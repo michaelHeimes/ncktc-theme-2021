@@ -1,0 +1,645 @@
+// search bar specific
+.search-bar {
+	width: 11.2rem;
+	position: relative;
+
+	.search-box {
+		background-color: transparent;
+		border-radius: 5px;
+		border-color: $dark-blue;
+		height: 1.8rem;
+		position: relative;
+		top: 0;
+		left: 0;
+		font-family: $font-body, FontAwesome; // proxima-nova for "Search" and Font Awesome for the magnifying glass
+	}
+}
+
+::placeholder {
+	color: $dark-blue;
+	opacity: 1;
+}
+
+#home-sub-header {
+	max-width: 28rem;
+	font-weight: bold;
+	font-size: 0.9rem;
+	line-height: unset;
+	padding: 0 1rem;
+
+	@include bp(sm) {
+		padding: unset;
+	}
+}
+
+#megaMenu ul.megaMenu > li.menu-item.ss-nav-menu-mega > ul.sub-menu-1, #megaMenu ul.megaMenu li.menu-item.ss-nav-menu-reg ul.sub-menu {
+	background: $white !important;
+	background-color: $white !important;
+	border-radius: 0 0 3px 3px !important; // 0 = top-left / top-right      3px = bottom-left / bottom-right
+}
+
+// Start desktop header styles
+@include from($desktop) {
+	#search-click-handler { display: none; }
+	.searchbar-mobile {
+		display: none;
+	}
+
+	#main-header {
+		max-width: 100%;
+		border-bottom: 5px solid $light-green;
+
+		// Top cyan nav bar
+		.quicklinks {
+			float: none; // clears 'float: right;' from 'oldcss.css'
+			margin-top: 0;
+			padding: 0;
+			max-width: 100%;
+			background-color: $light-blue;
+			box-shadow: 0 0 5px 2px $dark-grey; // light source is equal to the y value
+			position: relative;
+			z-index: 999;
+
+			.link-wrapper {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				max-width: 100%;
+				width: 75rem;
+				margin: 0 auto;
+
+				// links + search
+				.quicklinks__right {
+					display: flex;
+					justify-content: space-between;
+					align-items: center;
+					width: 34rem;
+
+					a {
+						font-size: 0.75rem;
+						color: $dark-blue;
+						font-weight: 600;
+
+						&:hover {
+							text-decoration: underline;
+						}
+					}
+				}
+			}	
+		} // end quicklinks
+	}
+
+	// main navigation bar.
+	.main-navigation {
+		display: flex;
+		align-items: center;
+		width: 75rem;
+		margin: 0 auto;
+		background-color: $white;
+
+		img {
+			margin-right: 2rem;
+		}
+	}
+
+	#megaMenu {
+		background-color: $white;
+		display: flex;
+		border-radius: 0px !important;
+		z-index: 9;
+
+		&:hover {
+			z-index: 99;
+		}
+
+		&:before {
+			box-shadow: none;
+		}
+
+		// id required to modify "Apply Now" button
+		#menu-item-2506 {
+			float: none;
+			font-family: $font-heading;
+
+			a {
+				padding: 1.8rem 3rem !important;
+			}
+
+			.wpmega-link-title {
+				text-transform: uppercase;
+				font-size: 0.875rem;
+			}
+		}
+
+		// start of menu list <ul>
+		#megaUber {
+			display: flex !important;
+			justify-content: space-between;
+			align-items: center;
+			padding: 0;
+			margin: 0;
+			width: 100%;
+
+			.menu-item-has-children {
+				background-color: none;
+			}
+
+			.wpmega-expanded {
+				background-color: none;
+			}
+
+			> .menu-item:not(#menu-item-2506) { // NOT "Apply Now" Button
+
+				> a {
+					color: $dark-grey;
+					font-family: $font-heading;
+					font-size: 0.875rem;
+					padding: 0.9rem 10px;
+					transition: 0s !important;
+
+					// transparent border added to prevent links shifting when hovered
+					border-top: 1px solid transparent;
+					border-left: 1px solid transparent;
+					border-right: 1px solid transparent;
+
+					&:hover {
+						background-color: $white;
+						box-shadow: 0 10px 0px 0px $white, 0 -9px 0px 0px $white, 12px 10px 8px -11px rgba($black, 0.5), -12px 10px 8px -11px rgba($black, 0.5);
+						border-radius: 3px 3px 0 0 !important;
+						transition: 0s !important;
+						border-top: 1px solid rgba($light-grey, 0.2);
+						border-left: 1px solid rgba($light-grey, 0.2);
+						border-right: 1px solid rgba($light-grey, 0.2);
+					}
+
+					&:after {
+						content: none;
+					}
+				}
+			}
+			
+			// INSIDE the drop down menu's
+			.um-anchoremulator {
+				color: $dark-grey;
+				font-family: $font-heading;
+				font-size: 0.875rem;
+
+				&:after {
+					content: none;
+				}
+			}
+
+			// "About Us" drop down
+			#menu-item-2499 > .um-anchoremulator {
+				color: $dark-grey;
+				font-family: $font-heading;
+				font-size: 0.875rem;
+				padding: 1.8rem 10px !important;
+				
+				&:hover {
+					background-color: $white;
+					box-shadow: 3px -9px 26px 1px rgba($black, 0.5), -3px -9px 26px 1px rgba($black, 0.5);
+				}
+
+				&:after { content: none; }
+			}
+
+			#menu-item-2883 {
+				.wpmega-link-title {
+					font-weight: bold !important;
+					font-family: $font-heading;
+				}
+
+				#menu-item-7646,
+				#menu-item-7729,
+				#menu-item-7765,
+				#menu-item-7730 {
+					.wpmega-link-title {
+						font-weight: normal !important;
+						font-family: $font-body;
+					}
+				}
+			}
+
+			ul.sub-menu-1 {
+				border: none !important;
+				box-shadow: 0 5px 10px -1px rgba($black, 0.6), 0 5px 10px -1px rgba($black, 0.6) !important;
+
+				&:first-of-type {
+					left: 0; // keeps new students menu aligned without overflowing "academics" menu
+				}
+			}
+		}
+	}
+
+	// required to change hover because megaMenu thinks it needs hover states on everything related to menu items
+	#megaMenu ul.megaMenu > li.menu-item:hover > a,
+	#megaMenu ul.megaMenu > li.menu-item > a:hover,
+	#megaMenu ul.megaMenu > li.menu-item.megaHover > a,
+	#megaMenu ul.megaMenu > li.menu-item:hover > span.um-anchoremulator,
+	#megaMenu ul.megaMenu > li.menu-item > span.um-anchoremulator:hover,
+	#megaMenu ul.megaMenu > li.menu-item.megaHover > span.um-anchoremulator {
+		background-color: $white;
+		box-shadow: 0 10px 0px 0px $white, 0 -9px 0px 0px $white, 12px 10px 8px -11px rgba($black, 0.5), -12px 10px 8px -11px rgba($black, 0.5);
+		border-top: 1px solid rgba($light-grey, 0.2) !important;
+		border-left: 1px solid rgba($light-grey, 0.2) !important;
+		border-right: 1px solid rgba($light-grey, 0.2) !important;
+		border-radius: 3px 3px 0 0 !important;
+	}
+
+	#megaMenu ul li.menu-item.ss-nav-menu-mega ul ul.sub-menu .ss-nav-menu-header > a,
+	#megaMenu ul li.menu-item.ss-nav-menu-mega ul.sub-menu-1 > li.menu-item > a {
+		border-bottom: none !important;
+	}
+
+	// spacing for the menu items inside menus
+	#megaMenu ul li.menu-item.ss-nav-menu-mega ul ul.sub-menu li.menu-item {
+		margin-top: 3px !important;
+		margin-bottom: 3px !important;
+	}
+
+	#megaMenu ul li.menu-item.ss-nav-menu-mega ul ul.sub-menu .ss-nav-menu-header > a {
+		margin-bottom: 0 !important;
+	}
+
+	// start of styles for blue bars and header styles / colors / fonts / weights
+	#megaMenu {
+		/* mega styles above */
+		.wpmega-link-title {
+			border-bottom: none !important;
+		}
+
+		// hays menu
+		#menu-item-7574 {
+			margin-left: 16.8rem !important;
+		}
+
+		// apply now button
+		#menu-item-7575, #menu-item-9218 {
+			max-width: 12rem;
+		}
+
+		#menu-item-7575 {
+			margin-top: 1rem;
+		}
+		
+		// Apply now button text inside
+		#menu-item-7575 .wpmega-link-title, #menu-item-9218 .wpmega-link-title {
+
+			&:hover {
+				text-decoration: none !important;
+			}
+		}
+
+		#menu-item-11058 {
+			margin-left: 26.7rem !important;
+			margin-top: -5rem !important;
+		}
+
+		#menu-item-11509 {
+			margin-left: 24.1rem !important;
+			margin-top: -1.5rem !important;
+		}
+
+		.apply-button {
+			border: 1px solid $light-green !important;
+			padding: 0.6rem 1rem !important;
+			border-radius: 5px !important;
+			font-size: 1rem !important;
+			white-space: nowrap;
+			transition: 0.2s ease-out;
+			color: $dark-blue;
+
+			&:hover {
+				background-color: $light-green;
+				text-decoration: none !important;
+				transition: 0.2s ease-out;
+			}
+
+			.academic-title {
+				white-space: nowrap;
+			}
+
+			.fa-arrow-right {
+				display: none;
+
+				@include bp(md) {
+					display: inline;
+					white-space: nowrap;
+					background-color: $white !important;
+					color: $light-green !important;
+					margin-left: 1.2rem;
+					padding: 0.2rem 0.3rem;
+					border: 2px solid $light-green !important;
+					border-radius: 50% !important;
+
+					&:hover {
+						background-color: none !important;
+					}
+				}
+			}
+		}
+
+		// new students drop down menu width
+		#menu-item-7 > ul {
+			max-width: 50rem !important;
+		}
+
+		// current students drop down menu width
+		#menu-item-8 > ul {
+			max-width: 50rem !important;
+		}
+
+		// about us drop down menu width
+		#menu-item-2499 > ul {
+			max-width: 40rem !important;
+		}
+
+		#menu-item-2499 > ul.sub-menu-1,
+		#menu-item-2499 > ul.sub-menu {
+			left: 21.7% !important;
+		}
+
+		#menu-item-2506 {
+			> a {
+				border: none !important;
+				box-shadow: none !important;
+
+				&:hover {
+					border: none !important;
+				}
+			}
+			
+			.wpmega-link-title { font-weight: bold !important; }
+		}
+
+		.menu-item-object-custom:not(.mega-with-sub), .menu-item-object-page:not(.mega-with-sub) {
+			.wpmega-link-title {
+				font-weight: normal !important;
+			}
+		}
+
+		.sub-menu-1 {
+			.wpmega-link-title {
+				color: $dark-blue !important;
+				border-bottom: none !important;
+
+				// hover applied to all wpmega-link-title spans (no anchor emulator attached)
+				&:hover {
+					text-decoration: underline;
+				}
+			}
+		}
+
+		// hover removed from top-level wpmega-link-title spans (w/ anchor emulator attached)
+		.um-anchoremulator > .wpmega-link-title {
+			&:hover {
+				text-decoration: none !important;
+			}
+		}
+
+		/**********************/
+		.academic-title,
+
+		// New students menu Items
+		#menu-item-21 .um-anchoremulator .wpmega-link-title,
+		#menu-item-7573 .um-anchoremulator .wpmega-link-title,
+		#menu-item-7577 .um-anchoremulator .wpmega-link-title,
+		#menu-item-7574 .um-anchoremulator .wpmega-link-title,
+
+		// Current students menu items
+		#menu-item-7580 .um-anchoremulator .wpmega-link-title,
+		#menu-item-7581 .um-anchoremulator .wpmega-link-title,
+		#menu-item-7582 .um-anchoremulator .wpmega-link-title,
+
+		// Academics menu items
+		#menu-item-197 .um-anchoremulator .wpmega-link-title,
+		#menu-item-208 .um-anchoremulator .wpmega-link-title,
+		#menu-item-190 .um-anchoremulator .wpmega-link-title,
+		#menu-item-217 .um-anchoremulator .wpmega-link-title,
+		#menu-item-196 .um-anchoremulator .wpmega-link-title,
+		#menu-item-189 .um-anchoremulator .wpmega-link-title,
+		#menu-item-1997 .um-anchoremulator .wpmega-link-title,
+
+		// About us menu items
+		#menu-item-7710 .um-anchoremulator .wpmega-link-title,
+		#menu-item-7711 .um-anchoremulator .wpmega-link-title,
+		#menu-item-7712 .um-anchoremulator .wpmega-link-title {
+			color: $dark-blue !important;
+			font-family: $font-body !important;
+			font-weight: bold !important;
+			text-transform: uppercase;
+
+			&:hover {
+				text-decoration: none;
+			}
+		}
+		/**********************/
+
+		.um-anchoremulator {
+			border: none !important;
+		}
+
+		ul.sub-menu-2 {
+			border-left: 2px solid $dark-blue;
+			
+			li {
+				padding-top: 0 !important;
+				padding-bottom: 0 !important;
+				padding-left: 0.7rem;
+				color: $dark-blue !important;
+				font-family: $font-body !important;
+
+				span {
+					color: $dark-blue !important;
+
+					&:hover {
+						text-decoration: underline;
+					}
+				}
+			}
+
+			.um-anchoremulator .wpmega-link-title {
+				color: $dark-blue !important;
+			}
+		}
+	}
+
+	// remove box shadow from "Apply Now" button
+	#megaMenu #menu-item-2506 a:hover {
+		box-shadow: none !important;
+	}
+
+	ul.sub-menu.sub-menu-2 {
+		border-left: 2px solid $dark-blue;
+	}
+} // End of desktop header styles
+
+// Start of mobile/tablet header styles
+@include until($desktop) {
+
+/******* SHIFTNAV SETTINGS AND STYLES *******/
+	.hide-mobile {
+		display: none; // hide logo (shiftnav has logo in top bar)
+	}
+
+	// [display: none] is for screens smaller than 1200px
+	#megaMenu {
+		display: none;
+		position: relative;
+	}
+
+	.main-navigation, #main-header {
+		position: relative;
+	}
+
+	.searchbar-mobile { display: block; }
+
+	#searchform {
+		position: fixed;
+		top: 3.25rem;
+		width: 100%;
+		background-color: $white;
+		z-index: 6000;
+		padding: 0;
+	}
+
+	.search-bar {
+		position: relative;
+		max-width: 100%;
+		width: unset;
+		z-index: 6000; // show on top of menu if js disabled
+		background-color: $white;
+		border-radius: 7px;
+	}
+
+	#search-click-handler {
+		position: fixed; // lock inside the nav bar
+		top: 0.6rem;
+		right: 3.5rem;
+		padding: 0.5rem;
+		margin-right: 1.5rem;
+		font-family: FontAwesome;
+		font-size: 1.1rem;
+		color: $dark-blue;
+		z-index: 6000;
+	}
+
+	.quicklinks {
+		display: none;
+	}
+
+	// style overrides for shiftnav mobile menu (slide out left alone)
+	#shiftnav-toggle-main {
+		position: relative;
+
+		@include bp(sm) {
+			display: block !important;
+		}
+
+		// @ 1200px, hide the shiftnav menu
+		@include bp(lg -1px) {
+			display: none;
+		}
+
+		// Force logo to show (hidden by default)
+		.shiftnav-main-toggle-content {
+			position: relative;
+			background: $white;
+			padding: 1.7rem;
+			
+			// NCK logo at top left
+			img {
+				display: block;
+				position: absolute;
+				left: 1rem;
+				top: 10px;
+				width: 80px;
+				height: 33px;
+			}
+		}
+
+		// move the hamburger menu to the right side
+		&:before {
+			color: $dark-blue;
+			position: absolute;
+			right: 0;
+			padding: 1rem !important;
+			font-size: 1.5rem;
+			z-index: 5001;
+		}
+	}
+} // End of mobile/tablet header styles
+
+// Modal Popup Video
+.modal-view {
+	display: none;
+	pointer-events: none;
+
+	&:target {
+		position: fixed;
+		z-index: 9999;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		display: flex;
+		margin: 0 auto;
+		pointer-events: auto;
+		background: rgba($black, 0.85);
+
+		// center modal
+		align-items: center;
+		justify-content: center;
+	}
+
+	> div {
+		margin: 1rem auto;
+		position: relative;
+		z-index: 9999;
+		transition: 0.4s ease-in;
+		text-align: center;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+
+		iframe {
+			// mobile size
+			width: 20rem;
+			height: 10rem;
+
+			// tablet size (768px)
+			@include bp(sm) {
+				width: 38rem;
+				height: 22rem;
+			}
+
+			// laptop size (1023px)
+			@include bp(md) {
+				width: 50rem;
+				height: 25rem;
+			}
+
+			// desktop size (1200px)
+			@include bp(lg) {
+				width: 70rem;
+				height: 35rem;
+			}
+		}
+
+		.close {
+			margin-top: 5px;
+			font-size: 1.5rem;
+			background-color: $white;
+			color: $light-green;
+			padding: 0.5rem 0.7rem;
+			border: 2px solid $light-green;
+			border-radius: 50%;
+
+			&:hover {
+				background-color: $light-green;
+				color: $white;
+			}
+		}
+	}
+}

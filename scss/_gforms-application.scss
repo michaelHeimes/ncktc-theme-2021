@@ -1,0 +1,240 @@
+/* This partial is for the Application on the "Apply" page
+/  The purpose of this file is to break up the application process into manageable chunks
+/  And to keep this separate from all other styles
+*/
+
+.apply-main {
+	max-width: 75rem;
+	margin: 0 auto 0.8rem;
+
+	h1 {
+		padding-top: 3rem;
+		
+		@include bp(md) {
+			padding-top: 0;
+			margin-left: 5rem;
+		}
+	}
+
+	// bring edges in for form wrapper
+	&__wrapper {
+		max-width: 70rem;
+		margin: 0 auto 2rem;
+		padding: 2rem;
+
+		// application form styles
+		.gform_wrapper {
+
+			.gf_page_steps {
+				border-bottom: none !important;
+			}
+			
+			.gf_step_active {
+				margin-top: 1.2rem;
+				margin-bottom: 0.2rem;
+			}
+
+			// hide incomplete steps on mobile - only show current/active step
+			.gf_step_pending {
+				display: none;
+
+				@include bp(sm) {
+					display: inline-block;
+				}
+			}
+
+			.gsection_title {
+				display: none;
+
+				@include bp(sm) {
+					display: inline-block;
+				}
+			}
+
+			.gf_step {
+				width: 13rem !important;
+			}
+
+			.gf_step .gf_step_number {
+				padding: 0.5rem 1rem;
+				background-color: $light-green;
+				color: $dark-grey;
+			}
+
+			.gform_page_footer {
+				display: flex;
+				max-width: 100%;
+				justify-content: space-between;
+				align-items: center;
+				padding: 1rem 0.5rem;
+				margin: 1rem auto 0;
+				border-top: 1px solid rgba($light-grey, 0.5);
+
+				flex-direction: column;
+
+				@include bp(sm) {
+					flex-direction: row;
+					align-items: initial;
+				}
+
+				.button {
+					display: inline-block;
+					width: 10rem;
+					background-color: $light-green;
+					color: $dark-grey;
+					padding: 0.5rem 1rem;
+					font-weight: normal;
+					font-family: $font-body;
+					font-size: 0.9rem;
+					text-transform: uppercase;
+					border-radius: 3px;
+					box-shadow: 0 10px 7px -10px rgba($dark-grey, 0.9);
+					transition: 0.3s ease-out;
+					text-align: center;
+					
+					&:hover {
+						background-color: $light-green-hover;
+						color: $dark-grey;
+						transition: 0.3s ease-in;
+						letter-spacing: 2px;
+					}
+
+					&:first-of-type:before {
+						content: '/203A';
+
+					}
+
+					&:last-of-type:after{
+						content: '/2039';
+					}
+				}
+			}
+
+
+			/*** Page and section styles below ***/
+
+			// all sections
+			.gsection {
+				margin-top: 3rem;
+
+				// switch gforms border location for sections
+				border-bottom: none;
+				border-top: 1px solid #CCC;
+			}
+
+			input::placeholder {
+				color: $dark-grey;
+			}
+
+			// Page 1 - Personal Information
+			@include bp(sm) {
+				#gform_fields_92 li:not(.gsection) {
+					display: inline-block;
+				}
+			}
+
+			// name block
+			#field_92_180 {
+				// display: inline-block;
+				width: 100%;
+			}
+
+			// maiden name, suffix, and date blocks
+			@include bp(sm) {
+				#field_92_4, #field_92_5, #field_92_6 {
+					width: calc(100% / 3);
+					padding-right: 16px;
+
+					#input_92_6 { width: 100%; }
+
+					#input_92_5_1_container, #input_92_5_2_container, #input_92_5_3_container {
+						width: calc(100% / 3);
+
+						&:last-of-type {
+							margin-right: 3px;
+						}
+					}
+
+					#input_92_5 { margin-top: 0; }
+
+					.gfield_label {
+						margin-bottom: 0 !important;
+					}
+				}
+			}
+
+			// address field block
+			#field_92_10, #field_92_90 {
+				width: 100%;
+			}
+
+			// Page 2 - Contact Information
+			@include bp(sm) {
+				#gform_fields_92_2 li:not(.gsection) {
+					display: inline-block;
+				}
+			}
+
+			// email block
+			#field_92_13 {
+				width: 100%;
+			}
+
+			// phone type and number
+			@include bp(sm) {
+				#field_92_56, #field_92_57 {
+					width: calc(50% / 2); // 25% each to keep inline with email box
+					padding-right: 16px;
+
+					#input_92_56, #input_92_57 {
+						width: 100%;
+					}
+				}
+			}
+
+			// can we text you preference
+			#field_92_15 {
+				@include bp(sm) { margin-left: 2rem !important; }
+
+				.ginput_container {
+					margin-top: 0;
+				}
+
+				ul, ul li {
+					margin-bottom: 0;
+
+					input {
+						margin-bottom: 0;
+					}
+
+					.gchoice_92_15_0 {
+						margin-right: 16px;
+					}
+				}
+			}
+
+			// below email block / emergency contact name, relation, number
+			@include bp(sm) {
+				#field_92_47, #field_92_48, #field_92_49, #field_92_65 {
+					width: calc(100% / 4);
+
+					#input_92_47, #input_92_48, #input_92_49, #input_92_65 {
+						width: 100%;
+					}
+				}
+			}
+
+		} // end [.gform_wrapper]
+	}
+}
+
+// move checkbox and radio button items inline with each other
+.gform_wrapper ul.gfield_checkbox li label, .gform_wrapper ul.gfield_radio li label {
+	vertical-align: top;
+	margin-top: -3px;
+	margin-left: 5px;
+}
+
+.gform_wrapper ul.gfield_radio li label {
+	margin-left: 10px;
+}

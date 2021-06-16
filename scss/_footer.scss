@@ -1,0 +1,292 @@
+.footer-background {
+	background-color: $dark-blue;
+	border-bottom: 3px solid $light-green;
+	max-width: 100%;
+}
+
+.footer-boxes {
+	max-width: 100%;
+	display: flex;
+	margin: 0 auto;
+	padding: 1rem;
+	flex-wrap: wrap;
+	justify-content: center;
+
+	@include bp(xs) {
+		justify-content: space-around;
+	}
+
+	@include bp(sm) {
+		width: 77rem;
+	}
+
+	&__box {
+		display: flex;
+		justify-content: space-between;
+		width: 17.5rem;
+		max-width: 100%;
+		margin-bottom: 1rem;
+		background-color: $white;
+		box-shadow: 0 0 4px 0 $dark-grey;
+
+		@include bp(lg) {
+			margin-bottom: -3rem; // pulls boxes below bottom border
+		}
+
+		&--column {
+			padding-left: 0.5rem;
+			padding-right: 0.5rem;
+			display: flex;
+			flex-direction: column;
+			padding-bottom: 0.3rem;
+
+			h5 {
+				text-transform: none;
+				padding-bottom: 0;
+				margin-bottom: 0;
+			}
+
+			p, a {
+				font-size: 0.75rem;
+				font-family: $font-body;
+				color: $dark-grey;
+			}
+
+			p {
+				padding: 0.5rem 0 0 0;
+				margin: 0;
+			}
+
+			.map-link {
+				color: $cyan;
+			}
+
+			a {
+				padding-top: 0.5rem;
+			}
+
+			a:hover {
+				text-decoration: underline;
+			}
+
+			.page-links {
+				color: $cyan;
+				font-weight: bold;
+				text-transform: uppercase;
+			}
+		} // END [--column]
+
+		&--social {
+			padding: 1rem;
+			width: 100%;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+
+			a {
+				background-color: $dark-blue;
+				color: $white;
+				padding: 0.6rem;
+				border-radius: 12px;
+
+				&:first-of-type {
+					padding: 0.6rem 0.8rem;
+				}
+
+				&:last-of-type {
+					padding: 0.6rem 0.65rem;
+				}
+
+				&:hover {
+					background-color: $cyan;
+				}
+			}
+		}
+
+		&--menu {
+			padding: 0.5rem;
+
+			ul {
+				list-style-type: none;
+				margin: 0;
+				padding: 0;
+
+				// Join Our Team
+				li#menu-item-7392 {
+					float: left;
+				}
+
+				// Student Achievement
+				li#menu-item-7394 {
+					float: right;
+				}
+
+				// Cafeteria Menu
+				li#menu-item-7395 {
+					float: left;
+				}
+
+				// Student Jobs
+				li#menu-item-7396 {
+					float: right;
+				}
+
+				// Transcript Request
+				li#menu-item-7393 {
+					clear: both;
+				}
+
+				// Improvement Suggestion Form
+				li#menu-item-7658 {
+					clear: both;
+				}
+
+				li {
+					padding-bottom: 0;
+					margin-bottom: 0;
+
+					a {
+						font-size: 0.75rem;
+						font-weight: bold;
+						font-family: $font-body;
+						text-transform: uppercase;
+						color: $cyan;
+
+						&:hover {
+							text-decoration: underline;
+							color: $cyan;
+						}
+					}
+				}
+			}
+		} // end [--menu]
+	} // end [__box]
+}
+
+// Footer section
+.footer-main {
+	background-color: $white;
+	padding-top: 2rem;
+	max-width: 100%;
+	margin: 0 auto;
+
+	@include bp(md) {
+		padding-top: 4rem;
+	}
+
+	&__box {
+		display: flex;
+		justify-content: center;
+		flex-direction: column;
+		align-items: center;
+		margin: 0 auto;
+		max-width: 73.5rem;
+
+		@include bp(1125px) {
+			flex-direction: row;
+			justify-content: space-between;
+		}
+
+		&--left {
+			max-width: 100%;
+
+			@include bp(xs) {
+				width: 27.6rem;
+			}
+
+			.link-columns__top {
+				padding-bottom: 1rem;
+				text-align: center;
+
+				@include bp(xs) {
+					text-align: left;
+				}
+
+				ul {
+					list-style-type: none;
+					margin: 0;
+					padding: 0;
+
+					@include bp(xs) {
+						columns: 3;
+					}
+
+					li#menu-item-1197 {
+						margin-left: -0.5rem;
+					}
+
+					li {
+						padding: 0;
+						margin: 0;
+
+						a {
+							font-size: 0.625rem;
+							color: $cyan;
+
+							&:hover {
+								color: $cyan;
+								text-decoration: underline;
+							}
+						}
+					}
+				}
+			} // end [.link-columns__top]
+
+			.copyright-box {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				flex-wrap: wrap-reverse; // puts copyright below KS-Degree Stats logo [mobile]
+
+				@include bp(xs) {
+					flex-direction: row;
+					justify-content: space-between;
+				}
+
+				p {
+					font-size: 0.625rem;
+					padding-top: 0.8rem;
+				}
+
+				img {
+					padding-top: 0.5rem;
+					width: 136px;
+					padding-bottom: 1rem;
+				}
+
+				a:hover {
+					text-decoration: underline;
+				}
+			}
+		} // end [--left]
+
+		&--right {
+			width: 44rem;
+			max-width: 100%;
+			padding: 0 0.8rem;
+			display: flex;
+			justify-content: center;
+			flex-wrap: wrap-reverse; // put hlc logo at the very bottom [mobile]
+			align-items: center;
+
+			@include bp(sm) {
+				justify-content: space-between;
+				flex-wrap: nowrap;
+				align-items: initial;
+			}
+
+			@include bp(md) {
+				padding: 0;
+			}
+
+			iframe {
+				padding-left: 0.5rem;
+			}
+
+			p {
+				max-width: 34rem;
+				font-size: 0.625rem;
+			}
+		}
+	} // end [__box]
+}

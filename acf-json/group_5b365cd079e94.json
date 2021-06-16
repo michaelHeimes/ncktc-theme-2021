@@ -1,0 +1,67 @@
+{
+    "key": "group_5b365cd079e94",
+    "title": "Display on Events Page",
+    "fields": [
+        {
+            "key": "field_5b365cde85225",
+            "label": "Display On Events Main Page",
+            "name": "display_on_events_main_page",
+            "type": "true_false",
+            "instructions": "Display This event in one of the 4 Call To Action Cards at the top of the 'events-main' page under 'About Us'",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "80",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_5b367fba91ef3",
+            "label": "Add Image to Featured Event",
+            "name": "add_image_to_featured_event",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "20",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "preview_size": "thumbnail",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "event"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1549560968
+}

@@ -1,0 +1,757 @@
+{
+    "key": "group_5438c2b34698f",
+    "title": "Program",
+    "fields": [
+        {
+            "key": "field_53d8157c3e934",
+            "label": "Program Locations",
+            "name": "program_locations",
+            "prefix": "",
+            "type": "checkbox",
+            "instructions": "Choose the Campus locations for this program. Check all that apply",
+            "required": 1,
+            "conditional_logic": 0,
+            "choices": {
+                "Beloit": "Beloit",
+                "Hays": "Hays"
+            },
+            "default_value": [],
+            "layout": "vertical"
+        },
+        {
+            "key": "field_539212d0c90be",
+            "label": "Program Head Beloit",
+            "name": "program_head_beloit",
+            "prefix": "",
+            "type": "relationship",
+            "instructions": "Please select the faculty member who is the program head at the Beloit Campus.",
+            "required": 1,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_53d8157c3e934",
+                        "operator": "==",
+                        "value": "Beloit"
+                    }
+                ]
+            ],
+            "return_format": "object",
+            "post_type": [
+                "faculty"
+            ],
+            "taxonomy": [],
+            "filters": [
+                "search"
+            ],
+            "max": 1,
+            "elements": [
+                "post_type"
+            ]
+        },
+        {
+            "key": "field_53d8146779a3c",
+            "label": "Program Head Hays",
+            "name": "program_head_hays",
+            "prefix": "",
+            "type": "relationship",
+            "instructions": "Please select the faculty member who is the program head at the Hays campus.",
+            "required": 1,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_53d8157c3e934",
+                        "operator": "==",
+                        "value": "Hays"
+                    }
+                ]
+            ],
+            "return_format": "object",
+            "post_type": [
+                "faculty"
+            ],
+            "taxonomy": [],
+            "filters": [
+                "search"
+            ],
+            "max": 1,
+            "elements": [
+                "post_type"
+            ]
+        },
+        {
+            "key": "field_53baf200a7a27",
+            "label": "Program Instructors",
+            "name": "program_instructors",
+            "prefix": "",
+            "type": "relationship",
+            "instructions": "Please select the faculty members who are instructors. If the program head is also an instructor, DO NOT INCLUDE THEM HERE.",
+            "required": 0,
+            "conditional_logic": 0,
+            "return_format": "object",
+            "post_type": [
+                "faculty"
+            ],
+            "taxonomy": [],
+            "filters": [
+                "search"
+            ],
+            "max": "",
+            "elements": [
+                "post_type"
+            ]
+        },
+        {
+            "key": "field_5397302565d5a",
+            "label": "Program Video",
+            "name": "program_video",
+            "prefix": "",
+            "type": "text",
+            "instructions": "Enter the URL of the program video here. \r\nMUST BE IN THE FOLLOWING FORMAT!<br>\r\n\/\/www.youtube.com\/embed\/Video-ID (ex. YJuyhBqC9Hc) Leave off the last slash \"\/\"",
+            "required": 0,
+            "conditional_logic": 0,
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "formatting": "none",
+            "maxlength": 40,
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_5417409983b6f",
+            "label": "Program Picture",
+            "name": "program_picture",
+            "prefix": "",
+            "type": "image",
+            "instructions": "This will only be shown if a video is not present.",
+            "required": 0,
+            "conditional_logic": 0,
+            "preview_size": "thumbnail",
+            "library": "uploadedTo",
+            "return_format": "array"
+        },
+        {
+            "key": "field_5397314b65d5b",
+            "label": "Program Description",
+            "name": "program_description",
+            "prefix": "",
+            "type": "wysiwyg",
+            "instructions": "Enter the description of the program.",
+            "required": 1,
+            "conditional_logic": 0,
+            "default_value": "",
+            "toolbar": "basic",
+            "media_upload": 0,
+            "tabs": "all"
+        },
+        {
+            "key": "field_53babd3a193fc",
+            "label": "Program Outcomes",
+            "name": "program_outcomes",
+            "prefix": "",
+            "type": "wysiwyg",
+            "instructions": "Enter the Program Outcomes",
+            "required": 0,
+            "conditional_logic": 0,
+            "default_value": "",
+            "toolbar": "basic",
+            "media_upload": 0,
+            "tabs": "all"
+        },
+        {
+            "key": "field_53fb6edde371b",
+            "label": "Pre-Requisite Courses",
+            "name": "program_pre_req",
+            "prefix": "",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "row_min": "",
+            "row_limit": "",
+            "layout": "table",
+            "button_label": "Add Course",
+            "min": 0,
+            "max": 0,
+            "sub_fields": [
+                {
+                    "key": "field_53fb6edde371c",
+                    "label": "Course",
+                    "name": "course",
+                    "prefix": "",
+                    "type": "post_object",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "column_width": "",
+                    "post_type": [
+                        "courses"
+                    ],
+                    "taxonomy": [],
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "return_format": "object",
+                    "ui": 1
+                },
+                {
+                    "key": "field_53fb6edde371d",
+                    "label": "or",
+                    "name": "or",
+                    "prefix": "",
+                    "type": "checkbox",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "column_width": "",
+                    "choices": {
+                        "or": "Or"
+                    },
+                    "default_value": [],
+                    "layout": "vertical"
+                }
+            ]
+        },
+        {
+            "key": "field_53b5c62f3a12d",
+            "label": "First Semester Courses",
+            "name": "program_first",
+            "prefix": "",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "row_min": "",
+            "row_limit": "",
+            "layout": "table",
+            "button_label": "Add Course",
+            "min": 0,
+            "max": 0,
+            "sub_fields": [
+                {
+                    "key": "field_53bb05c921412",
+                    "label": "Course",
+                    "name": "course",
+                    "prefix": "",
+                    "type": "post_object",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "column_width": "",
+                    "post_type": [
+                        "courses"
+                    ],
+                    "taxonomy": [],
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "return_format": "object",
+                    "ui": 1
+                },
+                {
+                    "key": "field_53f78fd8703bd",
+                    "label": "or",
+                    "name": "or",
+                    "prefix": "",
+                    "type": "checkbox",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "column_width": "",
+                    "choices": {
+                        "or": "Or"
+                    },
+                    "default_value": [],
+                    "layout": "vertical"
+                },
+                {
+                    "key": "field_54088f9e1c37f",
+                    "label": "elective",
+                    "name": "elective",
+                    "prefix": "",
+                    "type": "checkbox",
+                    "instructions": "Check this box <b>ONLY<\/b> if this is an elective.<br><b>DO NOT<\/b> check this box and \"OR\"",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "column_width": 30,
+                    "choices": {
+                        "elective": "Elective"
+                    },
+                    "default_value": [],
+                    "layout": "vertical"
+                }
+            ]
+        },
+        {
+            "key": "field_53b5c6cd3a12f",
+            "label": "Second Semester Courses",
+            "name": "program_second",
+            "prefix": "",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "row_min": "",
+            "row_limit": "",
+            "layout": "table",
+            "button_label": "Add Row",
+            "min": 0,
+            "max": 0,
+            "sub_fields": [
+                {
+                    "key": "field_53b5c6cd3a130",
+                    "label": "course",
+                    "name": "course",
+                    "prefix": "",
+                    "type": "post_object",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "column_width": "",
+                    "post_type": [
+                        "courses"
+                    ],
+                    "taxonomy": [],
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "return_format": "object",
+                    "ui": 1
+                },
+                {
+                    "key": "field_53f78fc3703bc",
+                    "label": "or",
+                    "name": "or",
+                    "prefix": "",
+                    "type": "checkbox",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "column_width": "",
+                    "choices": {
+                        "or": "Or"
+                    },
+                    "default_value": [],
+                    "layout": "vertical"
+                },
+                {
+                    "key": "field_540890041c380",
+                    "label": "elective",
+                    "name": "elective",
+                    "prefix": "",
+                    "type": "checkbox",
+                    "instructions": "Check this box <b>ONLY<\/b> if this is an elective.<br><b>DO NOT<\/b> check this box and \"OR\"",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "column_width": 30,
+                    "choices": {
+                        "elective": "Elective"
+                    },
+                    "default_value": [],
+                    "layout": "vertical"
+                }
+            ]
+        },
+        {
+            "key": "field_53f763214d4d4",
+            "label": "Summer Semester Courses",
+            "name": "program_summer",
+            "prefix": "",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "row_min": "",
+            "row_limit": "",
+            "layout": "table",
+            "button_label": "Add Row",
+            "min": 0,
+            "max": 0,
+            "sub_fields": [
+                {
+                    "key": "field_53f763214d4d5",
+                    "label": "course",
+                    "name": "course",
+                    "prefix": "",
+                    "type": "post_object",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "column_width": "",
+                    "post_type": [
+                        "courses"
+                    ],
+                    "taxonomy": [],
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "return_format": "object",
+                    "ui": 1
+                },
+                {
+                    "key": "field_53f78fad703bb",
+                    "label": "or",
+                    "name": "or",
+                    "prefix": "",
+                    "type": "checkbox",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "column_width": "",
+                    "choices": {
+                        "or": "Or"
+                    },
+                    "default_value": [],
+                    "layout": "vertical"
+                },
+                {
+                    "key": "field_540890191c381",
+                    "label": "elective",
+                    "name": "elective",
+                    "prefix": "",
+                    "type": "checkbox",
+                    "instructions": "Check this box <b>ONLY<\/b> if this is an elective.<br><b>DO NOT<\/b> check this box and \"OR\"",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "column_width": 30,
+                    "choices": {
+                        "elective": "Elective"
+                    },
+                    "default_value": [],
+                    "layout": "vertical"
+                }
+            ]
+        },
+        {
+            "key": "field_53b5c70e3a131",
+            "label": "Third Semester Courses",
+            "name": "program_third",
+            "prefix": "",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "row_min": "",
+            "row_limit": "",
+            "layout": "table",
+            "button_label": "Add Row",
+            "min": 0,
+            "max": 0,
+            "sub_fields": [
+                {
+                    "key": "field_53b5c70e3a132",
+                    "label": "course",
+                    "name": "course",
+                    "prefix": "",
+                    "type": "post_object",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "column_width": "",
+                    "post_type": [
+                        "courses"
+                    ],
+                    "taxonomy": [],
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "return_format": "object",
+                    "ui": 1
+                },
+                {
+                    "key": "field_53f78f90703ba",
+                    "label": "or",
+                    "name": "or",
+                    "prefix": "",
+                    "type": "checkbox",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "column_width": "",
+                    "choices": {
+                        "or": "Or"
+                    },
+                    "default_value": [],
+                    "layout": "vertical"
+                },
+                {
+                    "key": "field_5408902f1c382",
+                    "label": "elective",
+                    "name": "elective",
+                    "prefix": "",
+                    "type": "checkbox",
+                    "instructions": "Check this box <b>ONLY<\/b> if this is an elective.<br><b>DO NOT<\/b> check this box and \"OR\"",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "column_width": 30,
+                    "choices": {
+                        "elective": "Elective"
+                    },
+                    "default_value": [],
+                    "layout": "vertical"
+                }
+            ]
+        },
+        {
+            "key": "field_53b5c72d3a133",
+            "label": "Fourth Semester Courses",
+            "name": "program_fourth",
+            "prefix": "",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "row_min": "",
+            "row_limit": "",
+            "layout": "table",
+            "button_label": "Add Row",
+            "min": 0,
+            "max": 0,
+            "sub_fields": [
+                {
+                    "key": "field_53b5c72d3a134",
+                    "label": "course",
+                    "name": "course",
+                    "prefix": "",
+                    "type": "post_object",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "column_width": "",
+                    "post_type": [
+                        "courses"
+                    ],
+                    "taxonomy": [],
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "return_format": "object",
+                    "ui": 1
+                },
+                {
+                    "key": "field_53f78f4d703b9",
+                    "label": "or",
+                    "name": "or",
+                    "prefix": "",
+                    "type": "checkbox",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "column_width": "",
+                    "choices": {
+                        "or": "Or"
+                    },
+                    "default_value": [],
+                    "layout": "vertical"
+                },
+                {
+                    "key": "field_5408904b1c383",
+                    "label": "elective",
+                    "name": "elective",
+                    "prefix": "",
+                    "type": "checkbox",
+                    "instructions": "Check this box <b>ONLY<\/b> if this is an elective.<br><b>DO NOT<\/b> check this box and \"OR\"",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "column_width": 30,
+                    "choices": {
+                        "elective": "Elective"
+                    },
+                    "default_value": [],
+                    "layout": "vertical"
+                }
+            ]
+        },
+        {
+            "key": "field_53b5c7803a135",
+            "label": "General Education Courses",
+            "name": "program_general",
+            "prefix": "",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "row_min": "",
+            "row_limit": "",
+            "layout": "table",
+            "button_label": "Add Row",
+            "min": 0,
+            "max": 0,
+            "sub_fields": [
+                {
+                    "key": "field_53b5c7803a136",
+                    "label": "course",
+                    "name": "course",
+                    "prefix": "",
+                    "type": "post_object",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "column_width": "",
+                    "post_type": [
+                        "courses"
+                    ],
+                    "taxonomy": [],
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "return_format": "object",
+                    "ui": 1
+                },
+                {
+                    "key": "field_53f4dc6666a19",
+                    "label": "or",
+                    "name": "or",
+                    "prefix": "",
+                    "type": "checkbox",
+                    "instructions": "Check this box if the next program can be donated with \"or\" <br> Example: MTH-2054 OR MTH-4256",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "column_width": "",
+                    "choices": {
+                        "or": "Or"
+                    },
+                    "default_value": [],
+                    "layout": "vertical"
+                },
+                {
+                    "key": "field_540890631c384",
+                    "label": "elective",
+                    "name": "elective",
+                    "prefix": "",
+                    "type": "checkbox",
+                    "instructions": "Check this box <b>ONLY<\/b> if this is an elective.<br><b>DO NOT<\/b> check this box and \"OR\"",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "column_width": 30,
+                    "choices": {
+                        "elective": "Elective"
+                    },
+                    "default_value": [],
+                    "layout": "vertical"
+                }
+            ]
+        },
+        {
+            "key": "field_53e98eb4603d2",
+            "label": "Additional Course Notes",
+            "name": "program_notes",
+            "prefix": "",
+            "type": "wysiwyg",
+            "instructions": "Enter any additional notes that do not fit in any of the other fields.",
+            "required": 0,
+            "conditional_logic": 0,
+            "default_value": "",
+            "toolbar": "basic",
+            "media_upload": 0,
+            "tabs": "all"
+        },
+        {
+            "key": "field_53b30dbe800c0",
+            "label": "Post Graduate Jobs",
+            "name": "program_jobs",
+            "prefix": "",
+            "type": "repeater",
+            "instructions": "Please add the jobs available to students after graduation. All fields are optional.",
+            "required": 0,
+            "conditional_logic": 0,
+            "row_min": "",
+            "row_limit": "",
+            "layout": "table",
+            "button_label": "Add another job.",
+            "min": 0,
+            "max": 0,
+            "sub_fields": [
+                {
+                    "key": "field_53b30e0b800c1",
+                    "label": "Job Title",
+                    "name": "job_title",
+                    "prefix": "",
+                    "type": "text",
+                    "instructions": "Enter the Job Title",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "column_width": "",
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "formatting": "none",
+                    "maxlength": 61,
+                    "readonly": 0,
+                    "disabled": 0
+                },
+                {
+                    "key": "field_53b30e77800c2",
+                    "label": "Annual Salary",
+                    "name": "annual_salary",
+                    "prefix": "",
+                    "type": "number",
+                    "instructions": "Enter a salary. Numbers only! Formatting will be applied automatically.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "column_width": "",
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "min": "",
+                    "max": "",
+                    "step": "",
+                    "readonly": 0,
+                    "disabled": 0
+                }
+            ]
+        },
+        {
+            "key": "field_53f61ffd38104",
+            "label": "Tool List",
+            "name": "program_tool_list",
+            "prefix": "",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "default_value": "",
+            "toolbar": "basic",
+            "media_upload": 0,
+            "tabs": "all"
+        },
+        {
+            "key": "field_53ff5013c4d7d",
+            "label": "Program Specific Information",
+            "name": "program_specific",
+            "prefix": "",
+            "type": "wysiwyg",
+            "instructions": "THIS IS FOR PROGRAM SPECIFIC INFORMATION ONLY. If there is another field where the information fits, put it there. See <a href=\"https:\/\/www.ncktc.edu\/programs\/ad-nursing\/\" target=\"_blank\">A.D. Nursing<\/a> for an example of what should go in this box.",
+            "required": 0,
+            "conditional_logic": 0,
+            "default_value": "",
+            "toolbar": "full",
+            "media_upload": 1,
+            "tabs": "all"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "programs"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [
+        "the_content",
+        "excerpt",
+        "custom_fields",
+        "discussion",
+        "comments",
+        "slug",
+        "author",
+        "format",
+        "featured_image",
+        "categories",
+        "tags",
+        "send-trackbacks"
+    ]
+}

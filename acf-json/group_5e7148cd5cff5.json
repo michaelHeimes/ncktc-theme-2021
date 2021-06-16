@@ -1,0 +1,70 @@
+{
+    "key": "group_5e7148cd5cff5",
+    "title": "Notification Bar",
+    "fields": [
+        {
+            "key": "field_5e7148fffe116",
+            "label": "Show Notification Bar?",
+            "name": "show_notification_bar",
+            "type": "true_false",
+            "instructions": "Toggle notification bar on\/off.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 1,
+            "ui_on_text": "Yes",
+            "ui_off_text": "No"
+        },
+        {
+            "key": "field_5e7148e7fe115",
+            "label": "Notification Text",
+            "name": "notification_text",
+            "type": "textarea",
+            "instructions": "You can insert anchor tags into this field to link to pages.<br\/>\r\nOn mobile, this displays just below the Navigation Bar.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5e7148fffe116",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": 3,
+            "new_lines": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "notification-bar-ops"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1584485332
+}

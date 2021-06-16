@@ -1,0 +1,181 @@
+.events-header {
+	background-image: url(../img/events-header.jpg);
+	position: relative;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	min-width: 100vw;
+	min-height: 10rem;
+
+	@include bp(sm) {
+		min-height: 25rem;
+	}
+
+	&__blue-ribbon {
+		position: relative;
+		top: 5rem;
+		left: 0;
+		max-width: 100%;
+		background-color: rgba($light-blue, 0.9);
+		text-align: center;
+
+		@include bp(sm) {
+			max-width: 30rem;
+			text-align: left;
+		}
+
+		@include bp(md) {
+			max-width: 40rem;
+		}
+
+		h1 {
+			color: $white;
+			line-height: 0.9;
+			padding-top: 1rem;
+			padding-bottom: 1rem;
+
+			@include bp(sm) {
+				padding: 2.5rem 0 2.5rem 5rem;
+			}
+		}
+	}
+
+	&__bottom-bar {
+		position: relative;
+		top: -12px;
+		width: 100%;
+		max-width: 100%;
+		vertical-align: top;
+		height: 1.2rem;
+	}
+}
+
+.events-main {
+	background-image: url(../img/home-background-alt.jpg);
+	max-width: 100%;
+	margin-top: -1rem;
+
+	.cta-cards {
+		padding-top: 3rem;
+		margin-bottom: 2rem;
+
+		p {
+			padding-top: 0.4rem;
+		}
+	}
+}
+
+.events__event-boxes {
+	display: flex;
+	flex-direction: column; // display event boxes stacked
+	max-width: 100%;
+	margin: 0 auto;
+	padding-bottom: 1rem;
+
+	.events-calendar-notice {
+		max-width: 38rem;
+		width: 100%;
+		margin: 3rem auto;
+		padding: 1rem 0.5rem;
+		border-top: 2px solid $dark-blue;
+		border-bottom: 2px solid $dark-blue;
+
+		p {
+			margin: 0 auto;
+			font-size: 1.2rem;
+			font-family: $font-heading;
+			font-weight: bold;
+			text-align: center;
+		}
+
+		h4 {
+			margin: 1.5rem auto 0;
+			text-align: center;
+			> a { color: $dark-blue; &:hover { color: $cyan; } }
+		}
+	}
+
+	&--box {
+		background-color: $white;
+		max-width: 50rem;
+		width: 100%;
+		margin: 0 auto 1.5rem;
+		padding: 1.2rem;
+
+		.event-link {
+			display: flex;
+			max-width: 100%;
+			position: relative;
+			flex-direction: column; // for mobile
+			justify-content: center;
+
+			@include bp(sm) {
+				justify-content: space-between;
+				flex-direction: row; // for mobile
+				width: 100%;
+				align-items: normal;
+			}
+
+			&__left {
+				margin-bottom: 0.5rem;
+
+				@include bp(sm) {
+					width: 4.5rem;
+				}
+
+				span {
+					display: inline;
+					font-size: 0.75rem;
+					font-family: $font-body;
+					padding-right: 1rem;
+
+					@include bp(sm) {
+						display: inline-block;
+						padding-right: 0;
+					}
+				}
+
+				.last { // moves the Location down a bit
+					margin-top: 1.2rem;
+				}
+			}
+
+			&__center {
+				max-width: 28rem;
+
+				@include bp(sm) {
+					width: 28rem;
+					text-align: left;
+				}
+
+				.event-url {
+					font-family: $font-heading;
+					font-weight: bold;
+					font-size: 1.25rem;
+					display: inline-block;
+					color: $dark-blue;
+					padding-bottom: 1rem;
+
+					&:hover {
+						color: $cyan;
+					}
+				}
+
+				p {
+					font-size: 0.75rem;
+				}
+			}
+
+			&__right a {
+				position: relative;
+				top: 50%;
+				transform: translateY(-50%);
+				margin-top: 1rem;
+
+				@include bp(sm) {
+					margin-top: 0;
+				}
+			}
+		} // end .event-link
+	} // end [--box]
+} // end .events__event-boxes

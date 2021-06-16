@@ -1,0 +1,575 @@
+// new students header section
+.new-students {
+	background-image: url(../img/new-students-header.jpg);
+	position: relative;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	min-width: 100vw;
+	box-shadow: inset 0 -180px 200px 0 rgba($black, 0.7);
+
+	@include bp(md) {
+		height: 850px;
+	}
+}
+
+// 2 info boxes in the header
+.info-boxes {
+	width: 100%;
+	max-width: 75rem;
+	margin: 5rem auto 0;
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+
+	@include bp(md) {
+		margin-top: 8rem;
+	}
+
+	@include bp(lg) {
+		margin-top: 15rem;
+	}
+
+	&__box {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		flex-wrap: nowrap;
+		align-items: center;
+		width: 20rem;
+		background: rgba($off-white, 0.95); // 95% opacity
+		padding: 2rem 1.5rem 1rem;
+		margin: 0 auto 1.5rem;
+		border-radius: 3px;
+		box-shadow: 0 6px 5px -5px rgba($black, 0.5);
+
+		@include bp(md) {
+			width: 36.8rem;
+			flex-direction: row;
+			justify-content: space-between;
+		}
+
+		@include bp(lg) {
+			margin: 0 0 1.5rem;
+		}
+
+		// gravity forms style overrides
+		input:not([type=submit]) {
+			font-size: 0.625rem !important;
+			border-radius: 4px;
+			color: $cyan !important;
+
+			&::placeholder {
+				color: $cyan;
+			}
+		}
+
+		input[type=submit] {
+			display: inline-block;
+			background-color: $light-green;
+			color: $dark-grey;
+			box-shadow: 0 10px 7px -10px rgba($dark-grey, 0.9);	
+			border-radius: 3px;
+			font-size: 0.875rem !important;
+			font-weight: bold;
+			font-family: $font-body;
+			text-transform: uppercase;
+			cursor: pointer;
+			text-align: center;
+			width: 8rem;
+			padding-top: 0.5rem;
+			padding-bottom: 0.5rem;
+			margin-right: 0 !important;
+		
+			&:hover {
+				background-color: $light-green-hover;
+				color: $dark-grey;
+			}
+		}
+
+		// gravity forms main wrapper
+		.gform_wrapper {
+			margin-top: 0;
+			margin-bottom: 0;
+		}
+		
+		.gform_wrapper ul.gform_fields li.gfield {
+			padding-right: 0 !important;
+		}
+
+		.ginput_container {
+			margin-top: 0 !important;
+		}
+
+		.gfield {
+			clear: none !important;
+			margin-top: 0 !important;
+		}
+
+		// #input_79_2
+		#input_79_2, #input_80_1 {
+			width: 15rem !important;
+			border: 1px solid $dark-blue !important;
+		}
+
+		#input_79_3, #input_80_2 {
+			border: 1px solid $dark-blue !important;
+			width: 5.5rem;
+			float: left;
+		}
+
+		#input_79_4, #input_80_3 {
+			border: 1px solid $dark-blue !important;
+			width: 8.5rem;
+			float: right;
+		}
+
+		.gform_footer {
+			text-align: center;
+		}
+	}
+
+	h2 {
+		line-height: 0.9;
+		text-align: center;
+
+		@include bp(md) {
+			padding-left: 1.5rem;
+		}
+	}
+}
+
+// wooden bar at bottom of header
+.new-students__bottom-bar {
+	position: relative;
+	top: -5px;
+	width: 100%;
+	max-width: 100%;
+	vertical-align: top;
+	height: 1rem;
+	margin-bottom: 0;
+	padding-bottom: 0;
+}
+
+// Main section below header
+.new-students-main {
+	background-image: url(../img/home-background-alt.jpg);
+	margin: -14px auto 0;
+	width: 100%;
+	max-width: 100%;
+
+	&__resource-container {
+		width: 75rem;
+		max-width: 100%;
+		margin: 0 auto 4rem;
+
+		h2 {
+			text-align: center;
+			padding-top: 1rem;
+			padding-bottom: 1.5rem;
+
+			@include bp(lg) { // 1200px only on left
+				text-align: left;
+			}
+		}
+
+		&--boxes {
+			display: flex;
+			max-width: 100%;
+			justify-content: center;
+			flex-direction: column;
+			align-items: center;
+			flex-wrap: wrap;
+			margin: 0 auto;
+
+			@include bp(lg) { // 1px larger than iPad Pro
+				flex-direction: row;
+				justify-content: space-between;
+				flex-wrap: nowrap;
+			}
+
+			.boxes-left-side {
+				width: 24.25rem;
+				max-width: 100%;
+				position: relative;
+			}
+			
+			.boxes-left-side {
+				background-color: $light-blue;
+
+				.top-section {
+					padding-top: 0.8rem;
+					padding-bottom: 0.5rem;
+
+					h3 {
+						font-size: 2rem;
+						padding-left: 1.3rem;
+						color: $white;
+					}
+	
+					p {
+						padding-left: 1.3rem;
+						padding-right: 3rem;
+						font-size: 0.9rem;
+						color: $white;
+						margin-top: 0.5rem;
+						margin-bottom: 0.3rem;
+						line-height: 1.2; // is 1.6 without this
+					}
+
+					.learn-more {
+						margin-left: 1.3rem;
+						color: $white;
+						text-decoration: underline;
+					}
+				}
+			} // end .boxes-left-side
+			
+			.boxes-right-side {
+				display: flex;
+				flex-direction: column;
+				justify-content: space-around;
+				margin: 1rem auto 0;
+				max-width: 100%;
+
+				@include bp(md) {
+					margin: 0 auto;
+					padding-left: 1rem;
+					width: 51rem;
+				}
+			} // end boxes-right-side
+
+			// same styles for all 4 boxes
+			.boxes-top, .boxes-bottom {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				width: 100%;
+				position: relative;
+
+				@include bp(sm) {
+					margin-top: 0rem;
+				}
+
+				@include bp(md) {
+					flex-direction: row;
+					justify-content: space-between;
+					margin-top: 2rem;
+				}
+
+				.white-box {
+					margin-top: 1rem;
+					margin-bottom: 1rem;
+					background-color: $white;
+					padding: 0.3rem 0.7rem;
+					position: relative;
+
+					@include bp(413px) {
+						width: 24.25rem;
+					}
+
+					@include bp(md) {
+						margin-bottom: 0;
+						margin-top: 0;
+						max-height: 11rem;
+					}
+
+					// spans that hold numbers
+					span {
+						display: inline;
+						position: absolute;
+						z-index: 99;
+						color: rgba($dark-blue, 0.2);
+						font-size: 1.875rem;
+						font-family: $font-heading;
+						font-weight: bold;
+						top: -24px;
+						left: 0;
+					}
+						
+					h5 {
+						margin-top: 0;
+						padding-top: 0;
+						margin-bottom: 0;
+					}
+
+					p {
+						color: $light-grey;
+						font-size: 0.9rem;
+						margin: 0;
+						padding: 0;
+						line-height: 1.2;
+						min-height: 6.6rem; // push links down and keep aligned
+					}
+
+					.learn-more {
+						margin-right: 0.5rem;
+
+						@include bp(413px) {
+							margin-right: 2rem;
+						}
+					}
+				} // end .white-boxes
+			} // end .boxs-top [] .boxes-bottom
+
+			.boxes-top {
+				@include bp(lg) {
+					margin-top: 1.3rem;
+				}
+			}
+
+			.boxes-bottom {
+				@include bp(lg) {
+					margin-top: 2.2rem;
+				}
+			}
+		} // end [--boxes]
+	} // end [__resource-container]
+
+	.new-students-cta-wrapper {
+		max-width: 100%;
+		padding-top: 1.5rem;
+		padding-bottom: 1.5rem;
+		background-color: $white;
+		margin-bottom: 4rem;
+	
+		.new-students-cta-links {
+			display: flex;
+			margin: 0 auto;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			max-width: 77rem;
+			padding: 0 1rem;
+	
+			@include bp(sm) {
+				flex-wrap: wrap;
+				flex-direction: row;
+				justify-content: space-around;
+			}
+	
+			@include bp(lg) {
+				justify-content: space-between;
+			}
+	
+			&__card {
+				position: relative;
+				text-align: center;
+	
+				&:hover {
+					opacity: 0.7;
+				}
+	
+				div {
+					display: block;
+					width: 17.75rem;
+					min-height: 12.5rem;
+					box-shadow: inset 0 -50px 35px 0 rgba($black, 0.7);
+					border-radius: 3px;
+				}
+	
+				h5 {
+					font-family: $font-body;
+					text-align: center;
+					color: $white;
+					padding-top: 8.2rem;
+				}
+			} // end [__card]
+		} // end [.cta-links]
+	} // end .cta-wrapper
+
+	@include from($desktop) {
+		.new-students-corner-borders {
+			display: inline-block;
+	
+			// top-right of image
+			&:before {
+				display: block;
+				content: "";
+				position: absolute;
+				top: 39px;
+				right: -8px;
+				width: 8.8rem;
+				height: 6.8rem;
+				border-top: 15px solid $light-green;
+				border-right: 15px solid $light-green;
+			}
+	
+			// bottom-left of image
+			&:after {
+				display: block;
+				content: "";
+				position: absolute;
+				bottom: 139px;
+				right: 561px;
+				width: 8.8rem;
+				height: 6.8rem;
+				border-left: 15px solid $light-green;
+				border-bottom: 15px solid $light-green;
+				z-index: 1;
+			}
+		}
+	}
+
+	// small tweaks to container for the heading inside **(new students page only)
+	.home-container__first {
+		padding-top: 1rem;
+
+		img {
+			z-index: 2;
+		}
+
+		h2 {
+			padding-bottom: 3rem;
+			margin-top: -2.5rem;
+			text-align: center;
+
+			@include bp(md) {
+				padding-bottom: 1.5rem;
+				text-align: left;
+				margin-top: 0;
+			}
+		}
+	}
+
+	.home-container__first--left {
+		padding-left: 3rem;
+	}
+	/*************************/
+
+	.low-cta-wrapper {
+		max-width: 100%;
+		//padding-top: 1.5rem;
+		padding-bottom: 1.5rem;
+		margin-bottom: 10rem;
+
+		.low-cta-links {
+			display: flex;
+			margin: 0 auto;
+			justify-content: center;
+			max-width: 69.7rem; // centers boxes with alternate footer cards below this
+			flex-direction: column;
+			align-items: center;
+			flex-wrap: wrap;
+
+			@include bp(914px) {
+				flex-direction: row;
+				justify-content: space-between;
+			}
+
+			&__card {
+				position: relative;
+				text-align: center;
+				margin-bottom: 1rem;
+
+				@include bp(914px) {
+					margin-bottom: 0;
+				}
+
+				&:hover {
+					opacity: 0.7;
+				}
+
+				div {
+					display: block;
+					width: 19rem;
+					min-height: 12.5rem;
+					box-shadow: inset 0 -50px 35px 0 rgba($black, 0.7);
+					border-radius: 3px;
+				}
+
+				.card-image {
+					background-repeat: no-repeat;
+				}
+
+				h5 {
+					margin: 0 auto;
+					width: 11rem;
+					font-family: $font-body;
+					text-align: center;
+					color: $white;
+					padding-top: 8.2rem;
+				}
+			} // end [__card]
+		} // end [.cta-links]
+	} // end .cta-wrapper
+} // end .new-students-main
+
+.campus-video-cards {
+	max-width: 75rem;
+	width: 100%;
+	margin: 0 auto 5rem;
+
+	h2 {
+		text-align: center;
+		padding-bottom: 1.3rem;
+
+		@include bp(lg) {
+			text-align: left;
+		}
+	}
+
+	&__container {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		width: 100%;
+		margin: 0 auto;
+		align-items: center;
+
+		@include bp(lg) {
+			flex-direction: row;
+			justify-content: space-between;
+		}
+
+		div {
+			margin-bottom: 1.5rem;
+		}
+
+		// Women in Tech page only
+		.main-player-container {
+			max-width: 36rem;
+
+		}
+
+		iframe {
+			width: 589px;
+			height: 325px;
+			max-width: 100%;
+			max-height: 100%;
+		}
+
+		&--below {
+			margin-top: -0.5rem;
+			padding: 1.5rem 2.5rem 2.5rem;
+			background-color: $white;
+			max-width: 36.8rem;
+			width: 100%;
+
+			h3 {
+				margin-top: 0;
+				text-transform: none;
+			}
+
+			p {
+				font-size: 0.9rem;
+				min-height: 5.5rem; // push content down (keep aligned)
+			}
+
+			a {
+				display: inline-block;
+				margin-top: 1rem;
+				margin-right: 1rem;
+
+				@include bp(sm) {
+					margin-right: 3rem;
+				}
+
+				@include bp(lg) {
+					margin-top: 0;
+				}
+			}
+		}
+	}
+} // end .campus-video-cards

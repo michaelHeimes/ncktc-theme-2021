@@ -1,0 +1,186 @@
+{
+    "key": "group_549087e73a73f",
+    "title": "Display Courses from Category",
+    "fields": [
+        {
+            "key": "field_54908ba25c786",
+            "label": "Category Select",
+            "name": "course_list_category_select",
+            "prefix": "",
+            "type": "select",
+            "instructions": "Choose the category you want to display courses from.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "individual": "Individual Courses",
+                "online": "Online Courses"
+            },
+            "default_value": [],
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": "",
+            "disabled": 0,
+            "readonly": 0
+        },
+        {
+            "key": "field_5490880cb3f81",
+            "label": "Sections",
+            "name": "course_list_sections",
+            "prefix": "",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "min": "",
+            "max": "",
+            "layout": "table",
+            "button_label": "Add Section",
+            "sub_fields": [
+                {
+                    "key": "field_54908afcc0f1e",
+                    "label": "Heading",
+                    "name": "heading",
+                    "prefix": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": "",
+                    "readonly": 0,
+                    "disabled": 0
+                },
+                {
+                    "key": "field_549088f3b3f82",
+                    "label": "Courses",
+                    "name": "courses",
+                    "prefix": "",
+                    "type": "repeater",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "min": "",
+                    "max": "",
+                    "layout": "table",
+                    "button_label": "Add Course",
+                    "sub_fields": [
+                        {
+                            "key": "field_5490891ab3f83",
+                            "label": "Online Courses",
+                            "name": "online",
+                            "prefix": "",
+                            "type": "post_object",
+                            "instructions": "",
+                            "required": 1,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_54908ba25c786",
+                                        "operator": "==",
+                                        "value": "online"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "post_type": [
+                                "courses"
+                            ],
+                            "taxonomy": [
+                                "course-categories:online-courses"
+                            ],
+                            "allow_null": 0,
+                            "multiple": 0,
+                            "return_format": "object",
+                            "ui": 1
+                        },
+                        {
+                            "key": "field_54908d3ef4a82",
+                            "label": "Individual Courses",
+                            "name": "individual",
+                            "prefix": "",
+                            "type": "post_object",
+                            "instructions": "",
+                            "required": 1,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_54908ba25c786",
+                                        "operator": "==",
+                                        "value": "individual"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "post_type": [
+                                "courses"
+                            ],
+                            "taxonomy": [
+                                "course-categories:individual-courses"
+                            ],
+                            "allow_null": 0,
+                            "multiple": 0,
+                            "return_format": "object",
+                            "ui": 1
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page",
+                "operator": "==",
+                "value": "2267"
+            }
+        ],
+        [
+            {
+                "param": "page",
+                "operator": "==",
+                "value": "498"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "modified": 1419021756
+}

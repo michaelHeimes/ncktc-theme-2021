@@ -1,0 +1,14 @@
+// Make page Blank for Elementor
+.single-virtual {
+	.shiftnav-wrap {
+		display: none !important;
+	}
+
+	.shiftnav-toggle-main {
+		display: none !important;
+	}
+
+	#shiftnav-main, .shiftnav {
+		display: none !important
+	}
+}

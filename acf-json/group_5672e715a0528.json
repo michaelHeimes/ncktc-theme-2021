@@ -1,0 +1,150 @@
+{
+    "key": "group_5672e715a0528",
+    "title": "I AM NCK Tech Landing Pages",
+    "fields": [
+        {
+            "key": "field_5672e7280d447",
+            "label": "Background Image",
+            "name": "iamnck_bg",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "preview_size": "large",
+            "library": "all",
+            "min_width": 2000,
+            "min_height": 1000,
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": 1,
+            "mime_types": ""
+        },
+        {
+            "key": "field_5672e7db0d448",
+            "label": "Intro Text",
+            "name": "iamnck_intro",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1
+        },
+        {
+            "key": "field_5672e8550d449",
+            "label": "Icons",
+            "name": "icons",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "Icons and their descriptions are controlled by the template file itself. If you change one, it will change them all. You have been warned :)",
+            "new_lines": "wpautop",
+            "esc_html": 0
+        },
+        {
+            "key": "field_5672e89f0d44a",
+            "label": "Deadline Tag",
+            "name": "iamnck_deadline",
+            "type": "text",
+            "instructions": "You probably won't need to change this, but in case you do. The default value can be changed from the ACF field group. Admins only please.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Priority Deadline: February 1st",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_5672e8f10d44b",
+            "label": "Programs Link",
+            "name": "iamnck_programs_link",
+            "type": "page_link",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "page",
+                "programs"
+            ],
+            "taxonomy": [],
+            "allow_null": 0,
+            "multiple": 0
+        },
+        {
+            "key": "field_5672ea010d44c",
+            "label": "Apply Link",
+            "name": "iamnck_apply_link",
+            "type": "page_link",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "page",
+                "programs"
+            ],
+            "taxonomy": [],
+            "allow_null": 0,
+            "multiple": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "template-iamnck.php"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [
+        "the_content",
+        "revisions",
+        "featured_image"
+    ],
+    "active": 1,
+    "description": "",
+    "modified": 1450372723
+}

@@ -1,0 +1,713 @@
+// global box-sizing
+* {
+	box-sizing:	border-box;
+}
+
+// default styles
+body {
+	font-size: 16px; // default font size
+	font-family: $font-body; // default font family
+	overflow-x: hidden;
+	background: none !important; // clear the green-grid background
+
+	// lining numbers to make uniform in appearance
+	font-variant-numeric: lining-nums;
+	font-feature-settings: "lnum" 1;
+	-moz-font-feature-settings: "lnum" 1;
+	-webkit-font-feature-settings: "lnum" 1;
+}
+
+// site-wide
+html {
+	overflow-x: hidden;
+}
+
+// global buttons
+.green-shadow-button, .green-shadow-button-wide, .learn-more-green-button {
+	display: inline-block;
+	background-color: $light-green;
+	color: $green-button-text;
+	box-shadow: 0 10px 7px -10px rgba($dark-grey, 0.9);	
+	border-radius: 3px;
+	font-size: 0.875rem;
+	font-weight: bold;
+	text-transform: uppercase;
+	cursor: pointer;
+
+	&:hover {
+		background-color: $light-green-hover;
+		color: $dark-grey;
+	}
+}
+
+.green-shadow-button {
+	padding: 0.6rem 1rem 0.5rem;
+}
+
+.green-shadow-button-wide {
+	text-align: center;
+	width: 15rem;
+	padding-top: 0.5rem;
+	padding-bottom: 0.5rem;
+}
+
+.learn-more-green-button {
+	text-align: center;
+	width: 9rem;
+	padding-top: 0.5rem;
+	padding-bottom: 0.5rem;
+}
+
+.learn-more {
+	font-size: 0.75rem;
+	color: $cyan;
+	text-transform: uppercase;
+	font-weight: bold;
+
+	&:hover {
+		text-decoration: underline;
+		color: $cyan;
+	}
+}
+
+.learn-more-alt {
+	display: inline-block;
+	background-color: $white;
+	color: $dark-blue;
+	border: 2px solid $light-blue;
+	width: 9.375rem;
+	text-align: center;
+	font-family: $font-body;
+	font-size: 0.875rem;
+	font-weight: 600;
+	text-transform: uppercase;
+	border-radius: 3px;
+	padding: 0.4rem 0;
+
+	&:hover {
+		transition: 0.3s ease-out;
+		background-color: $light-blue;
+		color: $white;
+	}
+}
+
+// heading style base
+.h1-heading,
+.h2-heading,
+.h3-heading,
+.h4-heading,
+.h5-heading,
+.h6-heading,
+h1, h2, h3,
+h4, h5, h6 {
+	font-family: $font-heading; // Questa Slab Font
+	font-weight: bold; // weight 900
+	text-transform: uppercase;
+	color: $dark-blue;
+	font-variant-numeric: lining-nums;
+}
+
+h1, .h1-heading {
+	font-size: 2rem;
+
+	@include bp(sm) {
+		font-size: 3.75rem;
+	}
+}
+
+h2, .h2-heading {
+	font-size: 2rem;
+
+	@include bp(sm) {
+		font-size: 3rem;
+	}
+}
+
+h3, .h3-heading {
+	font-size: 1.8rem;
+
+	@include bp(sm) {
+		font-size: 2.25rem;
+	}
+}
+
+// staff directory edits for headings
+h3 > a {
+	font-size: 1.2rem;
+}
+
+.panel > h3 {
+	line-height: 0.7;
+}
+// end staff directory heading edits
+
+h4, .h4-heading {
+	font-size: 1.2rem;
+
+	@include bp(sm) {
+		font-size: 1.5rem;
+	}
+}
+
+h5, .h5-heading {
+	font-size: 1.25rem;
+
+	@include bp(sm) {
+		font-size: 1.35rem;
+	}
+}
+
+h6, .h6-heading {
+	font-size: 0.75rem;
+}
+
+// remove bottom box shadow from main content section
+.footer-widget .row:before {
+	box-shadow: none;
+}
+
+// full-width banner for job button - On Pages:/ "Current Students" / "Alumni" / "Foundation" / "About Us" /
+.banner-fw {
+	max-width: 100%;
+	margin: 0 auto 5rem;
+
+	&__inner {
+		display: flex;
+		justify-content: center;
+		align-items: center; // keeps green button centered on the header
+		max-width: 100%;
+		background-color: $white;
+		flex-wrap: wrap;
+		padding-bottom: 2rem;
+
+		@include bp(413px) {
+			padding-bottom: 0;
+		}
+
+		h3 {
+			padding-top: 2rem;
+			padding-bottom: 2rem;
+			text-transform: none;
+			text-align: center;
+		}
+
+		.green-shadow-button {
+
+			@include bp(415px) {
+				margin-left: 2rem;
+			}
+		}
+	}
+}
+
+// Tall Call to Action card styles - On Pages:/ "Current Students" / "Partnerships" / "Foundation" / "About Us" / "Events" /
+// Events Page is wider to allow for 4 cards to be shown (width is adjusted the same - below this block)
+.cta-cards, .cta-cards-events {
+	display: flex;
+	margin: 0 auto 2rem;
+	justify-content: center;
+	width: 100%;
+	max-width: 100%;
+	align-items: center;
+	flex-direction: column;
+
+	@include bp(61.25rem) {
+		max-width: 75rem;
+		justify-content: space-between;
+		flex-direction: row;
+		margin-bottom: 5rem;
+	}
+
+	&__card:not(.no-padding) {
+		max-width: 20rem; // leaves 1 rem of space between each card
+		background-color: $white;
+		text-align: left;
+		padding-bottom: 2rem; // brings buttons inside container
+		margin-bottom: 2rem;
+
+		@include bp(md) {
+			margin-bottom: 0;
+		}
+
+		@include bp(lg) {
+			max-width: 24rem;
+		}
+
+		img {
+			max-width: 20rem; // constrain image to the container width (lets height adjust)
+
+			@include bp(lg) {
+				max-width: 24rem;
+				min-height: 16.125rem; // 258px
+				max-height: 16.125rem; // 258px
+				width: 100%;
+			}
+		}
+
+		h3 {
+			max-width: 22rem;
+			padding-top: 0.7rem;
+			padding-left: 1rem;
+			text-transform: none;
+			line-height: 1;
+			padding-bottom: 0;
+			margin-bottom: 0;
+
+			@include bp(sm) {
+				padding-top: 0.7rem;
+				padding-left: 2rem;
+				min-height: 5.8rem; // keeps paragraph in line
+			}
+		}
+
+		p {
+			text-align: left;
+			font-size: 0.9rem;
+			padding: 1.5rem 1rem 1.5rem;
+
+			@include bp(sm) {
+				padding: 0 2rem 1rem;
+				min-height: 11.25rem;
+			}
+		}
+
+		.green-shadow-button-wide {
+			margin-left: 1rem;
+			
+			@include bp(sm) {
+				margin-left: 2rem;
+			}
+		}
+	}
+}
+
+// adjust events width on desktop for 4 cards
+.cta-cards-events {
+	padding: 0.5rem;
+	@include bp(61.25rem) {
+		max-width: 85rem;
+		margin-top: 3rem;
+	}
+
+	&__card:not(.no-padding) {
+		@include bp(lg) {
+			max-width: 19rem;
+		}
+
+		img {
+			max-width: 20rem;
+
+			@include bp(lg) {
+				width: 19rem;
+				height: 12.125rem;
+			}
+		}
+
+		p {
+			@include bp(sm) {
+				min-height: 6.25rem;
+			}
+		}
+	}
+}
+
+// On Pages:/ "New Students" / "Current Students" / "Partnerships" / "Foundation" /
+// only show the green box borders on desktop + 
+@include from($desktop) {
+	.corner-borders {
+		display: inline-block;
+
+		// top-right of image
+		&:before {
+			display: block;
+			content: "";
+			position: absolute;
+			top: 39px;
+			right: -8px;
+			width: 8.8rem;
+			height: 6.8rem;
+			border-top: 15px solid $light-green;
+			border-right: 15px solid $light-green;
+		}
+
+		// bottom-left of image
+		&:after {
+			display: block;
+			content: "";
+			position: absolute;
+			bottom: 83px;
+			right: 561px;
+			width: 8.8rem;
+			height: 6.8rem;
+			border-left: 15px solid $light-green;
+			border-bottom: 15px solid $light-green;
+		}
+	}
+}
+
+// cta icons before footer sections - On Pages:/ "Current students" / "Academics" /
+.cta-icons {
+	display: flex;
+	justify-content: center;
+	max-width: 100%;
+	margin: 0 auto;
+	text-align: center;
+	flex-wrap: wrap;
+	flex-direction: column;
+
+	@include bp(sm) {
+		max-width: 75rem;
+		flex-direction: row;
+		justify-content: space-between;
+		padding-bottom: 5rem;
+	}
+
+	@include bp(md) {
+		padding-bottom: 3rem;
+	}
+
+	// New Students Icon Set (3x2)
+	&__icon-box {
+		position: relative;
+		max-width: 100%;
+		text-align: center;
+		margin-bottom: 3.3rem;
+
+		@include bp(sm) {
+			margin-bottom: 0;
+			width: 16rem;
+		}
+
+		&:hover #fill-none path {
+			fill: $light-blue;
+		}
+
+		&:hover svg #Fill-3, 
+		&:hover svg #Fill-1,
+		&:hover svg #Fill-6,
+		&:hover svg #Fill-8 {
+			fill: $light-blue;
+		}
+
+		&:hover svg #Stroke-10, &:hover svg #Stroke-1 {
+			stroke: $light-blue;
+		}
+
+		&:hover .h5-heading {
+			color: $light-blue;
+		}
+
+		.h5-heading {
+			color: $dark-blue;
+		}
+
+		.icon-image {
+			padding-top: 4rem;
+			position: relative;
+
+			svg {
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				margin: 0 auto 1.2rem;
+			}
+
+			.webmail-icon {
+				left: -2.2rem;
+			}
+		}
+
+		.h5-heading {
+			font-family: $font-body;
+			display: inline-block;
+			margin: 0.5rem auto 0;
+
+			@include bp(md) {
+				margin-bottom: 5rem;
+			}
+		}
+	}
+
+	// Academics Icon Set (4x1)
+	&__icon-box-small {
+		position: relative;
+		max-width: 100%;
+		text-align: center;
+		margin-bottom: 4.5rem;
+
+		@include bp(xs) {
+			width: 18rem;
+			margin-bottom: 6.2rem;
+		}
+
+		@include bp(sm) {
+			width: 16rem;
+		}
+
+		@include bp(md) {
+			width: 15rem;
+		}
+
+		@include bp(lg) {
+			width: 18rem;
+		}
+
+		&:hover svg #Fill-1,
+		&:hover svg #Fill-4,
+		&:hover svg #Fill-3,
+		&:hover svg #Fill-5 {
+			fill: $light-blue;
+		}
+
+		&:hover svg #Stroke-1 {
+			stroke: $light-blue;
+		}
+
+		&:hover .h5-heading {
+			color: $light-blue;
+		}
+
+		.h5-heading {
+			color: $dark-blue;
+		}
+
+		.icon-image {
+			padding-top: 1.8rem;
+			position: relative;
+
+			svg {
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				margin: 0 auto 0.8rem;
+			}
+		}
+
+		.h5-heading {
+			font-family: $font-body;
+			display: inline-block;
+			margin: 0.5rem auto 3rem;
+		}
+	}
+}
+
+// Blue Ribbon Titles Boxes for all pages
+.ribbon-container {
+	max-width: 75rem;
+	margin: 0 auto;
+
+	&__blue-ribbon {
+		position: relative;
+		top: 4rem;
+		left: 0;
+		max-width: 95rem;
+		margin-left: -55%;
+		background-color: rgba($light-blue, 0.9);
+		padding-top: 4rem;
+		padding-bottom: 3rem;
+
+		@include bp(sm) {
+			padding-bottom: 1.5rem;
+		}
+
+		@include bp(md) {
+			padding-top: 3.8rem;
+			padding-bottom: 4rem;
+		}
+	}
+
+	h1 {
+		color: $white;
+		line-height: 0.9;
+		padding-top: 1rem;
+		padding-bottom: 1rem;
+		position: relative;
+		top: -25px;
+		max-width: 50rem;
+
+		@include bp(md) {
+			padding: 0;
+		}
+	}
+}
+
+// for all templates that have no nav menu [single.php+] & [page.php+]
+.container {
+	background-image: url(../img/home-background-alt.jpg);
+	width: 100%;
+	max-width: 100%;
+}
+
+.program-title {
+	margin-top: 0;
+	padding-top: 0;
+	background-color: $white !important;
+}
+
+.entry-content, .row {
+	h2 {
+		line-height: 1.1;
+		font-size: 2.5rem;
+	}
+
+	h3 {
+		line-height: 1.1;
+		font-size: 1.8rem;
+	}
+}
+
+.single-programs #content.row > .row:first-child {
+	h2 {
+		color: $dark-blue;
+	}
+}
+
+.entry-title {
+	font-size: 2.4rem;
+	line-height: 1.1;
+	margin-top: 3.2rem;
+
+	@include bp(md) {
+		margin-top: 0.5rem;
+	}
+}
+
+// logo on mobile
+.shiftnav-toggle-main-block {
+	a {
+		width: 90px;
+		height: 40px;
+		background-image: url(../img/logo.png);
+		background-size: contain;
+		background-repeat: no-repeat;
+		position: absolute;
+		z-index: 10000;
+		top: 5px;
+		left: 5px;
+	}
+}
+
+// left align buttons below videos on courses pages
+.single-programs {
+	// bring course content in and remove padding
+	.programs-wrapper {
+		width: 90%;
+		margin: 0 auto;
+
+		.columns {
+			padding-left: 0;
+		}
+		
+		.column {
+			padding-left: 0;
+		}
+
+		.flex-video {
+			margin-right: 1rem;
+		}
+	}
+	
+	#apply-button {
+		margin: 1rem 0;
+
+		@include bp(sm) {
+			margin: 1rem 0.5rem 1rem 0;
+		}
+	}
+
+	#content.row .row {
+		margin-left: 0;
+	}
+}
+
+// Fix WP-Modal Gallery for Campus Pages
+.gallery {
+	max-width: 100%;
+
+	dl.gallery-item {
+		float: unset !important;
+		width: 8rem !important;
+		@include bp(xs) { max-width: 10.5rem; }
+	}
+}
+
+// hide the title for Envira Gallery
+#envirabox-title, .envirabox-title-float {
+	display: none !important;
+}
+
+// campus map block on Beloit Overview Pages
+.small-6 .map h4:hover {
+	transform: scale(1.1) !important;
+}
+
+// video drop shadow reduced (Courses and Campus pages)
+.flex-video {
+	box-shadow: 0 7px 10px -6px $dark-grey !important;
+}
+
+// 404 page styles
+.page-not-found-wrapper {
+	max-width: 100%;
+	margin: 0 auto;
+	background: $white;
+	padding-top:4rem;
+	padding-left: 1.2rem;
+	position: relative;
+
+	@include bp(md) {
+		padding-left: 0;
+	}
+
+	.pnf-top {
+		max-width: 52rem;
+		margin: 0 auto;
+
+		.h1-heading {
+			display: inline-block;
+			text-transform: none;
+			padding-bottom: 3rem;
+			line-height: 1.1;
+		}
+
+		p:first-of-type {
+			font-weight: bold;
+		}
+
+		p:last-of-type {
+			margin-bottom: 2.5rem;
+		}
+
+		&--mobile {
+			display: inline-block;
+			margin-bottom: 2.5rem;
+
+			@include bp(sm) {
+				display: inline;
+				margin-bottom: 0;
+			}
+		}
+
+		span > a {
+			// margin-right: 4rem;
+
+			@include bp(sm) {
+				margin-right: 4rem;
+			}
+		}
+	}
+
+	.center-page-text {
+		background-image: url(../img/broken-link.jpg);
+		background-size: contain;
+		background-repeat: no-repeat;
+		background-position: center;
+		height: 15rem;
+
+		@include bp(sm) {
+			height: 28rem;
+		}
+	}
+}

@@ -1,0 +1,350 @@
+ // Women In Technology Landing Page Styles
+.wit-header {
+	width: 100%;
+	margin: 0 auto;
+	position: relative;
+	z-index: 1; // keep these numbers low
+	background-color: $dark-blue;
+	background-image: url(../img/header-dot-pattern.png);
+	background-size: cover;
+	background-repeat: no-repeat;
+	max-height: 48rem;
+	overflow: hidden;
+
+	.wit-video {
+		width: 100%;
+		max-height: 40rem; // 768px - avg laptop screen height
+		margin: 0 auto;
+		object-fit: fill; // force full width and keep aspect ratio
+		z-index: 2;
+		mix-blend-mode: multiply; // blends the dark blue background with the video, giving the blue more prominence
+	}
+
+	#wit-video-container, .close-video {
+		display: none; // fade-in with js
+	}
+
+	.wit-fade-container {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		background-color: $dark-blue;
+
+		@include bp(md) {
+			max-height: 48rem; // 768px
+			height: 100%;
+		}
+
+		// use a relative container to keep the video and close button in the same box
+		.rel-container {
+			position: relative;
+			max-width: 75rem;
+			margin: 0 auto;
+
+			.wit-fade-video {
+				position: absolute;
+				top: 0;
+				left: 50%;
+				transform: translateX(-50%);
+				z-index: 5;
+				object-fit: cover;
+				min-height: 100%;
+				max-width: 75rem;
+				width: 100%;
+
+				@include bp(lg) {
+					height: 40rem;
+				}
+			}
+
+			.close-video {
+				display: inline-block;
+				position: absolute;
+				top: 0;
+				right: 0;
+				z-index: 6;
+				padding: 0.5rem 1rem;
+				text-align: center;
+				background-color: $light-blue;
+				color: $dark-blue;
+		
+				&:hover {
+					background-color: $dark-blue;
+					color: $light-blue;
+				}
+			}
+		}
+	}
+
+	&__overlay {
+		position: absolute;
+		top: 55%;
+		left: 0;
+		width: 100%;
+		transform: translateY(-50%);
+		z-index: 3;
+		margin: 0 auto; // for inheritance purposes
+		text-align: center;
+		@include bp(sm) { top: 50%; }
+
+		h1, p, .play-button {
+			color: $white;
+			margin: inherit; // center in container
+			text-align: center;
+		}
+
+		h1 {
+			max-width: 24rem;
+			font-weight: 900;
+			padding-bottom: 2.5rem;
+			line-height: 0.8;
+			text-align: center;
+		}
+
+		p {
+			max-width: 23rem;
+			font-weight: bold;
+			line-height: 1.2;
+		}
+
+		.play-button {
+			max-width: 24rem;
+			display: inline-block;
+			padding-top: 1.5rem;
+		}
+	}
+}
+
+.header-bottom-bar {
+	position: relative;
+	margin-top: -25px;
+	width: 100%;
+	z-index: 10;
+	height: 0.7rem;
+}
+
+// Main page section
+.wit-wrapper {
+	max-width: 75rem;
+	margin: 0 auto;
+	padding: 0.75rem;
+
+	.intro-paragraph-wrapper {
+		position: relative;
+		background-color: $white;
+		max-width: 62rem;
+		margin: -12.5rem auto 5rem;
+		box-shadow: 0 0 8px 2px rgba($black, 0.5);
+		border-radius: 5px;
+		z-index: 20;
+
+		.intro-paragraph {
+			font-size: 1rem;
+			max-width: 62rem;
+			font-weight: bold;
+			margin: 1rem auto 3.5rem;
+			line-height: 1.2;
+			padding: 1.5rem;
+			
+			color: $dark-blue;
+
+			@include bp(sm) {
+				font-size: 1.25rem;
+			}
+			
+			@include bp(md) {
+				padding: 3.8rem 6.3rem;
+			}
+		}
+	}
+
+	.intro-header {
+		max-width: 62rem;
+		border-bottom: 7px solid $dark-blue;
+		margin: 0 auto 3rem;
+
+		h1 {
+			text-align: center;
+			font-weight: 900;
+		}
+	}
+
+	.wit-cta-snippets {
+		display: flex;
+		max-width: 100%;
+		flex-direction: column;
+		justify-content: center;
+		margin: 0 auto 3.5rem;
+		align-items: center;
+		text-align: center;
+
+		@include bp(sm) {
+			flex-direction: row;
+			justify-content: space-around;
+			flex-wrap: wrap;
+			align-items: unset;
+			text-align: left;
+		}
+
+		@include bp(md) {
+			justify-content: space-between;
+		}
+		
+		.cta-snippets {
+			max-width: 16rem;
+			width: 100%;
+
+			@include bp(xs) {
+				max-width: 20rem;
+				text-align: center
+			}
+
+			@include bp(md) {
+				max-width: 16rem;
+				text-align: left;
+			}
+
+			h3 {
+				font-weight: 900;
+				text-transform: unset;
+			}
+
+			p {
+				font-size: 0.9rem;
+				line-height: 1.2;
+			}
+		}
+	}
+	
+	.program-video-cards {
+		max-width: 75rem;
+		width: 100%;
+		margin: 0 auto 3rem;
+
+		h2 {
+			text-align: center;
+			padding-bottom: 1.3rem;
+			font-weight: 900;
+
+			@include bp(lg) {
+				text-align: left;
+			}
+		}
+
+		&__container {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			width: 100%;
+			margin: 0 auto;
+			align-items: center;
+			flex-wrap: wrap;
+
+			@include bp(lg) {
+				flex-direction: row;
+				justify-content: space-between;
+			}
+
+			.row-container {
+				margin-bottom: 2.5rem;
+				max-width: 35.8rem;
+			}
+
+			iframe {
+				width: 589px;
+				height: 325px;
+				max-width: 100%;
+				max-height: 100%;
+			}
+
+			&--below {
+				margin-top: -0.5rem;
+				padding: 1.5rem 2.5rem 2rem;
+				background-color: $white;
+				max-width: 35.8rem;
+				width: 100%;
+
+				h3 {
+					margin-top: 0;
+					text-transform: none;
+					font-weight: 900;
+					margin-bottom: 0;
+				}
+
+				.program-paragraph {
+					font-size: 0.9rem;
+					min-height: 5.5rem; // push content down (keep aligned)
+				}
+
+				.program-statistic, .program-statistic-two {
+					color: $grey;
+					font-size: 0.9rem;
+					font-weight: bold;
+					padding: 0;
+					margin: 0;
+				}
+
+				.program-statistic { padding-top: 0.8rem; }
+				.program-statistic-two { padding-bottom: 1.1rem; }
+
+				a {
+					display: inline-block;
+					margin-top: 1rem;
+					margin-right: 1rem;
+
+					@include bp(sm) {
+						margin-right: 3rem;
+					}
+
+					@include bp(lg) {
+						margin-top: 0;
+					}
+				}
+			}
+		}
+	} // end .program-video-cards
+
+	.info-menu {
+		max-width: 35.8rem;
+		width: 100%;
+		padding: 1.5rem 2.5rem 2rem;
+
+		h3 {
+			margin-bottom: 2rem;
+			text-transform: unset;
+			font-weight: 900;
+		}
+
+		&__menu {
+			list-style: none;
+			margin-left: 0;
+			padding-left: 0;
+		}
+
+		&--item {
+			padding-bottom: 1rem;
+			font-weight: 900;
+		}
+	} // end .info-menu
+
+	.campus-video-cards {
+		margin-bottom: 1.5rem;
+
+		h2, h3 { font-weight: 900; }
+
+		.main-player-container {
+			max-width: 35.8rem;
+		}
+	}
+
+	// tweaks to make boxes fit in smaller container
+	.info-boxes {
+		margin-top: 2rem;
+
+		&__box {
+			max-width: 35.8rem;
+			margin: 0 0 1.5rem;
+		}
+	}
+}

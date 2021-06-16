@@ -1,0 +1,52 @@
+/* NCK STYLESHEET */
+
+// Tweak the mixin for WordPress, this might create some extra CSS in additional to app.css
+@import "foundation/components/pagination";
+
+// Reverie comes with a standalone Foundation stylesheet already
+@import "foundation";
+
+// old css files
+@import "reverie-old";
+@import "css/oldcss.css";
+
+// new SCSS starts here with imports, separation, etc
+@import "mq";
+@import "variables";
+@import "globals";
+@import "header";
+@import "footer";
+
+// main template pages (NEW)
+@import "home-page";
+@import "current-students-landing";
+@import "new-students-landing";
+@import "pre-footer";
+@import "partnerships";
+@import "academics";
+@import "foundations";
+@import "alumni";
+@import "events";
+@import "about-us";
+@import "contact-nck";
+@import "video-tour"; // 360 Video Player Styles
+@import "women-in-tech"; // Women In Tech Landing Page (2019)
+@import "notification-bar";
+
+// Interior pages and partials [*-template.php] -> files
+@import "interior-pages";
+@import "gforms-application"; // multipage gravity form styles for the "Apply Now" Page
+@import "virtual-recruitment";
+
+// fix drop down arrows on firefox not appearing (added here to override Autoptimize injected styles)
+select {
+	-moz-appearance: menulist !important;
+}
+
+.gform_wrapper select {
+	-moz-appearance: menulist !important;
+}
+
+.search-padding {
+	padding: 0.5rem 1rem !important;
+}

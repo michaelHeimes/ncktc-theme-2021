@@ -1,0 +1,217 @@
+/*
+Theme Name:         NCK Tech - 2021
+Theme URI:          http://502mediagroup.com
+Description:        A theme made just for you guys at NCK TECH :)
+Version:            1.0.0
+Author:             502 Media Group
+Author URI:         http://502mediagroup.com
+
+License:            MIT License
+License URI:        http://www.opensource.org/licenses/mit-license.php
+*/
+
+/* -------------------------------------------------- 
+
+	This stylesheet will not be loaded by default.
+	
+	The main stylesheet is in css/style.css and
+  scss/style.scss
+
+-------------------------------------------------- */
+
+:root{
+	--primary: #002F57;	
+	--secondary: #C1D82F;
+	--whitish: rgb(141, 149, 163);
+	--lightgrayblue: #B9C3CE;
+	--nckblue: #104C7F;
+	--black: #252525;
+	--lightgray: #323232;
+	--gray: #4A4A4A;
+	--teal: #5CC6FF;
+	--proxima: proxima-nova, Helvetica, Arial;
+	--good: 'Good Headline Pro', sans-serif;
+	--mont: 'Montserrat', sans-serif;
+}
+
+/* HEADER */
+#main-header .quicklinks, #main-header, .main-navigation, #megaMenu {
+    background-color: var(--primary);
+}
+#main-header{
+	border: 0;
+}
+#main-header .quicklinks{
+	box-shadow: none;
+}
+#main-header .quicklinks .link-wrapper .quicklinks__right a{
+	color: var(--whitish);
+}
+
+
+@media screen and (min-width: 1200px){
+	#megaMenu #megaUber > .menu-item:not(#menu-item-2506) > a, #megaMenu #megaUber > .menu-item:not(#menu-item-14131) > a{
+		color: #fff;
+		font-family: var(--good);
+		padding: 25px 20px 18px;
+	}
+	#megaMenu #megaUber {
+	    display: flex !important;
+	    justify-content: flex-end;
+	    align-items: center;
+	    padding: 0;
+	    margin: 0;
+	    width: 100%;
+	}
+	#megaMenu ul.megaMenu li.menu-item.ss-nav-menu-mega-floatRight a{
+		
+	}
+	#megaMenu #menu-item-2506 > a, #megaMenu #sidebar .eventful #menu-item-2506 > a, #megaMenu #menu-item-14131 > a, #megaMenu #sidebar .eventful #menu-item-14131 > a {
+	    border: 2px solid var(--secondary) !important;
+	    background: none;
+	    color: #fff !important;
+	    box-shadow: none !important;
+		font-family: var(--good);	    
+	}
+	#megaMenu ul.megaMenu li.menu-item.ss-nav-menu-mega-floatRight a span{
+		color: #fff;
+	}
+	#megaMenu #menu-item-2506 > a:hover, #megaMenu #sidebar .eventful #menu-item-2506 > a:hover, #megaMenu #menu-item-14131 > a:hover, #megaMenu #sidebar .eventful #menu-item-14131 > a:hover{
+		background: var(--secondary) !important;
+		border: 2px solid var(--secondary) !important;
+		border-radius: 0 !important;
+		color: #384006 !important;
+	}
+	#megaMenu ul.megaMenu li.menu-item.ss-nav-menu-mega-floatRight a:hover span{
+		color: #384006 !important;
+	}
+	#megaMenu ul.megaMenu > li.menu-item:hover > a, #megaMenu ul.megaMenu > li.menu-item > a:hover, #megaMenu ul.megaMenu > li.menu-item.megaHover > a, #megaMenu ul.megaMenu > li.menu-item:hover > span.um-anchoremulator, #megaMenu ul.megaMenu > li.menu-item > span.um-anchoremulator:hover, #megaMenu ul.megaMenu > li.menu-item.megaHover > span.um-anchoremulator{
+		border-radius: 0 !important;
+	}
+	#megaMenu #megaUber > .menu-item:not(#menu-item-2506) > a:hover, #megaMenu #megaUber > .menu-item:not(#menu-item-14131) > a:hover{
+		border-radius: 0 !important;
+	}
+	#megaMenu #menu-item-2506 a, #megaMenu #menu-item-14131 a {
+	    padding: 14px 16px !important;
+	}
+	#megaMenu #menu-item-14131{
+		margin-right: 28px;
+		margin-left: 28px;
+	}
+	#main-header .quicklinks .link-wrapper .quicklinks__right{
+		column-gap: 20px;
+		width: auto;
+	}
+	
+}
+@media screen and (min-width: 768px){
+	.footer-boxes {
+	    width: auto;
+	}
+}
+@media screen and (min-width: 480px){
+	.footer-main__box--left .link-columns__top ul {
+	    -webkit-columns: 2;
+	    -moz-columns: 2;
+	    columns: 2;
+	}
+}
+
+/* FOOTER */
+.footerbackground {
+    background: var(--primary) url(img/Bull_Blue@2x.png) no-repeat;
+	  background-size: cover;
+	  background-blend-mode: multiply;
+    border-bottom: 0;
+    max-width: 100%;
+    color: #fff;
+}
+.footer-main{
+	background: none;
+}
+.footer-boxes {
+    max-width: 100%;
+    display: grid;
+    grid-template-columns: repeat(6, auto);
+    grid-column-gap: 60px;
+    margin: 0 auto;
+    padding: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.footer-boxes__box{
+	width: auto;
+	flex-direction: column;
+    display: flex;
+    justify-content: flex-start;
+    max-width: 100%;
+    margin-bottom: 1rem;
+    background-color: transparent;
+    box-shadow: none;
+}
+.footer-main__box{
+	align-items: flex-start;
+}
+.footer-main__box--left .link-columns__top ul li a, .footer-main__box--left .link-columns__top ul li #sidebar .eventful a, #sidebar .eventful .footer-main__box--left .link-columns__top ul li a {
+    font-size: 0.75rem;
+    color: var(--teal);
+}
+.footer-main__box--left .link-columns__top ul li a:hover, .footer-main__box--left .link-columns__top ul li #sidebar .eventful a:hover, #sidebar .eventful .footer-main__box--left .link-columns__top ul li a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+#menu-footer-menu li:last-child {
+    float: none;
+    clear: left;
+    text-align: left;
+    margin: 0;
+}
+.footer-main__box--left .link-columns__top ul li#menu-item-1197{
+	margin: 0;
+}
+.footer-boxes__box--menu ul{
+	display: flex;
+	flex-direction: column;
+}
+.footer-main__box--left .copyright-box p, .footer-main__box--right p{
+	font-size: 0.75rem;	
+}
+.footer-main__box--right p {
+    max-width: 100%;
+}
+.footer-boxes__box--column a:last-of-type{
+	padding-top: 5px;
+}
+.footer-boxes__box--column p, .footer-boxes__box--column a, .footer-boxes__box--column #sidebar .eventful a, #sidebar .eventful .footer-boxes__box--column a {
+    font-size: 0.75rem;
+    font-family: proxima-nova, Helvetica, Arial;
+    line-height: 0.9375;
+    color: #fff;
+}
+.footer-boxes__box--menu ul li a, .footer-boxes__box--menu ul li #sidebar .eventful a, #sidebar .eventful .footer-boxes__box--menu ul li a {
+    font-size: 0.75rem;
+    font-weight: normal;
+    font-family: var(--mont);
+    text-transform: none;
+    color: #fff;
+    
+}
+.footer-boxes__box--menu ul li a:hover{
+	color: var(--teal);
+}
+.footer-boxes__box--menu {
+    padding: 0rem;
+}
+/* GLOBAL COLORS */
+.h1-heading, .h2-heading, .h3-heading, .h4-heading, .h5-heading, .h6-heading, h1, h2, h3, h4, h5, h6{
+	color: var(--teal);
+	font-family: var(--good);
+}
+a, #sidebar .eventful a, .footer-widget .panel a, .footer-boxes__box--column .map-link {
+	color: var(--teal);
+}
+a:hover, #sidebar .eventful a:hover, .footer-widget .panel a:hover,.footer-boxes__box--column .map-link:hover {
+    color: #fff;
+    text-decoration: underline;
+}

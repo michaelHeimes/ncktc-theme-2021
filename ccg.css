@@ -1,0 +1,132 @@
+.wit-header__bgimage {
+	height: 100%;
+	width: 100%;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.wit-header__link {
+	position: absolute;
+	right: 0;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-transform: uppercase;
+	writing-mode: vertical-rl;
+	text-orientation: sideways;
+}
+
+.wit-header__link a {
+	color: white;
+}
+
+.wit-header__overlay-text {
+	margin-top: auto;
+}
+
+.wit-header__overlay-text h1 {
+	color: white;
+}
+
+.wit-header__update_nav {
+	display: flex;
+	text-align: left;
+	margin-top: auto;
+	max-width: 1200px;
+	align-items: flex-end;
+}
+
+.featured-update-box {
+	height: 211px;
+	display: flex;
+	//background-color: darkblue;
+	background: var(--primary);
+	color: white;
+}
+
+.update_nav-box {
+	height: 177px;
+	display: flex;
+	background: #B9C3CE;
+	color: var(--primary);
+}
+
+.featured-update-box .update_nav_title {
+	color: white;
+}
+
+.update_nav-box .update_nav_title {
+	color: var(--primary);
+}
+
+.update_nav-box a {
+	color: #323232;
+}
+
+.home .wit-header {
+	min-height: 600px;
+	height: 100vh;
+	max-height: none;
+}
+
+.update_nav_title {
+	font-size: 24px;
+}
+
+.update_nav_image {
+	width: 219px;
+	height: 145px;
+}
+
+.featured-update-box .update_nav-box-info {
+	width: 50%;
+}
+
+.featured-update-box-scroll {
+	text-transform: uppercase;
+	writing-mode: vertical-rl;
+	text-orientation: sideways;
+	display: flex;
+	justify-content: center;
+}
+
+
+.new-students {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	max-height: 650px;
+}
+
+.ribbon-container h1 {
+	position: static;
+}
+
+.new-students .info-boxes {
+	margin-top: 5rem;
+}
+
+.info-boxes h2 {
+	text-align: left;
+}
+
+.new-students-main .new-students-corner-borders:before, .new-students-main .new-students-corner-borders:after  {
+	display: none;
+}
+
+.page-container {
+	width: 100%;
+	max-width: 1200px;
+	margin: auto;
+}
+
+.home .container {
+	background: none;
+}

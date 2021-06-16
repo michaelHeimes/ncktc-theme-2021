@@ -1,0 +1,449 @@
+// interior page header stuff (image + banner)
+.interior-header {
+	position: relative;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	min-width: 100vw;
+	min-height: 10rem;
+	margin-top: 2.8rem;
+
+	@include bp(sm) {
+		margin-top: 0;
+		min-height: 25rem;
+	}
+
+	&__bottom-bar {
+		position: relative;
+		top: -12px;
+		width: 100%;
+		max-width: 100%;
+		vertical-align: top;
+		height: 1.2rem;
+	}
+
+	.ribbon-container {
+
+		&__blue-ribbon {
+			padding-top: 3.8rem;
+			padding-bottom: 4rem;
+			max-width: 95rem;
+			top: 4.5rem;
+
+			@include bp(md) {
+				top: 5.8rem;
+			}
+			
+			h1 {
+				position: relative;
+				left: 50%;
+			}
+		}
+	}
+}
+
+// container offset for space at top
+// global styles for all child page templates [template-*namehere.php]
+#content-interior {
+	max-width: 100%;
+	background-image: url(../img/home-background-alt.jpg);
+	margin: -1rem auto 0;
+	padding: 2.5rem 1rem;
+
+	&:before {
+		box-shadow: none;
+	}
+
+	.interior-main {
+		display: flex;
+		max-width: 75rem;
+		margin: 0 auto;
+		flex-wrap: wrap-reverse; // puts menu at the bottom on mobile
+
+		@include bp(800px) {
+			justify-content: space-around;
+		}
+
+		.interior-menu {
+			max-width: 30rem;
+			border-right: 1px solid $dark-grey;
+			margin-top: 2rem;
+
+			@include bp(807px) {
+				margin-top: 0;
+			}
+
+			.menu { // ul element
+				list-style-type: none;
+				margin: 0;
+				width: 13rem;
+				margin-right: 0.3rem;
+
+				a {
+					color: $dark-grey;
+					font-size: 0.9rem;
+					font-weight: normal;
+
+					&:hover {
+						font-weight: bold;
+						text-decoration: underline;
+						color: $dark-blue;
+					}
+				}
+
+				li.current-menu-item {
+					color: $dark-blue;
+					font-weight: bold;
+					text-decoration: underline;
+
+					a {
+						color: $dark-blue;
+						font-weight: bold;
+						text-decoration: underline;
+					}
+				}
+			}
+		} // end .interior-menu
+		
+		&__content {
+			max-width: 40rem;
+		} // end [__content]
+
+		h3 {
+			padding-bottom: 0;
+			margin-bottom: 0;
+
+			> a {
+				font-size: 1.2rem;
+				color: $dark-blue;
+
+				@include bp(sm) {
+					font-size: 1.5rem;
+				}
+			}
+		}
+
+		p {
+			font-size: 0.9rem;
+			color: $dark-grey;
+			font-family: $font-body;
+		}
+	
+		strong {
+			font-size: 1rem;
+			color: $dark-blue;
+			font-family: $font-heading;
+		}
+	
+		.button {
+			@extend .learn-more-alt; // styles in globals.scss
+			background-color: rgba($white, 0.4);
+		}
+	} // end .interior-main
+} // end #content-interior
+
+.row {
+	max-width: 75rem;
+}
+
+/* PROGRAM PAGES (CPT) - Articulation Agreements Section   Quick Find Code: 1119294440322 - in [single-programs.php] */
+.articulation-block {
+	margin-bottom: 1rem;
+	padding-top: 0.2rem;
+	padding-bottom: 0.2rem;
+	padding-left: 0.1rem;
+	border-bottom: 1px solid $dark-blue;
+	border-top: 1px solid $dark-blue;
+
+	p {
+		font-size: 1.35rem;
+		color: $dark-blue;
+		font-family: $font-heading;
+		font-weight: bold;
+		text-transform: uppercase;
+	}
+
+	a {
+		display: inline-block;
+		margin-top: 0.3rem;
+		margin-bottom: 0.3rem;
+		font-size: 0.8rem;
+	}
+}
+
+// Improvement Suggestion Form Page 
+.improv-para {
+	padding-top: 0.5rem;
+}
+
+// Bring sides in on all interior: pages / singles / posts / default templates
+.page-temp-wrapper {
+	margin: 0 auto;
+	max-width: 95%;
+}
+
+.basic-page-wrapper {
+	max-width: 80%;
+	margin: 0 auto;
+
+	.entry-title {
+		padding-top: 2.5rem;
+	}
+}
+.single-programs .programs-wrapper .columns {
+	padding-right: 3rem;
+}
+
+// Request Information / Apply Form
+.gform_wrapper {
+
+	.gf_page_steps {
+		border-bottom: none !important;
+	}
+	
+	.gf_step_active {
+		margin-top: 0.2rem;
+		margin-bottom: 0.2rem;
+	}
+
+	// hide incomplete steps on mobile - only show current/active step
+	.gf_step_pending {
+		display: none;
+
+		@include bp(sm) {
+			display: inline-block;
+		}
+	}
+
+	.gsection_title {
+		display: none;
+
+		@include bp(sm) {
+			display: inline-block;
+		}
+	}
+
+	.gf_step {
+		width: 13rem !important;
+	}
+
+	.gf_step .gf_step_number {
+		padding: 0.5rem 1rem;
+		background-color: $light-green;
+		color: $dark-grey;
+	}
+
+	.gform_page_footer {
+		display: flex;
+		max-width: 100%;
+		justify-content: space-between;
+		align-items: center;
+		padding: 1rem 0.5rem;
+		margin: 1rem auto 0;
+		border-top: 1px solid rgba($light-grey, 0.5);
+
+		flex-direction: column;
+
+		@include bp(sm) {
+			flex-direction: row;
+			align-items: initial;
+		}
+
+		.button {
+			display: inline-block;
+			width: 10rem;
+			background-color: $light-green;
+			color: $dark-grey;
+			padding: 0.5rem 1rem;
+			font-weight: normal;
+			font-family: $font-body;
+			font-size: 0.9rem;
+			text-transform: uppercase;
+			border-radius: 3px;
+			box-shadow: 0 10px 7px -10px rgba($dark-grey, 0.9);
+			transition: 0.3s ease-out;
+			text-align: center;
+			
+			&:hover {
+				background-color: $light-green-hover;
+				color: $dark-grey;
+				transition: 0.3s ease-in;
+				letter-spacing: 2px;
+			}
+
+			&:first-of-type:before {
+				content: '/203A';
+			}
+
+			&:last-of-type:after{
+				content: '/2039';
+			}
+		}
+	}
+
+	// Request Info Form Only
+	#field_3_15 {
+		max-width: 20rem;
+		clear: unset;
+		float: left;
+		padding-right: 4rem;
+	}
+
+	#field_3_17 {
+		max-width: 20rem;
+		clear: unset;
+		float: left;
+	}
+} // end [.gform_wrapper]
+
+.single-staff-image {
+	width: 250px;
+	height: 250px;
+}
+
+.staff-admin-head {
+	text-align: center;
+	padding-left: 0;
+	margin-left: 0;
+	padding-top: 2rem;
+	padding-bottom: 1rem;
+	font-size: 1.8rem !important;
+
+	@include bp(sm) {
+		padding-bottom: 2rem;
+		font-size: 2.4rem !important;
+	}
+}
+
+.staff-wrapper {
+	max-width: 75rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
+
+	@include bp(sm) {
+		flex-direction: row;
+		padding: 0;
+		justify-content: space-between;
+		align-items: initial;
+	}
+
+	.staff-member {
+		max-width: 15rem;
+		border: 1px solid $light-grey;
+		margin-bottom: 1.5rem;
+
+		@include bp(md) {
+			max-width: 16rem;
+		}
+
+		img {
+			width: 15rem;
+			height: 15rem;
+			text-align: center;
+
+			@include bp(md) {
+				width:  16rem;
+				height:  16rem;
+			}
+		}
+
+		h5 > a {
+			color: $dark-blue;
+			padding: 0 0.5rem;
+
+			&:hover {
+				text-decoration: underline;
+				color: $dark-blue;
+			}
+		}
+
+		p {
+			padding: 0 0.5rem;
+		}
+	}
+}
+
+.scholarship-p {
+	font-size: 1rem;
+	font-weight: bold;
+	margin-bottom: 3rem;
+}
+
+.scholarship-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	max-width: 45rem;
+	margin: 0 auto 4rem;
+
+	@include bp(sm) {
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: initial;
+		width: 45rem;
+	}
+
+	// make the Hansen image logo larger
+	&:nth-child(5), &:nth-child(6) {
+		.icon-links {
+			a img {
+				max-width: 11rem;
+			}
+		}
+	}
+
+	.icon-links {
+		max-width: 11rem;
+		text-align: center;
+		margin-top: 0.65rem; // bring top of images down in-line with <h4>
+
+		a, .learn-more {
+			display: inline-block;
+			margin-bottom: 1rem;
+
+			&:first-of-type {
+				margin-bottom: 0.5rem;
+			}
+		}
+
+		img {
+			max-width: 6rem;
+		}
+	}
+
+	.text-content {
+		max-width: 32rem;
+	}
+}
+
+// Accordion Style Fixes
+.accordion {
+	box-shadow: unset;
+	border: unset;
+
+	.accordion-title {
+		font-size: 1.5rem;
+		background: $light-blue;
+		margin-bottom: 1rem;
+	}
+
+	h3[id*='accordion-1-t'] {
+		padding: 0.5rem 1rem !important;
+		margin-bottom: 1rem !important;
+	}
+}
+
+// Highschool Pages
+#hs-counselor-menu, #hs-parent-menu {
+	margin-bottom: 2rem;
+}
+
+.hs-menu-header {
+	font-size: 1.1rem;
+	margin-right: 1rem;
+	font-family: $font-body;
+}

@@ -1,0 +1,42 @@
+// colors
+$white: #fff;
+$black: #000;
+$dark-grey: #4A4A4A;
+$light-grey: #979797;
+$off-white: #F5F5F5;
+$grey: #949494;
+
+// NCK-specific colors
+$light-blue: #4AA6D8;
+$dark-blue: #104C7F;
+$cyan: #0163C5;
+$light-green: #C1D82F;
+$light-green-hover: #CFE73B;
+$green-button-text: #384006;
+
+// fonts
+$font-body: proxima-nova, Helvetica, Arial;
+$font-heading: questa-slab, Helvetica, Arial;
+
+// mq sizes
+$small-tablet: 400px;
+$tablet: 900px;
+$laptop: 1024px;
+$desktop: 1200px;
+
+// mq includes
+@mixin bp($size) {
+	@if $size == xs {
+		@media (min-width: 480px)  { @content; }
+	} @else if $size == sm {
+		@media (min-width: 768px) { @content; }
+	} @else if $size == md {
+		@media (min-width: 1023px) { @content; }
+	} @else if $size == lg {
+		@media (min-width: 1200px) { @content; }
+	} @else if $size == xl {
+		@media (min-width: 1500px) { @content; }
+	} @else {
+		@media (min-width: $size) { @content; }
+	}
+}

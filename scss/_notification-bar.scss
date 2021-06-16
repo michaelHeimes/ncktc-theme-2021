@@ -1,0 +1,43 @@
+.notification-bar-sticky {
+	position: relative;
+	top: 3.25rem;
+	margin: 0 auto;
+	width: 100%;
+	background-color: #be0000;
+	z-index: 5;
+	padding: 0.5rem;
+	@include bp(sm) { top: 0; }
+
+	.notification-close-button {
+		position: absolute;
+		right: 0.5rem;
+		top: 0.6rem;
+		z-index: 6;
+		color: $white;
+		font-size: 2rem;
+
+		&:hover { cursor: pointer; }
+	}
+
+	&__content {
+		margin: 0 auto;
+		max-width: 50rem;
+		z-index: 6;
+
+		p {
+			text-align: center;
+			font-size: 1rem;
+			color: $white;
+			margin: 0;
+		}
+
+		a {
+			color: $white;
+			text-decoration: underline;
+		}
+	}
+}
+
+.notification, .alert-box.alert {
+	display: none !important; // hide built-in notification bar
+}

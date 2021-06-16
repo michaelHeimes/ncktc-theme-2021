@@ -1,0 +1,194 @@
+{
+    "key": "group_5438c2b2da45a",
+    "title": "Course",
+    "fields": [
+        {
+            "key": "field_53b31dafda9e4",
+            "label": "Course Code",
+            "name": "course_code",
+            "prefix": "",
+            "type": "text",
+            "instructions": "Enter the Course Code. To keep formatting consistent, separate values with a dash ( - ). Ex. NUR-123 or WLD-987",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "formatting": "none",
+            "maxlength": 15,
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_53b31e2ada9e5",
+            "label": "Course Credits",
+            "name": "course_credits",
+            "prefix": "",
+            "type": "number",
+            "instructions": "Enter the number of credits awarded for completing this course.",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "min": "",
+            "max": 10,
+            "step": ".5",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_53b31e71da9e6",
+            "label": "Course Description",
+            "name": "course_description",
+            "prefix": "",
+            "type": "wysiwyg",
+            "instructions": "Enter the course description.",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "basic",
+            "media_upload": 1
+        },
+        {
+            "key": "field_53b31ed1da9e7",
+            "label": "Course Pre Requisites",
+            "name": "course_pre_requisites",
+            "prefix": "",
+            "type": "repeater",
+            "instructions": "Select the courses that are pre requisites.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "row_min": "",
+            "row_limit": "",
+            "layout": "table",
+            "button_label": "Add Pre-Requisite",
+            "min": 0,
+            "max": 0,
+            "sub_fields": [
+                {
+                    "key": "field_53b31f09da9e8",
+                    "label": "Pre Requisite",
+                    "name": "pre_requisite",
+                    "prefix": "",
+                    "type": "post_object",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "post_type": [
+                        "courses"
+                    ],
+                    "taxonomy": [],
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "return_format": "object",
+                    "ui": 1
+                }
+            ]
+        },
+        {
+            "key": "field_53b31fe1da9ea",
+            "label": "Course Co Requisites",
+            "name": "course_co_requisites",
+            "prefix": "",
+            "type": "repeater",
+            "instructions": "Add any Co-Requisites.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "row_min": "",
+            "row_limit": "",
+            "layout": "table",
+            "button_label": "Add Co-Requisite",
+            "min": 0,
+            "max": 0,
+            "sub_fields": [
+                {
+                    "key": "field_53b31fe1da9eb",
+                    "label": "Co Requisite",
+                    "name": "co_requisite",
+                    "prefix": "",
+                    "type": "post_object",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "post_type": [
+                        "courses"
+                    ],
+                    "taxonomy": [],
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "return_format": "object",
+                    "ui": 1
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "courses"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "seamless",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [
+        "the_content",
+        "excerpt",
+        "custom_fields",
+        "discussion",
+        "comments",
+        "revisions",
+        "slug",
+        "author",
+        "format",
+        "featured_image",
+        "categories",
+        "tags",
+        "send-trackbacks"
+    ],
+    "modified": 1418763105
+}

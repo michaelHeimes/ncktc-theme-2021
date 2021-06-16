@@ -1,0 +1,120 @@
+.vp-wrapper {
+	max-width: 100%;
+	margin: 0 auto;
+	padding: 3rem 1rem 8rem;
+
+	h3 { text-align: center; }
+}
+
+.vp-container {
+	max-width: 90rem;
+	margin: 0 auto;
+	position: relative;
+
+	// animation to highlight the playlist button / functionality
+	.vp-playlist-highlight {
+		position: absolute;
+		width: 6rem;
+		height: 6rem;
+		top: -0.8rem;
+		left: -1rem;
+		border-radius: 50%;
+		z-index: 1002; // needs to be on top of the video player (which has zindex 1001 - so that it is on top of the #shadow overlay)
+
+		animation: 1s 4 flash_button; // lasts 1 second, iterates 4 times (pulse effect)
+		// js used to remove from the DOM after animation is done
+
+		// border applied when animation starts
+		@keyframes flash_button {
+			0% { border: none; }
+			10% { border: 1px solid $light-green; }
+			25% { border: 2px solid $light-green; }
+			35% { border: 3px solid $light-green; }
+			50% { border: 4px solid $light-green; }
+			60% { border: 5px solid $light-green; }
+			75% { border: 6px solid $light-green; }
+			85% { border: 7px solid $light-green; }
+			100% { border: 8px solid $light-green; }
+		}
+	}
+
+	// Experimental - Removes the animation for users who have toggled "Reduce Animations" in their accessibility preferences. This is primarily for users who suffer from vestibular disorders, epilepsy, adhd, migraines and scotopic sensitivity.
+	@media(prefers-reduced-motion: reduce) {
+		.vp-playlist-highlight {
+			animation: none;
+			-webkit-animation: none;
+			-moz-animation: none;
+			-o-animation: none;
+		}
+	}
+
+	.info-box-sticky {
+		font-weight: bold;
+		font-size: 1rem;
+		padding: 0.2rem;
+
+		@include bp(sm) {
+			font-size: 1.3rem;
+		}
+
+		.fa-sort-down {
+			margin-right: 5px;
+			margin-left: 1.5rem;
+		}
+	}
+
+	// full immersion player
+	iframe {
+		width: 100%;
+		min-height: 15rem;
+		position: relative;
+
+		@include bp(sm) {
+			min-height: 30rem;
+		}
+
+		@include bp(md) {
+			min-height: 45rem;
+		}
+	}
+
+	.zindex {
+		z-index: 1001;
+	}
+
+	// description box below the player
+	.vp-description {
+		max-width: 90rem;
+		background-color: $white;
+		padding: 1rem;
+		margin-top: -6px;
+
+		p {
+			margin-bottom: 0;
+
+			&:last-of-type {
+				margin-top: 1.5rem;
+			}
+		}
+
+		.lightbulb {
+			position: relative;
+			width: 3rem;
+			z-index: 1001; // makes sure this stays on top of the #shadow overlay
+
+			.lightsoff {
+				fill: #fff;
+			}
+		}
+	}
+}
+
+#shadow {
+	display: none;
+	background-color: rgba($black, 0.8);
+	position: absolute;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1000; // @ 1000 because the .qlinks bar at the very top is at zindex 999)
+}

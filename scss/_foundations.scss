@@ -1,0 +1,71 @@
+// foundation page header
+.foundation-header {
+	background-image: url(../img/foundation-header.jpg);
+	position: relative;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	min-width: 100vw;
+	min-height: 10rem;
+
+	@include bp(sm) {
+		min-height: 25rem;
+	}
+
+	&__bottom-bar {
+		position: relative;
+		top: -12px;
+		width: 100%;
+		max-width: 100%;
+		vertical-align: top;
+		height: 1.2rem;
+	}
+}
+
+.foundation-main {
+	background-image: url(../img/home-background-alt.jpg);
+	max-width: 100%;
+	margin-top: -1rem;
+	padding: 0 1rem;
+
+	@include bp(sm) {
+		padding: 0;
+	}
+
+	// modify corner borders [&:after] for this page only
+	@include mq($from: $desktop) {
+		.corner-borders {
+
+			&:after {
+				display: block;
+				content: "";
+				position: absolute;
+				bottom: 12px;
+				right: 561px;
+				z-index: 1;
+				width: 8.8rem;
+				height: 6.8rem;
+				border-left: 15px solid $light-green;
+				border-bottom: 15px solid $light-green;
+			}
+
+
+			img {
+				z-index: 2;
+			}
+		}
+	}
+
+	.home-container__first {
+		padding-bottom: 0;
+
+		@include bp(sm) {
+			padding-bottom: 2rem;
+		}
+	}
+
+	.cta-cards {
+		margin-bottom: 0;
+		padding-bottom: 2rem;
+	}
+}

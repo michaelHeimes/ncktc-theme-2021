@@ -1,0 +1,161 @@
+/* Contact Page Styles
+ * Template: default [page.php]
+ * Structure Template: Contact Us [page-contact.php]
+*/
+
+.contact-nck-header {
+	padding: 2rem 2rem 0;
+	text-align: center;
+
+	@include bp(md) {
+		padding: 2rem 0 0;
+		margin-left: 8rem;
+		text-align: left;
+	}
+
+	h1 { font-size: 2.8rem; }
+}
+
+.contact-nck-wrapper {
+	max-width: 75rem;
+	margin: 0 auto;
+	background-color: $white;
+	box-shadow: 2px 8px 25px #333, -2px 8px 25px #333;
+}
+
+.contact-nck-main {
+	display: flex;
+	margin: 0 auto;
+	max-width: 100%;
+	justify-content: space-between;
+	flex-wrap: wrap;
+
+	// left [info boxes]
+	.contact-info-left {
+		display: flex;
+		flex-direction: column;
+		max-width: 35rem;
+		margin: 0 auto;
+
+		.h4-heading {
+			display: inline-block;
+			border-bottom: 1px solid $dark-blue;
+			padding-bottom: 0.2rem;
+			margin-bottom: 0.7rem;
+		}
+
+		.campus-contact {
+			margin-top: 0.2rem;
+			margin-bottom: 0.2rem;
+			max-width: 22rem;
+			padding: 1.5rem;
+
+			@include bp(md) {
+				margin-top: 1.7rem;
+				margin-bottom: 1.7rem;
+			}
+
+			.learn-more {
+				font-size: 0.95rem;
+				font-family: $font-body;
+				text-transform: none;
+			}
+		}
+	}
+
+	// right [form]
+	.contact-form-right {
+		margin: 0 auto;
+		max-width: 27rem;
+		padding: 0.5rem;
+
+		@include bp(md) {
+			padding: 0;
+		}
+
+		#gform_submit_button_1 {
+			display: inline-block;
+			background-color: $light-green;
+			color: $dark-grey;
+			box-shadow: 0 10px 7px -10px rgba($dark-grey, 0.9);	
+			border-radius: 3px;
+			font-size: 0.875rem;
+			font-weight: bold;
+			text-transform: uppercase;
+			cursor: pointer;
+			padding-top: 0.5rem;
+			padding-bottom: 0.5rem;
+			width: 8rem;
+
+			&:hover {
+				background-color: $light-green-hover;
+				color: $dark-grey;
+			}
+		}
+
+		// Please select one label
+		#field_1_9 > .gfield_label {
+			margin-top: 1.5rem;
+		}
+
+		// state drop down box (not aligned by default)
+		#input_1_7_4 {
+			margin-top: 0.7rem;
+		}
+
+		// bring radio items closer together
+		.ginput_container_radio {
+			margin-bottom: 2.5rem;
+		
+			ul li {
+				margin-top: 5px;
+				margin-bottom: 5px;
+
+				input[type=radio] {
+					margin-top: 0;
+					margin-bottom: 0;
+				}
+			}
+		}
+
+		// Labels for Street address hidden
+		#input_1_7 {
+			label {
+				visibility: hidden; // hidden to everyone except screen readers, maintains spacing
+			}
+		}
+	}
+}
+
+.contact-bottom {
+	max-width: 100%;
+	text-align: center;
+	padding: 0.5rem;
+
+	@include bp(md) {
+		text-align: left;
+		margin-left: 8rem;
+		padding: 0;
+	}
+
+	&__section {
+		max-width: 70rem;
+		margin: 3rem auto 0;
+		padding-bottom: 1.5rem;
+
+		.h4-heading {
+			display: inline-block;
+			border-bottom: 1px solid $dark-blue;
+			margin-bottom: 1rem;
+			padding-bottom: 0.2rem;
+		}
+
+		p {
+			font-size: 0.9rem;
+
+			@include bp(sm) {
+				font-size: 1rem;
+			}
+		}
+	}
+}

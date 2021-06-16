@@ -1,0 +1,64 @@
+.partnerships {
+	background-image: url(../img/partnerships-header.jpg);
+	position: relative;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	min-width: 100vw;
+	min-height: 12rem;
+
+	@include bp(md) {
+		min-height: 25rem;
+	}
+	
+	&__bottom-bar {
+		position: relative;
+		top: -12px;
+		width: 100%;
+		max-width: 100%;
+		vertical-align: top;
+		height: 1.3rem;
+	}
+}
+
+.partnerships-main {
+	background-image: url(../img/home-background-alt.jpg);
+	margin: -1rem auto 0;
+	padding-top: 3rem;
+	width: 100%;
+	max-width: 100%;
+	position: relative;
+
+	.home-container__first {
+
+		&--left {
+			@include bp(sm) {
+				padding-left: 4rem;
+			}
+		}
+
+		img {
+			top: 4.5rem;
+			width: 697px;
+			max-height: 438px;
+		}
+	}
+
+	img {
+		z-index: 2;
+	}
+
+	.corner-borders:before {
+		top: 63px;
+	}
+
+	.corner-borders:after {
+		bottom: 158px;
+		z-index: 1;
+		right: 565px;
+	}
+
+	.home-container__first {
+		margin-bottom: 0;
+	}
+}
