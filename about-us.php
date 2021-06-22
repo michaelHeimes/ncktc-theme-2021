@@ -11,7 +11,6 @@
 		<h1>About Us</h1>
 	</div>
 </section>
-<img class="about-header__bottom-bar" src="<?php echo get_stylesheet_directory_uri(); ?>/img/bottom-header-bar.png" alt="Grey bat at bottom of header">
 
 <section class="about-main">
 	<?php include 'call-to-action-cards.php'; ?>
@@ -35,13 +34,14 @@
 					) );
 
 				$index = 0;
+				/*
 				foreach ( $EM_Events as $event ){
 					if ( $event->event_attributes['display_on_homepage'] == 0 ){
 						unset($EM_Events[$index]);
 					}
 					$index++;
 				}
-
+				*/
 				foreach ( $EM_Events as $EM_Event ) :
 					$i++;
 			?>
@@ -62,7 +62,7 @@
 			<?php if ( $i === 3 ) {	break 1; } ?>
 			<?php endforeach; wp_reset_postdata(); // End Featured Event ?>
 			
-			<a class="green-shadow-button" href="/events">See All Events</a>	
+			<a class="blue-link" href="/events">See All Events</a>	
 		</div> <!-- /.home-container__split--events -->
 
 		<div class="divider"></div>
@@ -92,8 +92,9 @@
 				<hr>
 				<?php if ( $i === 3 ) {	break 1; } ?>
 				<?php endforeach; wp_reset_postdata(); // End Featured Event ?>
-			<a class="green-shadow-button" href="https://ncktc.edu/wp-content/uploads/2018/05/2019-2020-Academic-Calendar.pdf">View 2019-'20 Calendar</a>
-			<a class="green-shadow-button" href="https://ncktc.edu/wp-content/uploads/2019/04/AcademicCalendar-20-21.pdf">View 2020-'21 Calendar</a>
+			<a class="blue-link" target="_blank" href="<?php $calendarFile = get_field('calendar_one'); echo $calendarFile['url']; ?>"><?php the_field('calendar_one_text'); ?></a>
+			<a class="blue-link" target="_blank" href="<?php $calendarFileTwo = get_field('calendar_two'); echo $calendarFileTwo['url']; ?>"><?php the_field('calendar_two_text'); ?></a>
+			
 		</div> <!-- home-container__split--news -->
 
 		<div class="divider"></div>
@@ -114,15 +115,15 @@
 				<hr>
 			<?php endwhile; wp_reset_postdata(); ?>
 
-			<a class="green-shadow-button" href="/news/">Read More Stories</a>
+			<a class="blue-link" href="/news/">Read More Stories</a>
 		</div> <!-- home-container__split--news -->
 
 	</div> <!-- /.home-container__split -->
 
 	<div class="banner-fw">
 		<div class="banner-fw__inner">
-			<h3>Veteran Honorary Degree</h3>
-			<a class="green-shadow-button" href="/about-us/veterans-honorary-associates-degree/">Learn More</a>
+			<h3>Work At NCK Tech</h3>
+			<a class="green-shadow-button" href="#">Learn More</a>
 		</div>
 	</div>
 

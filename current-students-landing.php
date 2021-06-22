@@ -10,15 +10,15 @@
 		<h1>Current Students</h1>
 	</div>
 
-	<div class="current-students__bottom-nav">
+</section> <!-- /.current-students -->
+
+<div class="current-students__bottom-nav">
 		<span class="current-students__bottom-nav--box">
 			<a href="https://portals.ncktc.edu/student/login.asp">
 				<?php include 'img/nckicons/techknow.svg'; ?>
 				<h5>TechKNOW</h5>
 			</a>
 		</span>
-
-		<span class="skew-bar"></span>
 
 		<span class="current-students__bottom-nav--box">
 			<a href="/cafeteria-menu/">
@@ -27,8 +27,6 @@
 			</a>
 		</span>
 
-		<span class="skew-bar"></span>
-		
 		<span class="current-students__bottom-nav--box">
 			<a href="/student-activities/">
 				<?php include 'img/nckicons/student-activities.svg'; ?>
@@ -36,8 +34,6 @@
 			</a>
 		</span>
 	</div> <!-- /.current-students__bottom-nav -->
-</section> <!-- /.current-students -->
-<img class="current-students__bottom-bar" src="<?php echo get_stylesheet_directory_uri(); ?>/img/bottom-header-bar.png" alt="Grey bar at bottom of header">
 
 <section class="students-main">
 	<div class="home-container__split">
@@ -51,13 +47,14 @@
 					) );
 
 				$index = 0;
+				/*
 				foreach ( $EM_Events as $event ){
 					if ( $event->event_attributes['display_on_homepage'] == 0 ){
 						unset($EM_Events[$index]);
 					}
 					$index++;
 				}
-
+				*/
 				foreach ( $EM_Events as $EM_Event ) :
 					$i++;
 			?>
@@ -72,8 +69,8 @@
 					<a class="event-url" href="<?php echo $EM_Event->output('#_EVENTURL'); ?>"><?php echo $EM_Event->output('#_EVENTNAME'); ?></a><br>
 				</div>
 			</div>
-			<span class="last"><?php echo $EM_Event->output('#_LOCATIONTOWN'); ?></span>
-			<a class="learn-more" href="<?php echo $EM_Event->output('#_EVENTURL'); ?>">Learn More ></a>
+			<span class="lastt"><?php echo $EM_Event->output('#_LOCATIONTOWN'); ?></span>
+			<a class="learn-more" href="<?php echo $EM_Event->output('#_EVENTURL'); ?>">View Event ></a>
 			<hr>
 			<?php if ( $i === 3 ) {	break 1; } ?>
 			<?php endforeach; wp_reset_postdata(); // End Featured Event ?>
@@ -109,12 +106,12 @@
 				<?php if ( $i === 3 ) {	break 1; } ?>
 				<?php endforeach; wp_reset_postdata(); // End Featured Event ?>
 
-			<a class="green-shadow-button" href="<?php $calendarFile = get_field('calendar_one'); echo $calendarFile['url']; ?>">View 2018-'19 Calendar</a>
-			<a class="green-shadow-button" href="<?php $calendarFileTwo = get_field('calendar_two'); echo $calendarFileTwo['url']; ?>">View 2019-'20 Calendar</a>
+			<a class="green-shadow-button" target="_blank" href="<?php $calendarFile = get_field('calendar_one'); echo $calendarFile['url']; ?>"><?php the_field('calendar_one_text'); ?></a>
+			<a class="green-shadow-button" target="_blank" href="<?php $calendarFileTwo = get_field('calendar_two'); echo $calendarFileTwo['url']; ?>"><?php the_field('calendar_two_text'); ?></a>
 		</div> <!-- home-container__split--news -->
 	</div> <!-- /.home-container__split -->
 
-	<!-- Financial Aid and Scholarships box -->
+	<!-- Financial Aid and Scholarships box 
 	<div class="home-container__first">
 		<div class="home-container__first--left">
 			<h3><?php echo get_field('current_students_header'); ?></h3>
@@ -127,14 +124,46 @@
 			<span class="corner-borders"><img src="<?php echo $currStuImage['url']; ?>" alt="<?php echo $currStuImage['alt']; ?>"></span>
 		<?php endif; ?>
 	</div>
+	-->
+	
+	<?php
+	$image = get_field('current_students_image');
+	$heading = get_field('current_students_header');
+	$content = get_field('current_students_paragraph');
+	$button_text = 'Financial Aid';
+	$button_text2 = 'Scholarships';
+	$button_link = '#';
+	$button_link2 = '#';
+	echo '<section class="story-carousel-section page-container">
+	<div class="story-carousel owl-carousela owl-themea">';
+	echo '<div class="story-carousel-item">';
+	echo '<div class="story-carousel-item-overlay smallclip"></div>';
+	echo '<div class="story-carousel-item-inner">';
+	echo '<div class="story-carousel-item-image item">';
+	if ($image){
+		$imageurl = $image['url'];
+		echo '<img class="bigclip" src="' . $imageurl . '">';
+	}
+	echo '</div>';
+	echo '<div class="story-carousel-item-content item">';
+	echo '<h3>' . $heading . '</h3>';
+	echo $content;
+	echo '<a href="' . $button_link .'">' . $button_text . '</a>';
+	echo '<a href="' . $button_link2 .'">' . $button_text2 . '</a>';
+	echo '</div>';
+	echo '</div>';
+	echo '</div>';
+	echo '</div>';
+	echo '</section>';
 
+	?>
 	<!-- Call to Action cards (x3) -->
 	<?php include 'call-to-action-cards.php'; ?>
 
 	<div class="banner-fw">
 		<div class="banner-fw__inner">
 			<h3>Looking For A Job?</h3>
-			<a class="green-shadow-button" href="/job-listings/">Student Job Board</a>
+			<a class="green-shadow-button" href="/job-listings/">View Job Listings</a>
 		</div>
 	</div>
 
@@ -201,12 +230,12 @@
 
 		<a href="/pay-online/" class="cta-icons__icon-box">
 			<div class="icon-image"><?php include 'img/nckicons/payments-icon.svg'; ?></div>
-			<span class="h5-heading">Online Payments</span>
+			<span class="h5-heading">GRAD GIFT</span>
 		</a>
 
 		<a href="/rave-alert/" class="cta-icons__icon-box">
 			<div class="icon-image"><?php include 'img/nckicons/rave-icon.svg'; ?></div>
-			<span class="h5-heading">Rave Guardian</span>
+			<span class="h5-heading">RAVE ALERT</span>
 		</a>
 	</div>
 
@@ -218,11 +247,82 @@
 
 		<a href="https://ncktc.ethinksites.com/" class="cta-icons__icon-box">
 			<div class="icon-image"><?php include 'img/nckicons/moodle-icon.svg'; ?></div>
-			<span class="h5-heading">Moodle</span>
+			<span class="h5-heading">MOODLEROOMS</span>
 		</a>
-
-		<a class="cta-icons__icon-box" style="pointer-events: none;"><div></div><span></span></a>
+		
+		<a href="/pay-online/" class="cta-icons__icon-box">
+			<div class="icon-image"><?php include 'img/nckicons/payments-icon.svg'; ?></div>
+			<span class="h5-heading">Online Payments</span>
+		</a>
 	</div> <!-- end of icon cta cards -->
 </section>
+<style>
+.current-students__bottom-nav {
+	padding-top: 60px;
+	padding-bottom: 60px;
+	color: #104C7F;
+}
 
+.current-students__bottom-nav .cls-1 {
+	fill: #104C7F !important;
+}
+
+.current-students__bottom-nav h5, .current-students__bottom-nav a {
+	color: #104C7F !important;
+}
+
+.home-container__split--events .event-link {
+	display: block;
+}
+
+
+.home-container__split--events hr {
+	margin-left: 0;
+}
+
+.home-container__split--academics .event-link {
+	padding-bottom: 0;
+}
+
+.story-carousel-item-inner {
+	display: flex;
+}
+
+.story-carousel-item-inner > .item {
+	width: 50%;
+}
+
+.story-carousel-item-content {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	padding: 50px;
+	color: white;
+	padding-left: 80px;
+	padding-right: 80px;
+}
+
+.story-carousel-item-content  h3 {
+	color: white;
+}
+
+.story-carousel-item {
+	position: relative;
+	padding: 90px 0;
+	margin-left: 2px;
+	z-index: 0;
+}
+
+.story-carousel-item-overlay {
+	position: absolute;
+	background: #002F57;
+	z-index: -1;
+	top: 0;
+	bottom: 0;
+	left: 10%;
+	right: 0;
+}
+
+
+</style>
 <?php get_footer() ?>

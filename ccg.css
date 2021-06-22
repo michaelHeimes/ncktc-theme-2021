@@ -130,3 +130,18 @@
 .home .container {
 	background: none;
 }
+
+.bigclip {
+	clip-path: polygon(0 0, 78% 0, 100% 33%, 100% 100%, 0 100%);
+}
+.smallclip {
+	clip-path: polygon(0 0, 92% 0, 100% 15%, 100% 100%, 0 100%);
+}
+
+.banner-fw__inner {
+	background-image: url('/wp-content/uploads/2021/06/Rectangle-3-Copy-4.jpg');
+}
+
+.banner-fw__inner h3 {
+	color: #104C7F;
+}

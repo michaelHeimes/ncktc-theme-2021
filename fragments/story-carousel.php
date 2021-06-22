@@ -10,12 +10,12 @@ echo '<section class="story-carousel-section page-container">
         $button_text = get_sub_field('button_text');
         $button_link = get_sub_field('button_link');
 		echo '<div class="story-carousel-item">';
-		echo '<div class="story-carousel-item-overlay"></div>';
+		echo '<div class="story-carousel-item-overlay smallclip"></div>';
 		echo '<div class="story-carousel-item-inner">';
 		echo '<div class="story-carousel-item-image item">';
 		if ($image){ 
 			$imageurl = $image['url'];
-			echo '<img src="' . $imageurl . '">';
+			echo '<img class="bigclip" src="' . $imageurl . '">';
 		}
 		echo '</div>';
 		echo '<div class="story-carousel-item-content item">';
@@ -30,15 +30,26 @@ echo '<section class="story-carousel-section page-container">
 echo '</div>';
 ?>
 <script>
+if (!window.myFunction) {
+
+    window.myFunction = function() {
+     
+	 }
+	 
 jQuery(document).ready(function( $ ) {
 	
+	
+	$('.story-carousel').each(function() {
+	
 	var dragbool = false;
-	var items = $(".story-carousel > .story-carousel-item").length;
+	var carouselitem = $(this).find(".story-carousel-item");
+	//var items = $(".story-carousel > .story-carousel-item").length;
+	var items = carouselitem.length;
 	if (items > 1) {
 		dragbool = true;
 	}
 	
-	$(".story-carousel").owlCarousel({
+	$(this).owlCarousel({
 	items: 1,
 	loop: true,
 	autoplay: false,
@@ -49,8 +60,13 @@ jQuery(document).ready(function( $ ) {
 	margin: 0,
 	navText: ['<i class="fas fa-chevron-left" aria-hidden="true"></i>', '<i class="fas fa-chevron-right" aria-hidden="true"></i>'],
   });
+  
+	});
 
 });
+
+}
+
 </script>
 <style>
 .story-carousel-item-inner {
@@ -78,6 +94,7 @@ jQuery(document).ready(function( $ ) {
 .story-carousel-item {
 	position: relative;
 	padding: 90px 0;
+	margin-left: 2px;
 }
 
 .story-carousel-item-overlay {
@@ -145,6 +162,7 @@ jQuery(document).ready(function( $ ) {
 .story-carousel .owl-item {
 	margin: auto;
 }
+
 </style>
 <?php 
 echo '</section>';

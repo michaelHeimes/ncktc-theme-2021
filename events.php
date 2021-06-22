@@ -11,7 +11,30 @@
 		<h1>Events</h1>
 	</div>
 </section>
-<img class="events-header__bottom-bar" src="<?php echo get_stylesheet_directory_uri(); ?>/img/bottom-header-bar.png" alt="Grey bar at bottom of header">
+
+<?php the_content();
+//echo do_shortcode('[ajax_load_more post_type="event" meta_key="_event_start_date" meta_value="2021-06-19" meta_compare=">=" meta_type="DATETIME" orderby="meta_value_num" order="ASC"]');
+echo do_shortcode('[ajax_load_more post_type="event" meta_key="_event_start_date" meta_value="2021-06-19" meta_compare=">="  orderby="meta_value_num" order="ASC"]');
+/*
+$args = array(
+'posts_per_page'	=> 3,
+'post_type'		=>'event',
+'post_status' => 'publish',
+'meta_key' => '_event_start_date',
+'meta_value' => '2021-08-23',
+);
+$the_query = new WP_Query( $args );
+if( $the_query->have_posts() ){
+while ( $the_query->have_posts() ) { $the_query->the_post();
+	the_title();
+	$meta = get_post_meta( get_the_ID() );
+	print_r($meta);
+	echo '<br>';
+}
+}
+wp_reset_query();
+*/
+?>
 
 <section class="events-main">
 	<div class="cta-cards">

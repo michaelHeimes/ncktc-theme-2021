@@ -1,0 +1,160 @@
+<?php
+/*
+Template Name: Home Page
+*/
+get_header(); ?>
+
+<!-- Row for main content area -->
+<div class="halfbar row"></div>
+<div class="row" id="content">
+	<div class="small-12 large-6 columns" id="video-meta">
+		<div class="flex-video">
+			<iframe width="640" height="360" src="//www.youtube.com/embed/BxTY6XVCM-0/?rel=0" frameborder="0" allowfullscreen></iframe>
+		</div>
+		<div class="row">
+			<div class="small-12 center">
+				<a href="#" class="button success large" id="apply-button">Apply Now!</a>
+			</div>
+		</div>
+		<div id="slider-wrapper" class="column show-for-large-up">
+			<div id="home-slider" class="">
+				<div class="clearfix">
+					<img src="/ncktech/wp-content/themes/reverie-master/img/Chris.png" id="image1" class="show-for-large-up left" />
+					<aside class="right">
+						<p>Rachel is working as an RN off the coast of Thailand.<br>It all started at <b>NCK Tech</b></p>
+						<a href="#" class="button success large">Read Rachel's Story</a>
+					</aside>
+				</div>
+				<div class="clearfix">
+					<img src="/ncktech/wp-content/themes/reverie-master/img/Chris.png" id="image1" class="show-for-large-up left" />
+					<aside class="right">
+						<h3>Some More Text</h3>
+						<button>Another button</button>
+					</aside>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="small-12 large-6 columns" id="meta">
+		<div class="row">
+			<div class="small-12 large-6 columns">
+				<h3>Take a Tour</h3>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae ut nobis id accusamus veniam pariatur cum minima quia. Assumenda perspiciatis quidem maxime eos esse odio fuga porro nihil blanditiis adipisci.</p>
+			</div>
+			<div class="small-12 large-6 columns">	
+			
+				<?php 
+					$args = array( // Start Featured Event
+			        'post_type' => 'event',
+			        'meta_key' => 'display_on_homepage',
+			        'meta_value' => true,
+					'posts_per_page' => 1,	
+	    			);
+	    			$loop = new WP_Query( $args );
+	   				while ( $loop->have_posts() ) : $loop->the_post();   	
+	   				// Setup Event Object from Current Post - $post->ID, 'post_id',
+	   				$EM_Event = em_get_event($post->ID, 'post_id');	
+	   				// print_r($EM_Event);		
+				?>
+				
+				
+				<h3>Upcoming Events</h3>
+				<hr style="margin: .5rem 0;"/>
+				<div>
+						<a href="<?php the_permalink(); ?>" class="event-link" style="display: block; color: #333;">
+							<time class="icon">
+								<em><?php echo $EM_Event->output('#l'); ?></em>
+								<strong><?php echo $EM_Event->output('#F'); ?></strong>
+								<span><?php echo $EM_Event->output('#d'); ?></span>
+							</time>
+							<h5><?php echo $EM_Event->output('#_EVENTNAME'); ?><br><small><?php echo $EM_Event->output('#_EVENTTIMES'); ?></small></h5>
+							<?php the_excerpt(); ?><hr/><a href="<?php the_permalink(); ?>" class="left">More Info...</a><a href="/ncktech/events" class="right">More Events</a>
+						</a>
+						
+				</div>
+				<?php endwhile; wp_reset_postdata(); // End Featured Event ?>
+			</div>
+		</div>
+		<div class="row">
+			<div class="small-12 column">
+				<h3>Recent News</h3>
+				<hr style="margin: .5rem 0;"/>
+				<h4>Article Title Here</h4>
+				<img src="/ncktech/wp-content/themes/reverie-master/img/welding.jpg" width="100%" height="200px"/> 
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa, quia, quam, nihil, quasi explicabo dignissimos culpa quas id blanditiis totam ipsum quibusdam nostrum reprehenderit non similique. Molestiae quod quis repellat.<a href="#"> Read More...</a></p>
+			</div>
+		</div>
+	</div>
+
+</div> <!-- end #content -->
+<?php wp_enqueue_script('anyslider', get_stylesheet_directory_uri().'/js/anyslider.min.js' ); ?>
+<script type="text/javascript">
+	jQuery( document ).ready(function( $ ) {
+
+		function heightonload(){
+				var $heightobj = $('#meta');
+				var $height = $heightobj.height();
+				// console.log($height);
+		
+				$('#video-meta').css('height', $height);
+		}
+		
+		$("#home-slider").AnySlider();
+		
+		var $window = $(window);
+		$window.load(function(){
+			if ( $window.width() > 1024 ){
+				heightonload();
+				// console.log('window wider than 1024');
+			}
+		});
+
+		$window.resize(function () {
+			if ($window.width() > 1024){
+				$height = $('#meta').height();
+				$('#video-meta').css('height', $height);
+			} else {
+				$('#video-meta').css('height', 'auto');
+			}
+		});
+
+	});
+</script>
+<style type="text/css">
+	#home-slider {
+		-ms-touch-action: none;
+		overflow: auto;
+		position: relative;
+		touch-action: none;
+	}
+	#slider-wrapper {
+		position: absolute;
+		z-index: 0;
+		overflow: hidden;
+		bottom: -1px;
+		width: 94%;
+	}
+	.as-nav {
+		position: absolute;
+		bottom: 5px;
+		margin: 0 250px;
+		width: 50px;
+		font-size: .5em;
+	}
+	.as-nav a {
+		color: rgba(0,0,0,0);
+	}
+	.as-nav a:after {
+		content: '\2B24';
+		color: #0064C5;
+	}
+	.as-nav a.as-active:after { color: #0095DA; }
+	.as-next-arrow, .as-prev-arrow { display: none; }
+	#home-slider aside.right {
+		max-width: 60%;
+	}
+	#home-slider img.left {
+		max-width: 40%;
+	}
+</style>
+<?php get_footer(); ?>

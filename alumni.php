@@ -10,7 +10,10 @@
 		<h1>Alumni</h1>
 	</div>
 
-	<div class="alumni-form-boxes">
+</section>
+
+<section class="alumni-header alumni-header-boxes">
+<div class="alumni-form-boxes">
 		<div class="alumni-form-boxes__box">
 			<h3>Join the Alumni Association</h3>
 			<?php gravity_form( 82, false, false, false, '', false ); ?>
@@ -28,10 +31,7 @@
 			</a>
 		</div> <!-- /.alumni-form-boxes__right -->
 	</div> <!-- /.alumni-form-box -->
-
 </section>
-<img class="alumni-header__bottom-bar" src="<?php echo get_stylesheet_directory_uri(); ?>/img/bottom-header-bar.png" alt="Grey bar at bottom of header">
-
 <section class="alumni-main">
 	<!-- full-width banner -->
 	<div class="banner-fw">
@@ -62,5 +62,38 @@
 		</div> <!-- /.alumni-cta-links -->
 	</div> <!-- /.alumni-cta-wrapper -->	
 </section>
+<style>
+.alumni-header {
+	box-shadow: none;
+	height: 348px;
+}
 
+.alumni-header.alumni-header-boxes {
+	background: white;
+	min-height: auto;
+	height: auto;
+}
+
+.alumni-header-boxes .alumni-form-boxes__box, .alumni-header-boxes .alumni-form-boxes__right--square {
+	background: #ECF1F6;
+}
+
+.alumni-header .alumni-form-boxes__right--square span, .alumni-header.alumni-header-boxes h3, .banner-fw__inner h3 {
+	color: #104C7F;
+}
+
+.alumni-header .alumni-form-boxes__right--square svg #Fill-4, .alumni-header .alumni-form-boxes__right--square svg #Fill-6, .alumni-header .alumni-form-boxes__right--square svg #Fill-8, .alumni-header .alumni-form-boxes__right--square svg #Fill-10, .alumni-header .alumni-form-boxes__right--square svg path#Fill-1 {
+	//fill: unset;
+	fill: #104C7F;
+}
+
+.alumni-header .alumni-form-boxes__right--square svg #Fill-3, .alumni-header .alumni-form-boxes__right--square svg #Fill-5, .alumni-header .alumni-form-boxes__right--square svg #Fill-7, .alumni-header .alumni-form-boxes__right--square svg #Fill-9, .alumni-header .alumni-form-boxes__right--square svg #Fill-11, .alumni-header .alumni-form-boxes__right--square svg #Fill-13, .alumni-header .alumni-form-boxes__right--square svg #Fill-15, .alumni-header .alumni-form-boxes__right--square svg #Fill-17 {
+	fill: #104C7F;
+}
+
+.banner-fw__inner {
+	background-image: url('/wp-content/uploads/2021/06/Rectangle-3-Copy-4.jpg');
+}
+
+</style>
 <?php get_footer() ?>

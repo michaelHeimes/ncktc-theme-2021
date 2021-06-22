@@ -1,0 +1,13 @@
+# builds / configs
+config.codekit
+codekit-config.json
+old-config.codekit
+
+# OS clutter
+.DS_Store
+/.project
+.vscode
+
+# Hide blessed files for now
+/css/style-blessed1.css
+/css/style-blessed1-min.css

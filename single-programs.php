@@ -62,7 +62,7 @@
 		</div><!-- End Counselor Panel -->
 		<?php endwhile; wp_reset_postdata(); // End Random Advisor ?>
 		<?php if ( get_field('program_tool_list') ){
-			echo '<div class="small-12 columnsa"><h3>Tool List</h3>';
+			echo '<div class="small-12 columnsa tool-list"><h3>Tool List</h3>';
 			the_field('program_tool_list');
 			echo '</div>';
 		} ?>
@@ -133,33 +133,17 @@
 
 		<?php endif; ?>
 		<!-- end of UT Calendar -->
-<div class="accordion-container">
-  <h3>Section 1</h3>
-  <div>
-    <p>
-    Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Integer
-    ut neque. Vivamus nisi metus, molestie vel, gravida in, condimentum sit
-    amet, nunc. Nam a nibh. Donec suscipit eros. Nam mi. Proin viverra leo ut
-    odio. Curabitur malesuada. Vestibulum a velit eu ante scelerisque vulputate.
-    </p>
-  </div>
-  <h3>Section 2</h3>
-  <div>
-    <p>
-    Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Integer
-    ut neque. Vivamus nisi metus, molestie vel, gravida in, condimentum sit
-    amet, nunc. Nam a nibh. Donec suscipit eros. Nam mi. Proin viverra leo ut
-    odio. Curabitur malesuada. Vestibulum a velit eu ante scelerisque vulputate.
-    </p>
-  </div>
-  </div>
 			<?php 
 
-			echo do_shortcode('[accordion clicktoclose=true scroll=true][accordion-item title="title2"]content2[/accordion-item][/accordion]');
 			
 			if( have_rows('program_first') ): ?><!-- Start Program Courses -->
 				<h3>Required Courses</h3>
-				<table>
+				<div class="accordion-container">
+						<?php if(have_rows('program_pre_req')) : ?>
+						
+						<h3>Pre-Requisite Courses</h3>
+						<div>
+						<table>
 					<thead>
 						<tr>
 							<th align="center">Course Code</th>
@@ -168,11 +152,6 @@
 						</tr>
 					</thead>
 					<tbody>
-
-						<?php if(have_rows('program_pre_req')) : ?>
-							<tr>
-								<th align="center" colspan="3">Pre-Requisite Courses</th>
-							</tr>
 							<?php while( have_rows('program_pre_req') ): the_row(); 
 							// vars
 							$course = get_sub_field('course');
@@ -202,11 +181,22 @@
 								<td colspan="2"><strong>TOTAL</strong></td>
 								<td><strong class="pre-req-semester-total"></strong></td>
 							</tr> <!-- End Pre Req Semester -->
+							</tbody>
+						</table>
+						 </div>
+						
 						<?php endif; ?>
-
-						<tr>
-							<th align="center" colspan="3">First Semester</th>
-						</tr>
+						<h3>First Semester</h3>
+						<div>
+						<table>
+						<thead>
+							<tr>
+								<th align="center">Course Code</th>
+								<th align="center">Course Name</th>
+								<th align="center">Credits</th>
+							</tr>
+						</thead>
+						<tbody>
 						<?php while( have_rows('program_first') ): the_row(); 
 							// vars
 							$course = get_sub_field('course');
@@ -223,7 +213,7 @@
 										<td><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a><span style="float:right"><strong><?php echo $coursevar; ?></strong></span></td>
 										<td style="text-align: right;"><?php the_field('course_credits'); ?></td>
 									</tr> <?php
-								} else { 
+								} else {
 							$course = get_sub_field('course');
 							$post = $course;
 							setup_postdata($post); ?>
@@ -239,11 +229,22 @@
 								<td colspan="2"><strong>TOTAL</strong></td>
 								<td><strong class="first-semester-total"></strong></td>
 							</tr> <!-- End First Semester -->
-
+							</tbody>
+							</table>
+							</div>
+							
 						<?php if( have_rows('program_second') ): ?><!-- Start Second Semester -->
-							<tr>
-								<th align="center" colspan="3">Second Semester</th>
-							</tr>
+							<h3>Second Semester</h3>
+							<div>
+							<table>
+							<thead>
+								<tr>
+									<th align="center">Course Code</th>
+									<th align="center">Course Name</th>
+									<th align="center">Credits</th>
+								</tr>
+							</thead>
+							<tbody>
 							<?php while( have_rows('program_second') ): the_row(); 
 								// vars
 								$course = get_sub_field('course');
@@ -276,11 +277,21 @@
 								<td colspan="2"><strong>TOTAL</strong></td>
 								<td><strong class="second-semester-total"></strong></td>
 							</tr> <!-- End Second Semester -->
-
+							</tbody>
+							</table>
+							</div>
 							<?php if( have_rows('program_summer') ): ?><!-- Start Summer Semester -->
+								<h3>Summer Semester</h3>
+								<div>
+								<table>
+							<thead>
 								<tr>
-									<th align="center" colspan="3">Summer Semester</th>
+									<th align="center">Course Code</th>
+									<th align="center">Course Name</th>
+									<th align="center">Credits</th>
 								</tr>
+							</thead>
+							<tbody>
 								<?php while( have_rows('program_summer') ): the_row(); 
 									// vars
 									$course = get_sub_field('course');
@@ -313,12 +324,25 @@
 									<td colspan="2"><strong>TOTAL</strong></td>
 									<td><strong class="summer-semester-total"></strong></td>
 								</tr> 
+								</tbody>
+							</table>
+								</div>
 							<?php endif; ?><!-- End Summer Semester -->
 
 						<?php if( have_rows('program_third') ): ?><!-- Start Third Semester -->
-							<tr>
-								<th align="center" colspan="3">Third Semester</th>
-							</tr>
+							<h3>Third Semester</h3>
+							<div>
+							<table>
+							<thead>
+								<tr>
+									<th align="center">Course Code</th>
+									<th align="center">Course Name</th>
+									<th align="center">Credits</th>
+								</tr>
+							</thead>
+							<tbody>
+							
+								<th align="center" colspan="3"></th>
 							<?php while( have_rows('program_third') ): the_row(); 
 								// vars
 								$course = get_sub_field('course');
@@ -351,11 +375,21 @@
 								<td colspan="2"><strong>TOTAL</strong></td>
 								<td><strong class="third-semester-total"></strong></td>
 							</tr><!-- End Third Semester -->
-
+							</tbody>
+							</table>
+						</div>
 						<?php if( have_rows('program_fourth') ): ?><!-- Start Fourth Semester -->
-							<tr>
-								<th align="center" colspan="3">Fourth Semester</th>
-							</tr>
+							<h3>Fourth Semester</h3>
+							<div>
+							<table>
+							<thead>
+								<tr>
+									<th align="center">Course Code</th>
+									<th align="center">Course Name</th>
+									<th align="center">Credits</th>
+								</tr>
+							</thead>
+							<tbody>
 							<?php while( have_rows('program_fourth') ): the_row(); 
 								// vars
 								$course = get_sub_field('course');
@@ -388,14 +422,24 @@
 								<td colspan="2"><strong>TOTAL</strong></td>
 								<td><strong class="fourth-semester-total"></strong></td>
 							</tr> <!-- End Fourth Semester -->
-
+							</tbody>
+							</table>
+							</div>
 							<?php endif; endif; ?>
 						<?php endif; ?> <!-- Endif for Previous Semesters -->
 
 						<?php if( have_rows('program_general') ): ?><!-- Start General Ed -->
-							<tr>
-								<th align="center" colspan="3">General Education Course Requirements</th>
-							</tr>
+							<h3>General Education Course Requirements</h3>
+							<div>
+							<table>
+							<thead>
+								<tr>
+									<th align="center">Course Code</th>
+									<th align="center">Course Name</th>
+									<th align="center">Credits</th>
+								</tr>
+							</thead>
+							<tbody>
 							<?php while( have_rows('program_general') ): the_row(); 
 								// vars
 								$course = get_sub_field('course');
@@ -427,13 +471,18 @@
 								<td colspan="2"><strong>TOTAL</strong></td>
 								<td><strong class="general-semester-total"></strong></td>
 							</tr>
+							</tbody>
+							</table>
+							</div>
 						<?php endif; ?><!-- End General Ed -->
+						</div>
 						<tr>
-							<td colspan="2"><strong>PROGRAM TOTAL</strong></td>
+							<td colspan="2"><strong>Total Required Hours</strong></td>
 							<td><strong class="course-total"></strong></td>
 		 				</tr>
-					</tbody>
-				</table>
+					
+				
+				
 			<?php else: ?>
 				<?php if( have_rows('program_general') ): ?><!-- Start General Ed Alone -->
 					<h3>Required Courses</h3>
@@ -474,7 +523,7 @@
 								<?php wp_reset_postdata(); ?>
 							<?php endwhile; ?>
 							<tr>
-								<td colspan="2"><strong>TOTAL</strong></td>
+								<td colspan="2"><strong>Total Required Hours</strong></td>
 								<td><strong class="general-semester-total"></strong></td>
 							</tr>
 						</tbody>
@@ -526,7 +575,7 @@
 					$artText = get_sub_field('articulation_agreement_text');
 					$artLink = get_sub_field('articulation_agreement_link');
 					?>
-					<a href="<?php echo $artLink ?>" class="learn-more"><?php echo $artText; ?></a><br>
+					<a href="<?php echo $artLink ?>" class="learn-more graylink"><?php echo $artText; ?></a><br>
 					<?php endwhile; ?>
 				</div> <!-- /.articulation-block -->
 			<?php endif; ?>
@@ -610,8 +659,8 @@
 	</div>
 </div>
 
-<h2>Interested in AGRICULTURAL EQUIPMENT TECHNOLOGY?</h2>
 </div>
+<?php get_template_part( 'program-page-pre-footer-cta' ); ?>
 <style>
 .programs-wrapper-cols {
 	display: flex;
@@ -649,6 +698,76 @@
 
 .single-programs .button-group {
 	display: flex;
+}
+
+.accordion-container.ui-accordion .ui-accordion-content {
+	padding: 20px;
+	background: #ECF1F6;
+	color: #323232;
+}
+
+.accordion-container table {
+	border: none;
+	margin: 0;
+}
+
+.accordion-container table, .accordion-container table thead, .accordion-container table tfoot, .accordion-container table tr.even, .accordion-container table tr.alt, .accordion-container table tr:nth-of-type(2n) {
+	background: transparent;
+}
+
+.single-programs .first-semester, .single-programs .first-semester-total, .single-programs .second-semester, .single-programs .second-semester-total, .single-programs .summer-semester, .single-programs .summer-semester-total, .single-programs .third-semester, .single-programs .third-semester-total, .single-programs .fourth-semester, .single-programs .fourth-semester-total, .single-programs .general-semester, .single-programs .general-semester-total, .single-programs .course-total, .single-programs .pre-req-semester, .single-programs .pre-req-semester-total {
+	float: none;
+}
+
+.accordion-container.ui-accordion .ui-accordion-header {
+	background: #ECF1F6;
+	margin: 0;
+	margin-top: 20px;
+	padding: 20px;
+	color: #323232;
+	font-family: 'Good Headline Pro', sans-serif;
+	font-size: 22px;
+	font-weight: 400;
+	border: 0;
+	border-radius: 0;
+}
+
+a.graylink {
+	background: #ECF1F6;
+	padding: 20px;
+	color: #323232;
+	margin-bottom: 20px;
+	font-family: 'Good Headline Pro', sans-serif;
+	font-size: 22px;
+	font-weight: 400;
+}
+
+.tool-list a {
+	display: block;
+	background: #ECF1F6;
+	padding: 20px;
+	color: #323232;
+	margin-bottom: 20px;
+	font-family: 'Good Headline Pro', sans-serif;
+	font-size: 22px;
+	font-weight: 400;
+}
+
+.accordion-container.ui-accordion .ui-accordion-header::after {
+	content: "\f077";
+	font-family: "FontAwesome";
+	//font-weight: 900;
+	float: right;
+	padding-right: 10px;
+	font-size: 21px;
+}
+
+.accordion-container.ui-accordion .ui-accordion-header.ui-state-active::after {
+	content: "\f078";
+}
+
+.articulation-block {
+	border: 0;
 }
 
 </style>
@@ -748,6 +867,8 @@
 		$( ".accordion-container" ).accordion({
       collapsible: true,
        active: false,
+	   heightStyle: "content",
+	   icons: false,
     });
 		}); // End anonymous function on document.ready
 	</script><!-- End Program Page Scripts -->
