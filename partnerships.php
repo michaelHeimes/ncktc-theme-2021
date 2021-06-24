@@ -50,8 +50,10 @@
 	echo '<div class="story-carousel-item-content item">';
 	echo '<h3>' . $heading . '</h3>';
 	echo $content;
+	echo '<div class="link-wrap">';
 	echo '<a href="' . $button_link .'">' . $button_text . '</a>';
-	echo '<a href="' . $button_link2 .'">' . $button_text2 . '</a>';
+	echo '<a class="chev-link" href="' . $button_link2 .'">' . $button_text2 . '</a>';
+	echo '</div>';
 	echo '</div>';
 	echo '</div>';
 	echo '</div>';

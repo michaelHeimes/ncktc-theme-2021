@@ -6897,13 +6897,11 @@ h6, .h6-heading {
       margin-top: 0 !important; }
     .info-boxes__box #input_79_2, .info-boxes__box #input_80_1 {
       width: 15rem !important;
-      border: 1px solid #104C7F !important; }
+      }
     .info-boxes__box #input_79_3, .info-boxes__box #input_80_2 {
-      border: 1px solid #104C7F !important;
       width: 5.5rem;
       float: left; }
     .info-boxes__box #input_79_4, .info-boxes__box #input_80_3 {
-      border: 1px solid #104C7F !important;
       width: 8.5rem;
       float: right; }
     .info-boxes__box .gform_footer {
@@ -7583,13 +7581,11 @@ h6, .h6-heading {
         margin-top: 0 !important; }
       .alumni-header .alumni-form-boxes__box #input_82_1 {
         width: 15rem !important;
-        border: 1px solid #104C7F !important; }
+        }
       .alumni-header .alumni-form-boxes__box #input_82_2 {
-        border: 1px solid #104C7F !important;
         width: 5.5rem;
         float: left; }
       .alumni-header .alumni-form-boxes__box #input_82_3 {
-        border: 1px solid #104C7F !important;
         width: 8.5rem;
         float: right; }
       .alumni-header .alumni-form-boxes__box .gform_footer {

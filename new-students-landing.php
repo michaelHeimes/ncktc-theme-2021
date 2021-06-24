@@ -37,8 +37,10 @@
 					<h3>New Around Here?</h3>
 					<p>Getting ready for college can seem like a lot of work. Not to worry. We have broken out the main steps here for you to make coming to NCK Tech a breeze.</p>
 					<p>If you get stuck, we have dedicated staff standing by to help you with any questions you may have.</p>
-					<a class="learn-more" href="/admissions-process/">See Our Admissions Process &rsaquo;</a><br>
-					<a class="learn-more" href="/contact/">Talk to an Admissions Counselor &rsaquo;</a>
+					<div class="link-wrap">
+						<a class="learn-more" href="/admissions-process/">See Our Admissions Process &rsaquo;</a><br>
+						<a class="learn-more" href="/contact/">Talk to an Admissions Counselor &rsaquo;</a>
+					</div>
 				</div>
 				<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/new-student-card-bottom.jpg" alt="NCK Tech Staff Member">
 			</div>
@@ -46,35 +48,51 @@
 			<div class="boxes-right-side">
 				<div class="boxes-top">
 					<div class="white-box">
-						<span>01.</span>
-						<h5>Apply</h5>
-						<p>Completing an application is the first step in the admissions process.<br> Apply online today. It only takes about 10 minutes. $50 application fee required.</p>
-						<a class="learn-more" href="/apply/">Apply Now &rsaquo;</a>
+						<div class="top">
+							<span>01.</span>
+							<h5>Apply</h5>
+							<p>Completing an application is the first step in the admissions process.<br> Apply online today. It only takes about 10 minutes. $50 application fee required.</p>
+						</div>
+						<div class="link-wrap">
+							<a class="learn-more" href="/apply/">Apply Now &rsaquo;</a>
+						</div>
 					</div>
 					
 					<div class="white-box">
-						<span>02.</span>
-						<h5>Submit Test Scores</h5>
-						<p>Our Accuplacer Test is free. Please take the test and submit your scores at the end.</p>
-						<a class="learn-more" href="/accuplacer-test-day/">Take The Accuplacer Test &rsaquo;</a>
+						<div class="top">
+							<span>02.</span>
+							<h5>Submit Test Scores</h5>
+							<p>Our Accuplacer Test is free. Please take the test and submit your scores at the end.</p>
+						</div>
+						<div class="link-wrap">
+							<a class="learn-more" href="/accuplacer-test-day/">Take The Accuplacer Test &rsaquo;</a>
+						</div>
 					</div>
 				</div> <!-- top box row -->
 
 				<div class="boxes-bottom">
 					<div class="white-box">
-						<span>03.</span>
-						<h5>Financial Aid &amp; Scholarships</h5>
-						<p>Financial aid and scholarships are available to help with your educational expenses. Start by filling out the FAFSA (Free Application for Federal Student Aid) to see what financial aid you qualify for. You can then apply for scholarships offered by NCK Tech.</p>
-						<a class="learn-more" href="https://fafsa.ed.gov/">Apply for FAFSA &rsaquo;</a>
-						<a class="learn-more" href="/financial-aid/scholarships/">Apply for Scholarships &rsaquo;</a>
+						<div class="top">
+							<span>03.</span>
+							<h5>Financial Aid &amp; Scholarships</h5>
+							<p>Financial aid and scholarships are available to help with your educational expenses. Start by filling out the FAFSA (Free Application for Federal Student Aid) to see what financial aid you qualify for. You can then apply for scholarships offered by NCK Tech.</p>
+						</div>
+						<div class="link-wrap">
+							<a class="learn-more" href="https://fafsa.ed.gov/">Apply for FAFSA &rsaquo;</a>
+							<a class="learn-more" href="/financial-aid/scholarships/">Apply for Scholarships &rsaquo;</a>
+						</div>
 					</div>
 
 					<div class="white-box">
-						<span>04.</span>
-						<h5>Find Housing</h5>
-						<p>Both of our campuses have many housing options available. Choose your campus to find great places to live!</p>
-						<a class="learn-more" href="/beloit-on-campus-housing/">Beloit Housing &rsaquo;</a>
-						<a class="learn-more" href="/campus-housing-hays/">Hays Housing &rsaquo;</a>
+						<div class="top">						
+							<span>04.</span>
+							<h5>Find Housing</h5>
+							<p>Both of our campuses have many housing options available. Choose your campus to find great places to live!</p>
+						</div>
+						<div class="link-wrap">
+							<a class="learn-more" href="/beloit-on-campus-housing/">Beloit Housing &rsaquo;</a>
+							<a class="learn-more" href="/campus-housing-hays/">Hays Housing &rsaquo;</a>
+						</div>
 					</div>
 				</div> <!-- bottom box row -->
 			</div> <!-- /.boxes-right-side -->
@@ -123,13 +141,18 @@
 					<div>
 						<iframe id="ytplayer" type="text/html" src="<?php echo $videoSrc; ?>" allowfullscreen frameborder="0"></iframe>
 						<div class="campus-video-cards__container--below">
-							<h3><?php echo $videoHeader; ?></h3>
-							<p><?php echo $videoParagraph; ?></p>
-							<div>
-								<a class="green-shadow-button" href="<?php echo $videoButtonOneLink; ?>"><?php echo $videoButtonOneTxt; ?></a>
-								<a class="green-shadow-button" href="/virtual-tour/" style="width: 10rem; text-align: center;">Virtual Tour</a>
+							<div class="top">
+								<h3><?php echo $videoHeader; ?></h3>
+								<p><?php echo $videoParagraph; ?></p>
 							</div>
-							<a class="learn-more" href="<?php echo $videoButtonTwoLink; ?>"><?php echo $videoButtonTwoTxt; ?> &rsaquo;</a>
+							
+							<div class="bottom">
+								<div>
+									<a class="green-shadow-button" href="<?php echo $videoButtonOneLink; ?>"><?php echo $videoButtonOneTxt; ?></a>
+									<a class="green-shadow-button" href="/virtual-tour/">Virtual Tour</a>
+								</div>
+								<a class="learn-more" href="<?php echo $videoButtonTwoLink; ?>"><?php echo $videoButtonTwoTxt; ?> &rsaquo;</a>
+							</div>
 						</div>
 					</div>
 				<?php endwhile; ?>
@@ -137,47 +160,52 @@
 		</div> <!-- /.[__container] -->
 	</div> <!-- /.campus-video-cards -->
 
-	<!-- re-used from 'home-page.php/scss' -->
-	<div class="home-container__first">
-		<h2>Room &amp; Board</h2>
-		<div class="new_students-block-container">
-		<div class="new_students-block-inner"></div>
-		<?php $newStuImage = get_field('new_students_image');
-		if( !empty($newStuImage) ) : ?>
-			<span class="new-students-corner-borders"><img src="<?php echo $newStuImage['url']; ?>" alt="<?php echo $newStuImage['alt']; ?>"></span>
-		<?php endif; ?>
-		<div class="home-container__first--left">
-			<h3><?php echo get_field('new_students_header'); ?></h3>
-			<p><?php echo get_field('new_students_paragraph'); ?></p>
-			<a class="green-shadow-button" href="/beloit-on-campus-housing/">Beloit Campus</a>
-			<a class="green-shadow-button scholarship-button" href="/campus-housing-hays/">Hays Campus</a>
-		</div>
-		
-		</div>
-	</div>
+	<div class="admissions-bottom">
 
-	<!-- cta-cards below "Room & Board" -->
-	<div class="low-cta-wrapper">
-		<div class="low-cta-links">
-			<?php if( have_rows('above_footer_cta_cards') ):
-				while( have_rows('above_footer_cta_cards') ): the_row();
-
-				//vars
-				$lowCtaLink = get_sub_field('cta_link');
-				$lowCtaImage = get_sub_field('cta_image');
-				$lowCtaHeader = get_sub_field('cta_header_text');
-				?>
-					<a class="low-cta-links__card" href="<?php echo $lowCtaLink; ?>">
-						<div class="card-image" style="background-image: url('<?php echo $lowCtaImage['url']; ?>');">
-							<h5><?php echo $lowCtaHeader; ?></h5>
-						</div>
-					</a>
-				<?php endwhile; ?>
+		<!-- re-used from 'home-page.php/scss' -->
+		<div class="home-container__first">
+			<h2>Room &amp; Board</h2>
+			<div class="new_students-block-container">
+			<div class="new_students-block-inner"></div>
+			<?php $newStuImage = get_field('new_students_image');
+			if( !empty($newStuImage) ) : ?>
+				<span class="new-students-corner-borders"><img src="<?php echo $newStuImage['url']; ?>" alt="<?php echo $newStuImage['alt']; ?>"></span>
 			<?php endif; ?>
+			<div class="home-container__first--left">
+				<h3><?php echo get_field('new_students_header'); ?></h3>
+				<p><?php echo get_field('new_students_paragraph'); ?></p>
+				<a class="green-shadow-button" href="/beloit-on-campus-housing/">Beloit Campus</a>
+				<a class="green-shadow-button scholarship-button" href="/campus-housing-hays/">Hays Campus</a>
+			</div>
+			
+			</div>
 		</div>
-	</div> <!-- /.cta-wrapper -->
-
+	
+		<!-- cta-cards below "Room & Board" -->
+		<div class="low-cta-wrapper">
+			<div class="low-cta-links">
+				<?php if( have_rows('above_footer_cta_cards') ):
+					while( have_rows('above_footer_cta_cards') ): the_row();
+	
+					//vars
+					$lowCtaLink = get_sub_field('cta_link');
+					$lowCtaImage = get_sub_field('cta_image');
+					$lowCtaHeader = get_sub_field('cta_header_text');
+					?>
+						<a class="low-cta-links__card" href="<?php echo $lowCtaLink; ?>">
+							<div class="card-image" style="background-image: url('<?php echo $lowCtaImage['url']; ?>');">
+								<h5><?php echo $lowCtaHeader; ?></h5>
+							</div>
+						</a>
+					<?php endwhile; ?>
+				<?php endif; ?>
+			</div>
+		</div> <!-- /.cta-wrapper -->
+		
 	<?php include 'alt-top-footer.php'; ?> <!-- alt footer used on "New Students" and "Academics" Pages -->
+	
+	</div>
+	
 </section> <!-- /.new-students-main -->
 <style>
 .new_students-block-container {

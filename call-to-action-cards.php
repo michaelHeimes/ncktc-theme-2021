@@ -18,9 +18,14 @@
 			?>
 			<div class="cta-cards__card">
 				<img src="<?php echo $ctaImage['url']; ?>" alt="<?php echo $ctaImage['alt']; ?>">
-				<h3><?php echo $ctaHeader; ?></h3>
-				<p><?php echo $ctaPara; ?></p>
-				<a class="green-shadow-button-wide" href="<?php echo $ctaButtonLink; ?>"><?php echo $ctaButtonTxt; ?></a>
+
+				<div class="top">
+					<h3><?php echo $ctaHeader; ?></h3>
+					<p><?php echo $ctaPara; ?></p>
+				</div>
+				<div class="bottom">
+					<a class="green-shadow-button-wide" href="<?php echo $ctaButtonLink; ?>"><?php echo $ctaButtonTxt; ?></a>
+				</div>
 			</div>
 		<?php endwhile; ?>
 	<?php endif; ?>

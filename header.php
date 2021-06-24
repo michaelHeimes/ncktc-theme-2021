@@ -16,6 +16,10 @@
 	<link rel="alternate" type="application/rss+xml" title="<?php bloginfo('name'); ?> Feed" href="<?php echo home_url(); ?>/feed/">
 	<link rel="stylesheet" href="https://use.typekit.net/xdq1unx.css">
 	
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+	
 	<style>
 		.issuuembed { width: 100% !important; height: 90vh !important; max-height: 40rem; } #wp-toolbar.quicklinks { float: none; }
 	</style>
@@ -159,7 +163,13 @@
 					$update_nav_link_text = get_sub_field('update_nav_link_text');
 					$update_nav_link = get_sub_field('update_nav_link');
 					
-					echo '<div class="update_nav-box">';
+					if (get_row_index() === 1) {
+						
+						echo '<div class="update_nav-box left">';
+					} else {
+						echo '<div class="update_nav-box">';
+					}
+					
 					if ($update_nav_imge) {
 						$update_nav_imge_url = $update_nav_imge['url'];
 						echo '<img class="update_nav_image" src="' . $update_nav_imge_url . '">';

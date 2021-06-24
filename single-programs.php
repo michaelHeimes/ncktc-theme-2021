@@ -36,7 +36,7 @@
 				'post_type' => 'faculty',
 				'advisors' => 'program',
 				'posts_per_page' => 1, 
-				'orderby' => rand			
+				'orderby' => 'rand'			
 			); 
 			$loop = new WP_Query( $args );
 			while ( $loop->have_posts() ) : $loop->the_post();
@@ -476,10 +476,10 @@
 							</div>
 						<?php endif; ?><!-- End General Ed -->
 						</div>
-						<tr>
-							<td colspan="2"><strong>Total Required Hours</strong></td>
-							<td><strong class="course-total"></strong></td>
-		 				</tr>
+						<div class="required-wrap">
+							<div>Total Required Hours</div>
+							<div class="course-total"></div>
+		 				</div>
 					
 				
 				
@@ -530,8 +530,8 @@
 					</table>
 				<?php endif; ?><!-- End General Ed Alone -->
 			<?php endif; ?><!-- END COURSES LISTING -->
-			<p>T&rtrif; - Course eligible for transfer to a state university.</p>
-			<div>
+			<p class="eligibility">T&rtrif; - Course eligible for transfer to a state university.</p>
+			<div class="program-notes">
 				<?php if ( get_field('program_notes') != '' || null || false ) {
 					echo '<h4>Additional Notes:</h4>';
 					the_field('program_notes');

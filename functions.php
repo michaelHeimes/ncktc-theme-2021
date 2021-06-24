@@ -485,6 +485,8 @@ add_filter('wp_image_editors', function (array $editors): array {
 function ccgfeb2021_scripts() {
 wp_enqueue_style( 'style-css', get_stylesheet_directory_uri() . '/style.css' );
 wp_enqueue_style( 'ccg-css', get_stylesheet_directory_uri() . '/ccg.css' );
+wp_enqueue_style( 'ccg-2-css', get_stylesheet_directory_uri() . '/ccg-2.css' );
+
 }
 add_action( 'wp_enqueue_scripts', 'ccgfeb2021_scripts' );
 
