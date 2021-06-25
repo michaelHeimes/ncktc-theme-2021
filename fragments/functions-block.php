@@ -44,6 +44,14 @@ function register_acf_block_types() {
         'render_template'   => 'fragments/events-block.php',
         'category'          => 'formatting',
     ));
+	
+	acf_register_block_type(array(
+        'name'              => 'accordion_block',
+        'title'             => __('Accordion Block'),
+        'description'       => __('Accordion Block'),
+        'render_template'   => 'fragments/accordion-block.php',
+        'category'          => 'formatting',
+    ));
 
     
 }

@@ -36,4 +36,31 @@
 		</div>
 	</div>
 </div> <!-- /.pre-footer-cards -->
+<style>
+.pre-footer-wrapper {
+	background: url('/wp-content/uploads/2021/06/Rectangle-3-Copy-4.jpg');
+	padding-bottom: 80px;
+}
+
+.pre-footer-wrapper .pre-footer-container .pre-footer-box {
+	background: #002F57;
+}
+
+.pre-footer-wrapper .pre-footer-container .pre-footer-box p {
+	color: white;
+}
+
+.pre-footer-wrapper .pre-footer-container .pre-footer-box ul li {
+	color: white;
+}
+
+.pre-footer-wrapper .pre-footer-container .pre-footer-box ul {
+	list-style-image: url(/wp-content/uploads/2021/06/Check.png);
+}
+
+.pre-footer-wrapper .pre-footer-container .pre-footer-box h4 {
+	color: white;
+	padding-bottom: 23px;
+}
+</style>
 <?php // end of file ?>

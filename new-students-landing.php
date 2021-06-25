@@ -149,7 +149,7 @@
 							<div class="bottom">
 								<div>
 									<a class="green-shadow-button" href="<?php echo $videoButtonOneLink; ?>"><?php echo $videoButtonOneTxt; ?></a>
-									<a class="green-shadow-button" href="/virtual-tour/">Virtual Tour</a>
+									<a class="green-shadow-button transparent-button" href="/virtual-tour/">Virtual Tour</a>
 								</div>
 								<a class="learn-more" href="<?php echo $videoButtonTwoLink; ?>"><?php echo $videoButtonTwoTxt; ?> &rsaquo;</a>
 							</div>
@@ -242,6 +242,18 @@
 
 .new-students-main .home-container__first--left {
 	color: white;
+}
+.new-students .ribbon-container h1 {
+	position: static;
+	background: none;
+	clip-path: none;
+	padding: 0;
+}
+
+.transparent-button {
+	background: transparent;
+	box-shadow: none;
+	border: 3px solid #C1D82F;
 }
 </style>
 <?php get_footer() ?>

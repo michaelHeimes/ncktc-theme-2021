@@ -12,31 +12,34 @@
 
 </section> <!-- /.current-students -->
 
+
+<div class="students-main-background">
 <div class="current-students__bottom-nav">
 		<span class="current-students__bottom-nav--box">
 			<a href="https://portals.ncktc.edu/student/login.asp">
-				<?php include 'img/nckicons/techknow.svg'; ?>
+				<?php //include 'img/nckicons/techknow.svg'; ?>
+				<img src="/wp-content/uploads/2021/06/cloud-computing-1-2.png"/>
 				<h5>TechKNOW</h5>
 			</a>
 		</span>
 
 		<span class="current-students__bottom-nav--box">
 			<a href="/cafeteria-menu/">
-				<?php include 'img/nckicons/cafeteria-menu.svg'; ?>
+				<?php //include 'img/nckicons/cafeteria-menu.svg'; ?>
+				<img src="/wp-content/uploads/2021/06/frying-pan-1.png"/>
 				<h5>Cafeteria Menu</h5>
 			</a>
 		</span>
 
 		<span class="current-students__bottom-nav--box">
 			<a href="/student-activities/">
-				<?php include 'img/nckicons/student-activities.svg'; ?>
+				<?php //include 'img/nckicons/student-activities.svg'; ?>
+				<img src="/wp-content/uploads/2021/06/Group-3.png"/>
 				<h5>Student Activities</h5>
 			</a>
 		</span>
 	</div> <!-- /.current-students__bottom-nav -->
-
-<section class="students-main">
-	<div class="home-container__split">
+<div class="home-container__split">
 		<div class="home-container__split--events">			
 			<h3>Upcoming Events</h3>
 			<?php
@@ -75,7 +78,7 @@
 			<?php if ( $i === 3 ) {	break 1; } ?>
 			<?php endforeach; wp_reset_postdata(); // End Featured Event ?>
 			
-			<a class="green-shadow-button" href="/events">See All Events</a>	
+			<a class="green-shadow-buttona" href="/events">See All Events</a>	
 		</div> <!-- /.home-container__split--events -->
 
 		<div class="divider"></div>
@@ -106,11 +109,15 @@
 				<?php if ( $i === 3 ) {	break 1; } ?>
 				<?php endforeach; wp_reset_postdata(); // End Featured Event ?>
 
-			<a class="green-shadow-button" target="_blank" href="<?php $calendarFile = get_field('calendar_one'); echo $calendarFile['url']; ?>"><?php the_field('calendar_one_text'); ?></a>
-			<a class="green-shadow-button" target="_blank" href="<?php $calendarFileTwo = get_field('calendar_two'); echo $calendarFileTwo['url']; ?>"><?php the_field('calendar_two_text'); ?></a>
+			<a class="green-shadow-buttona" target="_blank" href="<?php $calendarFile = get_field('calendar_one'); echo $calendarFile['url']; ?>"><?php the_field('calendar_one_text'); ?></a>
+			<a class="green-shadow-buttona" target="_blank" href="<?php $calendarFileTwo = get_field('calendar_two'); echo $calendarFileTwo['url']; ?>"><?php the_field('calendar_two_text'); ?></a>
 		</div> <!-- home-container__split--news -->
 	</div> <!-- /.home-container__split -->
 
+</div>
+
+
+<section class="students-main">
 	<!-- Financial Aid and Scholarships box 
 	<div class="home-container__first">
 		<div class="home-container__first--left">
@@ -131,7 +138,7 @@
 	$heading = get_field('current_students_header');
 	$content = get_field('current_students_paragraph');
 	$button_text = 'Financial Aid';
-	$button_text2 = 'Scholarships';
+	$button_text2 = 'Scholarships <i class="fas fa-chevron-right" aria-hidden="true"></i>';
 	$button_link = '#';
 	$button_link2 = '#';
 	echo '<section class="story-carousel-section page-container">
@@ -148,8 +155,10 @@
 	echo '<div class="story-carousel-item-content item">';
 	echo '<h3>' . $heading . '</h3>';
 	echo $content;
+	echo '<div class="link-wrap">';
 	echo '<a href="' . $button_link .'">' . $button_text . '</a>';
-	echo '<a href="' . $button_link2 .'">' . $button_text2 . '</a>';
+	echo '<a class="chev-link" href="' . $button_link2 .'">' . $button_text2 . '</a>';
+	echo '</div>';
 	echo '</div>';
 	echo '</div>';
 	echo '</div>';
@@ -174,11 +183,13 @@
 			<img src="<?php echo get_field('student_handbook_card_image'); ?>" alt="Student Handbook Image">
 			<h3><?php echo get_field('student_handbook_card_header'); ?></h3>
 			<p><?php echo get_field('student_handbook_card_paragraph'); ?></p>
+			<div class="bottom">
 			<a class="green-shadow-button-wide" href="<?php
 				$ctaUploadPDF = get_field('student_handbook_card_pdf_upload');
 				echo $ctaUploadPDF['url']; ?>">
 				<?php echo get_field('student_handbook_card_button_text'); ?>
 			</a>
+			</div>
 		</div>
 
 		<?php if( have_rows('second_set_of_cta_cards') ):
@@ -196,7 +207,9 @@
 					<img src="<?php echo $ctaImage2['url']; ?>" alt="<?php echo $ctaImage2['alt']; ?>">
 					<h3><?php echo $ctaHeader2; ?></h3>
 					<p><?php echo $ctaPara2; ?></p>
+					<div class="bottom">
 					<a class="green-shadow-button-wide" href="<?php echo $ctaButtonLink2; ?>"><?php echo $ctaButtonTxt2; ?></a>
+					</div>
 				</div>
 			<?php endwhile; ?>
 		<?php endif; ?>
@@ -221,46 +234,48 @@
 			<?php endwhile; ?>
 		<?php endif; ?>
 	</div>
-
+<div class="cta-icons-section">
 	<div class="cta-icons">
 		<a href="/transcript-request/" class="cta-icons__icon-box">
-			<div class="icon-image"><?php include 'img/nckicons/transcript-icon.svg'; ?></div>
+			<div class="icon-image"><img src="/wp-content/uploads/2021/06/Group-24.png"/></div>
 			<span class="h5-heading">Transcript Request</span>
 		</a>
 
 		<a href="/pay-online/" class="cta-icons__icon-box">
-			<div class="icon-image"><?php include 'img/nckicons/payments-icon.svg'; ?></div>
+			<div class="icon-image"><img src="/wp-content/uploads/2021/06/Group-15.png"/></div>
 			<span class="h5-heading">GRAD GIFT</span>
 		</a>
 
 		<a href="/rave-alert/" class="cta-icons__icon-box">
-			<div class="icon-image"><?php include 'img/nckicons/rave-icon.svg'; ?></div>
+			<div class="icon-image"><img src="/wp-content/uploads/2021/06/Group-14.png"/></div>
 			<span class="h5-heading">RAVE ALERT</span>
 		</a>
 	</div>
 
 	<div class="cta-icons">
 		<a href="http://mail.google.com/a/ncktc.edu" class="cta-icons__icon-box">
-			<div class="icon-image"><?php include 'img/nckicons/webmail-icon.svg'; ?></div>
+			<div class="icon-image"><img src="/wp-content/uploads/2021/06/Group-21.png"/></div>
 			<span class="h5-heading">Webmail</span>
 		</a>
 
 		<a href="https://ncktc.ethinksites.com/" class="cta-icons__icon-box">
-			<div class="icon-image"><?php include 'img/nckicons/moodle-icon.svg'; ?></div>
+			<div class="icon-image"><img src="/wp-content/uploads/2021/06/Group-16.png"/></div>
 			<span class="h5-heading">MOODLEROOMS</span>
 		</a>
 		
 		<a href="/pay-online/" class="cta-icons__icon-box">
-			<div class="icon-image"><?php include 'img/nckicons/payments-icon.svg'; ?></div>
+			<div class="icon-image"><img src="/wp-content/uploads/2021/06/Group-13.png"/></div>
 			<span class="h5-heading">Online Payments</span>
 		</a>
 	</div> <!-- end of icon cta cards -->
+	</div>
 </section>
 <style>
 .current-students__bottom-nav {
 	padding-top: 60px;
 	padding-bottom: 60px;
 	color: #104C7F;
+	align-items: flex-end;
 }
 
 .current-students__bottom-nav .cls-1 {
@@ -323,6 +338,28 @@
 	right: 0;
 }
 
+.students-main {
+	background: none;
+}
 
+.cta-icons-section {
+	background-image: url('/wp-content/uploads/2021/06/Rectangle-3-Copy-4.jpg');
+	margin-top: -180px;
+	padding-top: 120px;
+}
+
+.cta-cards .cta-cards__card {
+	background: #ECF1F6;
+}
+
+.students-main-background {
+	background-image: url('/wp-content/uploads/2021/06/Rectangle-3-Copy-4.jpg');
+	margin-bottom: -295px;
+	padding-bottom: 295px;
+}
+
+.story-carousel {
+	margin-bottom: 100px;
+}
 </style>
 <?php get_footer() ?>

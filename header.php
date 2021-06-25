@@ -94,7 +94,7 @@
 					<div class="wit-header__bgimage" style="background-image: url(<?php echo $randimageurl; ?>)">
 					<?php
 					echo '<div class="wit-header__link">';
-					echo '<a href="' . $rand_row_link . '">eye ' . $rand_row_link_text . '</a>';
+					echo '<a href="' . $rand_row_link . '"><i class="fas fa-eye"></i> ' . $rand_row_link_text . '</a>';
 					echo '</div>';
 					?>
 					<div class="wit-header__overlay-text">
@@ -176,7 +176,7 @@
 					}
 					echo '<div class="update_nav-box-info">';
 					echo '<h4 class="update_nav_title">' . $update_nav_title . '</h4>';
-					echo '<a href="' . $update_nav_link . '">' . $update_nav_link_text . '</a>';
+					echo '<a href="' . $update_nav_link . '">' . $update_nav_link_text . ' <i class="fas fa-arrow-right" aria-hidden="true"></i></a>';
 					echo '</div>';
 					echo '</div>';
 					}

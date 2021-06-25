@@ -11,7 +11,6 @@
 		<h1>Academics</h1>
 	</div>
 </section>
-<img class="academics-header__bottom-bar" src="<?php echo get_stylesheet_directory_uri(); ?>/img/bottom-header-bar.png" alt="Grey bar at bottom of header">
 
 <section class="academics-main">
 
@@ -48,26 +47,49 @@
 
 	<div class="cta-icons">
 		<a href="/individual-courses/courses/" class="cta-icons__icon-box-small">
-			<div class="icon-image"><?php include 'img/nckicons/bookmark-icon.svg'; ?></div>
+			<div class="icon-image"><img src="/wp-content/uploads/2021/06/Group-26.png"/></div>
 			<span class="h5-heading">View Courses</span>
 		</a>
 
 		<a href="/individual-courses/fees-costs/" class="cta-icons__icon-box-small">
-			<div class="icon-image"><?php include 'img/nckicons/payments-icon.svg'; ?></div>
+			<div class="icon-image"><img src="/wp-content/uploads/2021/06/FeesCosts.png"/></div>
 			<span class="h5-heading">Estimated Costs</span>
 		</a>
 
 		<a href="/individual-courses/faq/" class="cta-icons__icon-box-small">
-			<div class="icon-image"><?php include 'img/nckicons/faq-icon.svg'; ?></div>
+			<div class="icon-image"><img src="/wp-content/uploads/2021/06/Group-2.png"/></div>
 			<span class="h5-heading">FAQ</span>
 		</a>
 
 		<a href="/events/" class="cta-icons__icon-box-small">
-			<div class="icon-image"><?php include 'img/nckicons/ac-calendar-icon.svg'; ?></div>
+			<div class="icon-image"><img src="/wp-content/uploads/2021/06/calendar.png"/></div>
 			<span class="h5-heading">Academic Calendar</span>
 		</a>
 	</div>
 </section>
+<style>
+.academics-main {
+	background: none;
+}
+
+.academics-main__cta-cards--card, .academics-main__cta-cards--card .link-group {
+	background: #ECF1F6;
+}
+
+.cta-icons__icon-box-small {
+	display: flex;
+	flex-direction: column;
+}
+
+.cta-icons__icon-box-small .icon-image {
+	margin-bottom: auto;
+}
+
+.cta-icons__icon-box-small .h5-heading {
+	margin-top: 40px;
+}
+
+</style>
 
 <?php include 'alt-top-footer.php'; ?>
 <?php get_footer() ?>

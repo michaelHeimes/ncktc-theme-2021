@@ -68,6 +68,7 @@
 
 .update_nav-box a {
 	color: #323232;
+	text-decoration: underline;
 }
 
 .home .wit-header {
@@ -103,10 +104,6 @@
 	flex-direction: column;
 	justify-content: center;
 	max-height: 650px;
-}
-
-.ribbon-container h1 {
-	position: static;
 }
 
 .new-students .info-boxes {
@@ -145,3 +142,47 @@
 .banner-fw__inner h3 {
 	color: #104C7F;
 }
+
+
+.ribbon-container .ribbon-container__blue-ribbon {
+	display: none;
+	//background: #007BFF;
+	//clip-path: polygon(0 0, 78% 0, 100% 33%, 100% 100%, 0 100%);
+	//clip-path: polygon(0 0, 92% 0, 100% 15%, 100% 100%, 0 100%);
+}
+
+
+.ribbon-container h1 {
+	bottom: 0;
+	position: absolute;
+	top: auto;
+	background: #007BFF;
+	padding: 40px 50px;
+	padding-right: 80px;
+	clip-path: polygon(0 0, 78% 0, 100% 33%, 100% 100%, 0 100%);
+	//clip-path: polygon(0 0, 92% 0, 100% 15%, 100% 100%, 0 100%);
+	clip-path: polygon(0 0, 85% 0, 100% 35%, 100% 100%, 0 100%);
+	max-width: none;
+}
+
+.page-template .container {
+	background: none;
+}
+
+.with-banner-background {
+	background-image: url('/wp-content/uploads/2021/06/Rectangle-3-Copy-4.jpg');
+}
+
+.cta-cards .cta-cards__card:not(.no-padding) .bottom {
+	margin-top: auto;
+}
+
+.home .featured-update-box a {
+	color: white;
+}
+
+
+#megaMenu #megaUber > .menu-item:not(#menu-item-2506):hover > a {
+	color: #104C7F;
+}
+

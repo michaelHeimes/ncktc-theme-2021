@@ -1,6 +1,6 @@
 <section class="program-page-pre-footer-cta">
-<h2 class="pre-footer-heading">Interested in AGRICULTURAL EQUIPMENT TECHNOLOGY?</h2>
 <?php
+echo '<h2 class="pre-footer-heading">Interested in ' . get_the_title() . '?</h2>';
 $pre_footer_heading = get_field('pre-footer_heading' , 'option');
 $image = get_field('image' , 'option');
 $imageurl = $image['url'];

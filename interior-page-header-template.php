@@ -22,4 +22,3 @@ if( has_post_thumbnail( $post->post_parent ) ) {
 		<h1><?php echo get_the_title($post); ?></h1>
 	</div>
 </section>
-<img class="interior-header__bottom-bar" src="<?php echo get_stylesheet_directory_uri(); ?>/img/bottom-header-bar.png" alt="Grey Bar at bottom of header">
