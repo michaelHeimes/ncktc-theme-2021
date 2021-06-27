@@ -17,8 +17,8 @@
 
 	<div class="banner-fw">
 		<div class="banner-fw__inner">
-			<h3>Join Our Team</h3>
-			<a class="green-shadow-button" href="/job-opportunities/">View Jobs</a>
+			<h3>Want To Get In Touch</h3>
+			<a class="green-shadow-button" href="/contact/">Contact Us</a>
 		</div>
 	</div>
 
@@ -56,13 +56,24 @@
 					<a class="event-url" href="<?php echo $EM_Event->output('#_EVENTURL'); ?>"><?php echo $EM_Event->output('#_EVENTNAME'); ?></a><br>
 				</div>
 			</div>
-			<span class="last"><?php echo $EM_Event->output('#_LOCATIONTOWN'); ?></span>
-			<a class="learn-more" href="<?php echo $EM_Event->output('#_EVENTURL'); ?>">Learn More ></a>
+			<span class="last location"><?php echo $EM_Event->output('#_LOCATIONTOWN'); ?></span>
+			<?php 
+			$event_categories = get_the_terms($EM_Event->post_id, 'event-categories' );
+			foreach ($event_categories as $cat) {
+			if( $cat->name == 'Beloit' ) {
+				echo '<span class="last location">Beloit Campus</span>';
+			}
+			if( $cat->name == 'Hays' ){
+				echo '<span class="last location">Hays Campus</span>';
+			}
+			}			
+			?>
+			<a class="learn-more" href="<?php echo $EM_Event->output('#_EVENTURL'); ?>">View Event ></a>
 			<hr>
 			<?php if ( $i === 3 ) {	break 1; } ?>
 			<?php endforeach; wp_reset_postdata(); // End Featured Event ?>
 			
-			<a class="blue-link" href="/events">See All Events</a>	
+			<a class="blue-link" href="/events">See All Events <i class="fas fa-arrow-right" aria-hidden="true"></i></a>	
 		</div> <!-- /.home-container__split--events -->
 
 		<div class="divider"></div>
@@ -92,8 +103,8 @@
 				<hr>
 				<?php if ( $i === 3 ) {	break 1; } ?>
 				<?php endforeach; wp_reset_postdata(); // End Featured Event ?>
-			<a class="blue-link" target="_blank" href="<?php $calendarFile = get_field('calendar_one'); echo $calendarFile['url']; ?>"><?php the_field('calendar_one_text'); ?></a>
-			<a class="blue-link" target="_blank" href="<?php $calendarFileTwo = get_field('calendar_two'); echo $calendarFileTwo['url']; ?>"><?php the_field('calendar_two_text'); ?></a>
+			<a class="blue-link" target="_blank" href="<?php $calendarFile = get_field('calendar_one'); echo $calendarFile['url']; ?>"><?php the_field('calendar_one_text'); ?> <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+			<a class="blue-link" target="_blank" href="<?php $calendarFileTwo = get_field('calendar_two'); echo $calendarFileTwo['url']; ?>"><?php the_field('calendar_two_text'); ?> <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
 			
 		</div> <!-- home-container__split--news -->
 
@@ -115,7 +126,7 @@
 				<hr>
 			<?php endwhile; wp_reset_postdata(); ?>
 
-			<a class="blue-link" href="/news/">Read More Stories</a>
+			<a class="blue-link" href="/news/">Read More Stories <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
 		</div> <!-- home-container__split--news -->
 
 	</div> <!-- /.home-container__split -->
@@ -123,7 +134,7 @@
 	<div class="banner-fw">
 		<div class="banner-fw__inner">
 			<h3>Work At NCK Tech</h3>
-			<a class="green-shadow-button" href="#">Learn More</a>
+			<a class="green-shadow-button" href="/job-opportunities/">Apply Now</a>
 		</div>
 	</div>
 

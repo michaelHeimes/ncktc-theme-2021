@@ -38,7 +38,7 @@ the_excerpt();
 echo '</div>';
 
 echo '<div class="events-block-item-right">';
-echo '<a class="event-url" href="' . get_the_permalink() . '">Learn More</a>';
+echo '<a class="event-url learn-more" href="' . get_the_permalink() . '">Learn More ></a>';
 echo '</div>';
 
 echo '</div>';

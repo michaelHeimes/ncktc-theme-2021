@@ -137,6 +137,46 @@ wp_reset_query();
 	margin-top: auto;
 }
 
+.featured-events h3.event-name {
+	font-family: Good Headline Pro, sans-serif;
+	font-size: 30px;
+	line-height: 1.1;
+	font-style: italic;
+	text-transform: uppercase;
+	color: #104C7F;
+	letter-spacing: 0;
+}
+
+.featured-events img {
+	max-width: 24rem;
+	min-height: 16.125rem;
+	max-height: 16.125rem;
+	width: 100%;
+}
+
+.featured-events p {
+	padding-left: 0;
+	color: #323232;
+}
+
+.events-list .events-block-item h3 {
+	font-family: Good Headline Pro, sans-serif;
+	font-size: 24px;
+	line-height: 1.1;
+	font-style: italic;
+	text-transform: uppercase;
+	color: #104C7F;
+	letter-spacing: 0;
+}
+
+.events-list .events-block-item p {
+	color: #323232;
+}
+
+.events-list .events-block-item-left {
+	color: #104C7F;
+}
+
 </style>
 <?php /*
 <section class="events-main">

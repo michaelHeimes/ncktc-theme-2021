@@ -186,3 +186,26 @@
 	color: #104C7F;
 }
 
+.new-students-main__resource-container--boxes .boxes-left-side .top-section .learn-more {
+	text-decoration: none;
+}
+
+.about-main .home-container__split--events .learn-more {
+	padding-left: 1rem;
+	display: block;
+	width: auto;
+}
+
+.about-main .home-container__split--events .location {
+	width: auto;
+	display: block;
+}
+
+.about-main .home-container__split--events hr:last-of-type {
+	border: solid #979797;
+	border-width: 1px 0 0;
+}
+
+.home-container__split--events a.blue-link {
+	margin-left: 1rem;
+}
