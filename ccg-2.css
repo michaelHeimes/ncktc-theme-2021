@@ -12,6 +12,7 @@
 }
 
 section.partnerships,
+section.partnerships,
 section.alumni-header,
 section.foundation-header,
 section.about-header {
@@ -34,6 +35,8 @@ body:not(.page-template-new-students-landing) .ribbon-container h1 {
 	letter-spacing: 0;
 	line-height: 1.246;
 	padding: .5em 1.34em .5em .6em;
+	margin: 0;
+    bottom: 30px;
 }
 
 body:not(.page-template-new-students-landing) .ribbon-container h1:before {
@@ -175,7 +178,8 @@ p,
 .home .update_nav-box a,
 .home .large-feature-image-l-r.large-feature-image-l-r-right a,
 .story-carousel-item-content.item a.chev-link,
-.about-main .home-container__split a.blue-link {
+.home-container__split a.blue-link,
+a.green-shadow-buttona {
 	font-family: Good Headline Pro, sans-serif;
 	font-weight: bold;
 	font-size: 16px;
@@ -185,15 +189,25 @@ p,
 	background-color: transparent;
 }
 
+.home .update_nav-box a:hover,
+.home .large-feature-image-l-r.large-feature-image-l-r-right a:hover,
+.story-carousel-item-content.item a.chev-link:hover,
+.home-container__split a.blue-link:hover,
+a.green-shadow-buttona:hover {
+	text-decoration: none;
+}
+
 /* Arrow Links Underline */
 .home .large-feature-image-l-r.large-feature-image-l-r-right a,
-.about-main .home-container__split a.blue-link {
+.about-main .home-container__split a.blue-link,
+a.green-shadow-buttona {
 	display: inline-block;
 	position: relative;
 }
 
 .home .large-feature-image-l-r.large-feature-image-l-r-right a:after,
-.about-main .home-container__split a.blue-link:after {
+.about-main .home-container__split a.blue-link:after,
+a.green-shadow-buttona:after {
 	content: '';
 	position: absolute;
 	left: 0;
@@ -203,7 +217,8 @@ p,
 	background-color: #C1D82F;
 }
 
-.about-main .home-container__split a.blue-link:after {
+.about-main .home-container__split a.blue-link:after,
+a.green-shadow-buttona:after {
 	background-color: #002F57;
 }
 
@@ -1003,7 +1018,7 @@ p.pre-style-swap {
 	background-image: none;
 }
 
-.page-template-about-us .home-container__split h3 {
+.home-container__split h3 {
 	font-family: Good Headline Pro, sans-serif;
 	text-transform: uppercase;
 	font-style: italic;
@@ -1013,18 +1028,18 @@ p.pre-style-swap {
 	letter-spacing: 0;
 }
 
-.about-main .home-container__split--events .event-link {
+.home-container__split--events .event-link {
     flex-direction: column;
     margin: 0;
     padding: 0;
 }
 
-.about-main .home-container__split--events .event-link__left {
+.home-container__split--events .event-link__left {
 	width: auto;
 	padding-bottom: .2rem;
 }
 
-.about-main .home-container__split--events .event-link__left span {
+.home-container__split--events .event-link__left span {
 	font-family: Montserrat, sans-serif;
 	font-size: 12px;
 	text-transform: uppercase;
@@ -1033,7 +1048,7 @@ p.pre-style-swap {
 	letter-spacing: 0;
 }
 
-.about-main .home-container__split--events .event-link__right .event-url {
+.home-container__split--events .event-link__right .event-url {
 	font-family: Good Headline Pro, sans-serif;
 	text-transform: uppercase;
 	font-weight: bold;
@@ -1043,24 +1058,108 @@ p.pre-style-swap {
 	margin: 0;
 }
 
-.about-main .home-container__split--events .last {
+.home-container__split--events .last {
 	display: none;
 }
 
-.about-main .home-container__split--events .learn-more {
+.home-container__split--events .learn-more {
 	width: auto;
 	padding: 0;
 	margin-top: .3rem;
     display: inline-block;
 }
 
-.about-main .home-container__split--events hr {
+.home-container__split--events hr {
 	margin-left: 0;
 }
 
-.about-main .home-container__split--events a.blue-link {
+.home-container__split--events a.blue-link {
 	
 }
+
+
+/* Current Students */
+@media (min-width: 1023px) {
+	.page-template-current-students-landing .current-students {
+		min-height: 25em;
+	}
+
+}
+
+@media (min-width: 1200px) {
+	.page-template-current-students-landing .current-students {
+		min-height: 25em;
+	}
+}
+
+.page-template-current-students-landing .current-students__bottom-nav--box:first-of-type img,
+.cta-icons .icon-image img {
+	max-width: 63px;
+}
+
+.page-template-current-students-landing .current-students__bottom-nav--box img {
+	max-width: 90px;
+	margin-bottom: .4rem;
+}
+
+.page-template-current-students-landing .current-students__bottom-nav--box:last-of-type img {
+	max-width: 60px;
+}
+
+.page-template-current-students-landing .current-students__bottom-nav--box a,
+a.cta-icons__icon-box {
+	font-family: Good Headline Pro, sans-serif;
+	font-size: 22px;
+	line-height: 1.25;
+	color: #104C7F;
+	letter-spacing: 0;
+	text-align: center;
+	display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.page-template-current-students-landing .current-students__bottom-nav--box a:hover,
+a.cta-icons__icon-box:hover,
+a.cta-icons__icon-box:hover span.h5-heading {
+	text-decoration: none;	
+	color: #104C7F;
+}
+
+.page-template-current-students-landing .current-students__bottom-nav--box a h5,
+a.cta-icons__icon-box span.h5-heading {
+	display: inline-block;
+	position: relative;
+}
+
+.page-template-current-students-landing .current-students__bottom-nav--box a h5:after,
+a.cta-icons__icon-box span.h5-heading:after {
+	content: '';
+	position: absolute;
+	bottom: 3px;
+	left: 0;
+	right: 0;
+	width: 100%;
+	height: 1px;
+	background-color: transparent;
+}
+
+.page-template-current-students-landing .current-students__bottom-nav--box a:hover h5:after,
+a.cta-icons__icon-box:hover span.h5-heading:after {
+	background-color: #5CC6FF;
+}
+
+/* Academics */
+.academics-main__cta-cards--card .card-header .h3-heading {
+	font-family: Good Headline Pro, sans-serif;
+	text-transform: uppercase;
+	font-style: italic;
+	font-size: 30px;
+	line-height: 1.1;
+	letter-spacing: 0;
+}
+
 
 
 
