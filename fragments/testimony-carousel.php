@@ -1,12 +1,13 @@
 <?php
 if( have_rows('testimonial') ){
 echo '<section class="testimonial-carousel-section page-container1">';
-echo '<div class="testimonial-carousel-heading-item">';
+echo '<div class="testimonial-carousel-heading-item desktop">';
 $heading = get_field('heading');
 echo '<h2>' . $heading . '</h2>';
 echo '<div class="testimonial-carousel-heading-item-bottom">';
-echo '<div class="testimonial-carousel-nav owl-nav"></div><span class="testimonial-carousel-dots owl-dots"></span>';
+echo '<div class="testimonial-carousel-nav owl-nav desktop"></div><span class="testimonial-carousel-dots owl-dots"></span>';
 echo '</div></div>';
+echo '<h2 class="mobile">' . $heading . '</h2>';
 echo '<div class="testimonial-carousel-container">';
 echo '<div class="testimonial-carousel owl-carousel owl-theme">';
     while( have_rows('testimonial') ) { the_row();
@@ -27,6 +28,7 @@ echo '<div class="testimonial-carousel owl-carousel owl-theme">';
 	}
 	
 echo '</div></div>';
+echo '<div class="testimonial-carousel-nav owl-nav mobile"></div><span class="testimonial-carousel-dots owl-dots"></span>';
 ?>
 
 <script src="<?php echo get_stylesheet_directory_uri(); ?>/magnific-popup/jquery.magnific-popup.min.js"></script>
